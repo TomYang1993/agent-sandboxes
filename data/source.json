@@ -2,7 +2,7 @@
  "source": "AI Sandbox Hunt",
  "url": "https://aisandboxhunt.com",
  "license": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit AI Sandbox Hunt with a link to the page the data comes from.",
- "updated": "2026-11-23",
+ "updated": "2026-11-24",
  "method": "https://aisandboxhunt.com/methodology",
  "methodVersion": "1.3 (2026-11-14)",
  "categories": [
@@ -239,7 +239,7 @@
    "score": {
     "dev-box": {
      "total": 59,
-     "rank": 25,
+     "rank": 26,
      "of": 37
     },
     "code-sandbox": {
@@ -322,7 +322,7 @@
      "Rates are published per 730-hour month: $0.80 per vCPU, $0.70 per GB of RAM and $0.09 per GB of disk. We divide the vCPU and RAM rates by 730 to get hourly figures; the disk figure is shown per month as published.",
      "These are default-instance rates. VM instances bill compute at 2.5x and Performance instances (dedicated cores) at 4x; disk is unchanged. Default instances share host hardware, so sustained heavy CPU use may be limited when the host is busy.",
      "RAM is stated in GB without saying GB or GiB; we treat GB as GiB.",
-     "Shapes are fixed: 2 vCPU / 4 GB, 4 / 8, 4 / 16 and 4 / 32 on every type, and VM and Performance instances also offer 8 vCPU / 64 GB. A default instance that asks for more than 4 vCPU is provisioned at 4 vCPU. The 64 GB shape is larger than the memory an account can run at once before its top-ups total $50 (32 GB, then 40 GB).",
+     "Shapes are fixed: 2 vCPU / 4 GB, 4 / 8, 4 / 16 and 4 / 32 on every type, and VM and Performance instances also offer 8 vCPU / 64 GB. VM and Performance instances take 2 to 60 GB of disk on the 2 vCPU / 4 GB shape and 2 to 100 GB on every larger shape. A default instance that asks for more than 4 vCPU is provisioned at 4 vCPU. The 64 GB shape is larger than the memory an account can run at once before its top-ups total $50 (32 GB, then 40 GB).",
      "Auto-sleep is off by default; when on, an instance sleeps after an idle timeout (default 900 seconds, from 5 minutes to a day) and wakes on the next request. In-memory state usually survives a wake but is not guaranteed. Instances parked in cold storage bill $0.03 per GB-month on compressed bytes stored.",
      "Creating an instance requires one day of its running rate in the wallet. Managed models, search and integrations are billed separately from the same wallet.",
      "Instances persist until deleted and nothing times out mid-task. If the wallet goes negative and automatic top-up cannot charge, instances are suspended; an instance left suspended for 30 days is permanently deleted.",
@@ -344,97 +344,97 @@
     {
      "url": "https://www.agent37.com/pricing",
      "quote": "Agent37 charges $0.80 per vCPU, $0.70 per GB of RAM and $0.09 per GB of disk, per730-hour month, metered by the minute.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/pricing",
      "quote": "A standard 2 vCPU, 4 GB RAM sandbox with 4 GB persistent disk costs $4.76 for 730 running hours.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/docs/agents-api/billing",
      "quote": "Compute is metered per minute: time an instance spends running bills its full rate, time spent stopped or sleeping bills its disk alone.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/docs/agents-api/billing",
      "quote": "Add a card from the billing page (nothing is charged) and your workspace gets a one-time $5 credit",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/pricing",
      "quote": "Performance runs on cores held for it and costs 4x compute.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/docs/agents-api/billing",
      "quote": "Parked in cold storage | $0.03 per GB per month, on the actual compressed bytes stored.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/docs/agents-api/instance-sizing",
      "quote": "These four shapes stop at 4 vCPU.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/docs/agents-api/instance-sizing",
-     "quote": "A VM or performance instance takes 2-100 GB of disk on every shape, and has one larger shape: 8 vCPU / 64 GB RAM",
-     "checked": "2026-11-17"
+     "quote": "A VM or performance instance takes 2-60 GB of disk on the 2 vCPU / 4 GB shape and 2-100 GB on every larger one, and has one larger shape: 8 vCPU / 64 GB RAM",
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/docs/agents-api/billing",
      "quote": "A VM or Performance instance can also be 8 vCPU / 64 GB RAM.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/docs/agents-api/vm-instances",
      "quote": "The same four shapes plus 8 vCPU / 64 GB, and compute meters at 2.5x the default rate",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/docs/agents-api/vm-instances",
      "quote": "VM instances run in every region: `us`, `eu` (France or the UK), and `ap-south` (India, Mumbai).",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/docs/agents-api/concepts",
      "quote": "Runs on dedicated servers in the United States.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://agent37.com",
      "quote": "Every sandbox is enforced by gVisor, with its own filesystem and a hard disk quota.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/docs/agents-api/instance-auto-sleep",
      "quote": "In-memory state usually survives a wake, but it is not guaranteed: treat anything that must outlive a sleep as a file.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/docs/llms.txt",
      "quote": "Cut an instance off from the internet, or let it reach only the domains and addresses you list.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/pricing",
      "quote": "The limit is the memory running at once: 32 GB before your first top-up, which is 8 sandboxes at 2 vCPU and 4 GB.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.agent37.com/pricing",
      "quote": "It rises to 40 GB after your first top-up, 200 GB once your top-ups total $50, 800 GB",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     }
    ],
-   "lastChecked": "2026-11-17",
+   "lastChecked": "2026-11-24",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/agent37",
    "score": {
     "code-sandbox": {
      "total": 71,
-     "rank": 13,
+     "rank": 14,
      "of": 62
     },
     "dev-box": {
@@ -899,7 +899,7 @@
    "score": {
     "code-sandbox": {
      "total": 68,
-     "rank": 18,
+     "rank": 20,
      "of": 62
     }
    },
@@ -1618,8 +1618,8 @@
      "of": 37
     },
     "code-sandbox": {
-     "total": 73,
-     "rank": 10,
+     "total": 74,
+     "rank": 9,
      "of": 62
     }
    },
@@ -1756,8 +1756,8 @@
    "page": "https://aisandboxhunt.com/aws-agentcore-code-interpreter",
    "score": {
     "code-sandbox": {
-     "total": 59,
-     "rank": 40,
+     "total": 60,
+     "rank": 39,
      "of": 62
     }
    },
@@ -1918,8 +1918,8 @@
    "page": "https://aisandboxhunt.com/aws-lambda-microvms",
    "score": {
     "code-sandbox": {
-     "total": 64,
-     "rank": 29,
+     "total": 65,
+     "rank": 30,
      "of": 62
     }
    },
@@ -2422,8 +2422,8 @@
      "of": 7
     },
     "dev-box": {
-     "total": 43,
-     "rank": 35,
+     "total": 44,
+     "rank": 33,
      "of": 37
     }
    },
@@ -2641,7 +2641,7 @@
    "page": "https://aisandboxhunt.com/bitrise-rde",
    "score": {
     "dev-box": {
-     "total": 52,
+     "total": 53,
      "rank": 29,
      "of": 37
     }
@@ -3388,7 +3388,7 @@
     },
     "code-sandbox": {
      "total": 71,
-     "rank": 14,
+     "rank": 15,
      "of": 62
     }
    },
@@ -5100,7 +5100,7 @@
    "score": {
     "dev-box": {
      "total": 50,
-     "rank": 31,
+     "rank": 30,
      "of": 37
     }
    },
@@ -5260,8 +5260,8 @@
      "of": 62
     },
     "dev-box": {
-     "total": 67,
-     "rank": 13,
+     "total": 68,
+     "rank": 12,
      "of": 37
     }
    },
@@ -5401,7 +5401,7 @@
    "score": {
     "dev-box": {
      "total": 48,
-     "rank": 32,
+     "rank": 31,
      "of": 37
     }
    },
@@ -5717,7 +5717,7 @@
    "score": {
     "code-sandbox": {
      "total": 68,
-     "rank": 19,
+     "rank": 21,
      "of": 62
     }
    },
@@ -6176,12 +6176,12 @@
    "score": {
     "code-sandbox": {
      "total": 64,
-     "rank": 30,
+     "rank": 31,
      "of": 62
     },
     "dev-box": {
-     "total": 64,
-     "rank": 18,
+     "total": 65,
+     "rank": 17,
      "of": 37
     },
     "gpu": {
@@ -7130,7 +7130,7 @@
    "score": {
     "code-sandbox": {
      "total": 68,
-     "rank": 21,
+     "rank": 23,
      "of": 62
     }
    },
@@ -7305,7 +7305,7 @@
    "score": {
     "code-sandbox": {
      "total": 68,
-     "rank": 20,
+     "rank": 22,
      "of": 62
     }
    },
@@ -7400,7 +7400,7 @@
     "HTTPS API",
     "MCP server"
    ],
-   "regions": "Oregon, Los Angeles, New York, Dallas, Frankfurt, Tokyo, Sydney, Singapore and London (Oregon closed to new accounts). Personal pools use the account's region; Work pools can go in any region.",
+   "regions": "Oregon, Los Angeles, San Jose, New York, Dallas, Frankfurt, Tokyo, Sydney, Singapore and London (Oregon closed to new accounts; San Jose is the nearest substitute). Personal pools use the account's region; Work pools can go in any region.",
    "features": {
     "pauseResume": true,
     "snapshots": null,
@@ -7472,62 +7472,62 @@
     {
      "url": "https://exe.dev/docs/standalone-vms.md",
      "quote": "A standalone VM's reserved capacity is metered at $0.105 per 2 vCPU / 4 GiB unit-hour, the same rate as pool capacity.",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://exe.dev/docs/standalone-vms.md",
      "quote": "Time is measured by the second, with no minimum charge and no rounding up to the hour.",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://exe.dev/docs/standalone-vms.md",
      "quote": "stops a standalone VM, and its vCPU and memory are not billed ... A paused VM keeps its disk, and it still counts toward your VM limits.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://exe.dev/pricing",
      "quote": "2 vCPUs, 4 GiB memory, $15 a month 4 vCPUs, 8 GiB memory, $35 a month 8 vCPUs, 16 GiB memory, $75 a month 16 vCPUs, 32 GiB memory, $155 a month",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://exe.dev/pricing",
      "quote": "Try free for 7 days",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://exe.dev/pricing/compare",
      "quote": "Max size |16 vCPUs / 32 GiB memory |32 vCPUs / 64 GiB memory |Custom",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://exe.dev/pricing/compare",
      "quote": "Additional disk |$0.08 / GiB / month |$0.08 / GiB / month |Custom",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://exe.dev/pricing/compare",
      "quote": "KVM-isolated VMs |Included |Included |Included",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://exe.dev/docs/pools.md",
      "quote": "Work starts at $75/month and includes 2 vCPUs + 4 GiB of capacity, counted across all of the team's pools and standalone VMs together.",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://exe.dev/docs/regions.md",
-     "quote": "The PDX region is not accepting new accounts; LAX is the nearest substitute.",
-     "checked": "2026-11-13"
+     "quote": "The PDX region is not accepting new accounts; SJC is the nearest substitute.",
+     "checked": "2026-11-24"
     }
    ],
-   "lastChecked": "2026-11-23",
+   "lastChecked": "2026-11-24",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/exe-dev",
    "score": {
     "dev-box": {
      "total": 60,
-     "rank": 22,
+     "rank": 23,
      "of": 37
     }
    },
@@ -8059,8 +8059,8 @@
      "of": 37
     },
     "code-sandbox": {
-     "total": 68,
-     "rank": 22,
+     "total": 69,
+     "rank": 18,
      "of": 62
     }
    },
@@ -8228,13 +8228,13 @@
    "page": "https://aisandboxhunt.com/freestyle",
    "score": {
     "dev-box": {
-     "total": 62,
+     "total": 63,
      "rank": 19,
      "of": 37
     },
     "code-sandbox": {
      "total": 60,
-     "rank": 39,
+     "rank": 40,
      "of": 62
     }
    },
@@ -8608,7 +8608,7 @@
    "page": "https://aisandboxhunt.com/github-codespaces",
    "score": {
     "dev-box": {
-     "total": 62,
+     "total": 63,
      "rank": 20,
      "of": 37
     }
@@ -8938,8 +8938,8 @@
    "page": "https://aisandboxhunt.com/google-cloud-workstations",
    "score": {
     "dev-box": {
-     "total": 65,
-     "rank": 16,
+     "total": 66,
+     "rank": 15,
      "of": 37
     }
    },
@@ -9216,7 +9216,7 @@
      "of": 62
     },
     "dev-box": {
-     "total": 54,
+     "total": 55,
      "rank": 28,
      "of": 37
     }
@@ -9738,7 +9738,7 @@
     },
     "code-sandbox": {
      "total": 75,
-     "rank": 5,
+     "rank": 6,
      "of": 62
     }
    },
@@ -9910,7 +9910,7 @@
    "score": {
     "dev-box": {
      "total": 66,
-     "rank": 14,
+     "rank": 16,
      "of": 37
     },
     "coding-agent": {
@@ -10409,7 +10409,7 @@
     "browser"
    ],
    "tagline": "Cloud Chromium browsers in per-browser unikernel microVMs, billed per second by memory and paused when idle.",
-   "summary": "Kernel runs each Chromium browser in its own unikernel microVM, driven with Playwright, CDP or computer controls. Usage is billed per second at $0.0000166667 per GB-second: a 1 GB headless browser costs about $0.06 per hour and the default 8 GB headful browser about $0.48 per hour. Browsers go into standby about 10 seconds after the last client disconnects, which stops usage charges, and proxies are not charged. Every plan includes monthly usage credit, starting with $5 on the free plan.",
+   "summary": "Kernel runs each Chromium browser in its own unikernel microVM, driven with Playwright, CDP or computer controls. Usage is billed per second at $0.0000166667 per GB-second: a 1 GB headless browser costs about $0.06 per hour and the default 8 GB headful browser about $0.48 per hour. Browsers go into standby about 10 seconds after the last client disconnects, which stops usage charges. The Hobbyist plan includes 5 GB of proxy traffic and Start-Up 20 GB. Every plan includes monthly usage credit, starting with $5 on the free plan.",
    "isolation": "Each browser runs in its own unikernel microVM with its own kernel and filesystem, isolated at the hypervisor",
    "isolationKind": "microvm",
    "openSource": true,
@@ -10471,7 +10471,7 @@
       "name": "Hobbyist",
       "monthlyFee": 30,
       "includedUsageUsd": 10,
-      "limits": "$10 of usage credit per month; 10 concurrent browsers; unlimited proxy usage; 7-day replays; unlimited managed auth connections and vaults.",
+      "limits": "$10 of usage credit per month; 10 concurrent browsers; 5 GB of free proxies; 7-day replays; unlimited managed auth connections and vaults.",
       "includedVcpuHours": 0,
       "includedGibHours": 0,
       "capped": false
@@ -10480,7 +10480,7 @@
       "name": "Start-Up",
       "monthlyFee": 200,
       "includedUsageUsd": 50,
-      "limits": "$50 of usage credit per month; 150 concurrent browsers; bring-your-own proxies; GPU acceleration; regional browsers; 30-day replays.",
+      "limits": "$50 of usage credit per month; 150 concurrent browsers; 20 GB of free proxies; bring-your-own proxies; GPU acceleration; regional browsers; 30-day replays.",
       "includedVcpuHours": 0,
       "includedGibHours": 0,
       "capped": false
@@ -10491,7 +10491,7 @@
     "notes": [
      "Usage rates per second: headless browser $0.0000166667, headful browser $0.0001333336, headful with GPU $0.0008000016. Multiplied by 3,600 that is $0.06000012, $0.48000096 and $2.88000576 per hour.",
      "The pricing page states the rate as $0.0000166667 per GB-second ($0.06000012 per GB-hour; we treat GB as GiB, which Kernel does not specify). Headless browsers come in 1, 2 or 4 GB and headful in 8 GB (default) or 16 GB; the per-hour browser price shown is the documented headless rate, which matches 1 GB.",
-     "Proxies are not charged on any plan. Plan credits cover usage only, not the monthly fee.",
+     "Proxies: Hobbyist includes 5 GB and Start-Up 20 GB of free proxy traffic, and the free plan's stealth mode attaches a Kernel-managed residential proxy. Kernel does not publish a price for proxy traffic beyond that; on Enterprise the order form sets it. Until late November 2026 the pricing page said proxies were not charged and Hobbyist had unlimited proxy usage. Plan credits cover usage only, not the monthly fee.",
      "Browsers in standby keep their state and stop usage charges but still count toward the concurrency limit. A browser is deleted after its timeout (default 60 seconds, up to 72 hours) once in standby.",
      "App invocations (code deployed to run next to the browsers) are billed at $0.0000666668 per second.",
      "GPU acceleration is only on Start-Up and Enterprise. Enterprise pricing is custom.",
@@ -10501,62 +10501,93 @@
    "bestFor": [
     "Agents that wait on users or models between actions, since standby stops charges",
     "Untrusted pages or code next to the browser, given per-browser VM isolation",
-    "Proxy-heavy work, since proxy traffic is not metered"
+    "Trying hosted browsers free, with $5 of usage credit a month, stealth mode and a managed proxy on the free plan"
    ],
    "watchOut": [
     "Headful browsers cost eight times the headless rate because billing follows memory",
     "Standby browsers still take a concurrency slot until deleted",
     "GPU, custom proxies and regional browsers need the $200/month Start-Up plan",
-    "Only 5 concurrent browsers on the free plan"
+    "Only 5 concurrent browsers on the free plan",
+    "Proxy traffic beyond the free 5 GB on Hobbyist or 20 GB on Start-Up has no published price"
    ],
    "sources": [
     {
      "url": "https://www.kernel.sh/pricing",
-     "quote": "Usage costs: $0.0000166667 per GB-second (no charges for idle time or proxies).",
-     "checked": "2026-11-13"
+     "quote": "Usage costs: $0.0000166667 per GB-second (no charges for idle time).",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://www.kernel.sh/pricing",
+     "quote": "Our hobbyist plan includes 5GB of free proxies and our start-up plans include 20GB of free proxies.",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://www.kernel.sh/pricing",
+     "quote": "On enterprise plans, your order form sets proxy pricing.",
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.kernel.sh/pricing",
      "quote": "$5 / month free credits",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.kernel.sh/docs/info/pricing",
      "quote": "Headless browser |0.0000166667",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.kernel.sh/docs/info/pricing",
      "quote": "Headful browser + GPU acceleration |0.0008000016",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.kernel.sh/docs/info/pricing",
      "quote": "Start-Up |$200 + usage |$50",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://www.kernel.sh/docs/info/pricing",
+     "quote": "Hobbyist |$30 + usage |$10",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://www.kernel.sh/docs/info/pricing",
+     "quote": "Headful browser |0.0001333336",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://www.kernel.sh/docs/info/pricing",
+     "quote": "App invocation |0.0000666668",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://www.kernel.sh/pricing",
+     "quote": "150 concurrent browsers",
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.kernel.sh/docs/browsers/concurrency-and-limits",
      "quote": "Memory |8 GB or 16 GB |1 GB, 2 GB, or 4 GB",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.kernel.sh/docs/overview/why-kernel",
      "quote": "Each browser is a microVM with its own kernel and filesystem",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.kernel.sh/docs/browsers/standby",
      "quote": "Kernel browsers automatically start entering standby after ten seconds with no activity.",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://github.com/kernel/kernel-images",
      "quote": "This image can be used to run headful Chromium in a Docker container or with Unikraft unikernels.",
-     "checked": "2026-11-13"
+     "checked": "2026-11-24"
     }
    ],
-   "lastChecked": "2026-11-13",
+   "lastChecked": "2026-11-24",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/kernel",
@@ -10887,7 +10918,7 @@
     "code-sandbox"
    ],
    "tagline": "Hosted microVM sandboxes from the kosa8 agent-security tool, with Cloud hours included in every paid plan.",
-   "summary": "kosa8 runs each agent in a microVM with its own kernel, either on your own Mac or Linux machines or on kosa8 Cloud, its hosted service, which runs in one US region (Ashburn, Virginia) today. Cloud sandboxes are created from Python, JavaScript/TypeScript, Go, Ruby or Java SDKs or a REST API. There is no free tier and no pay as you go: every account picks a plan, from $29 a month, before it uses kosa8 anywhere. Each plan includes a monthly allowance of Cloud sandbox-hours (100 on Solo up to 1,000 a person on Scale; one sandbox-hour is an hour of a 2 vCPU / 4 GB sandbox), nothing is billed on top except browser sandboxes ($0.12 per browser-hour), and new work stops at the plan's limits. Sleeping sandboxes use no hours.",
+   "summary": "kosa8 runs each agent in a microVM with its own kernel, either on your own Mac or Linux machines or on kosa8 Cloud, its hosted service, which runs in one US region (Ashburn, Virginia) today. Cloud sandboxes are created from Python, JavaScript/TypeScript, Go, Ruby or Java SDKs or a REST API. New accounts start on the free Starter tier: $10 of Cloud usage once, with no card and no time limit. Plans start at $29 a month and each includes a monthly allowance of Cloud sandbox-hours (100 on Solo up to 1,000 a person on Scale; one sandbox-hour is an hour of a 2 vCPU / 4 GB sandbox). Use above the included hours is billed per second ($0.048 per vCPU-hour and $0.0154 per GiB-hour of memory) up to a spend cap that is on by default at $50. Browser sandboxes cost $0.12 per browser-hour. Sleeping sandboxes use no hours.",
    "isolation": "Hardware-virtualised microVM per sandbox with its own kernel (Cloud Hypervisor on KVM on Linux)",
    "isolationKind": "microvm",
    "openSource": false,
@@ -10918,13 +10949,13 @@
    },
    "pricing": {
     "rates": {
-     "vcpuHour": null,
-     "gibHour": null,
+     "vcpuHour": 0.048,
+     "gibHour": 0.0154,
      "instanceHour": null,
      "instance": null,
-     "storageGibMonth": null,
-     "billingIncrement": "Monthly plan with included Cloud sandbox-hours; one sandbox-hour is an hour of a 2 vCPU / 4 GB sandbox, and other sizes count by vCPU",
-     "billedWhile": "A running sandbox uses the plan's sandbox-hours. An idle sandbox sleeps on a timer you set and uses none until the next command wakes it. Apart from browser sandboxes, nothing is billed per second on top of a plan.",
+     "storageGibMonth": 0.08,
+     "billingIncrement": "Monthly plan with included Cloud sandbox-hours; one sandbox-hour is an hour of a 2 vCPU / 4 GB sandbox, and other sizes count by vCPU. Use above the included hours is billed per second.",
+     "billedWhile": "A running sandbox uses the plan's sandbox-hours, then is billed per second up to the spend cap. An idle sandbox sleeps on a timer you set and uses no hours until the next command wakes it; its snapshot costs $0.08 per GiB a month.",
      "cpuActiveOnly": false,
      "unitVcpu": null,
      "unitGib": null,
@@ -10936,45 +10967,48 @@
       "name": "Solo",
       "monthlyFee": 29,
       "includedUsageUsd": 0,
-      "limits": "100 Cloud sandbox-hours a month, 2 sandboxes running at once, largest Cloud sandbox 2 vCPU / 4 GB, 1 persistent sandbox, 5 snapshots kept. On your own machines: 4 forks at once, 64 GB sandbox disk.",
-      "includedVcpuHours": 0,
-      "includedGibHours": 0,
-      "capped": true
+      "limits": "100 Cloud sandbox-hours a month, then usage billed per second up to the spend cap; 2 sandboxes running at once, largest Cloud sandbox 2 vCPU / 4 GB, 1 persistent sandbox, 5 snapshots kept. On your own machines: 4 forks at once, 64 GB sandbox disk. $290 a year if paid yearly.",
+      "includedVcpuHours": 200,
+      "includedGibHours": 400,
+      "capped": false
      },
      {
       "name": "Pro",
       "monthlyFee": 89,
       "includedUsageUsd": 0,
-      "limits": "500 Cloud sandbox-hours a month, 10 running at once, largest 4 vCPU / 8 GB, 5 persistent sandboxes, 50 snapshots. Adds swarms, pipelines and functions. On your own machines: 16 forks at once, 128 GB disk.",
-      "includedVcpuHours": 0,
-      "includedGibHours": 0,
-      "capped": true
+      "limits": "500 Cloud sandbox-hours a month, then usage billed per second up to the spend cap; 10 running at once, largest 4 vCPU / 8 GB, 5 persistent sandboxes, 50 snapshots. Adds swarms, pipelines and functions. On your own machines: 16 forks at once, 128 GB disk. $890 a year if paid yearly.",
+      "includedVcpuHours": 1000,
+      "includedGibHours": 2000,
+      "capped": false
      },
      {
       "name": "Team",
       "monthlyFee": 169,
       "includedUsageUsd": 0,
-      "limits": "Per person per month. 500 Cloud sandbox-hours a person, pooled; 25 running at once, largest 8 vCPU / 16 GB, 25 persistent sandboxes, 250 snapshots. Adds single sign-on (OIDC), governance and MCP policies. On your own machines: 48 shared forks, 256 GB disk.",
-      "includedVcpuHours": 0,
-      "includedGibHours": 0,
-      "capped": true
+      "limits": "Per person per month, or $1,690 a person a year; it starts on yearly billing. 500 Cloud sandbox-hours a person, pooled, then usage billed per second up to the spend cap; 25 running at once, largest 8 vCPU / 16 GB, 25 persistent sandboxes, 250 snapshots. Adds single sign-on (OIDC), governance and MCP policies. On your own machines: 48 shared forks, 256 GB disk.",
+      "includedVcpuHours": 1000,
+      "includedGibHours": 2000,
+      "capped": false
      },
      {
       "name": "Scale",
       "monthlyFee": 199,
       "includedUsageUsd": 0,
-      "limits": "Per person per month. 1,000 Cloud sandbox-hours a person, pooled; up to 1,000 running at once, largest 16 vCPU / 32 GB, 100 persistent sandboxes, 1,000 snapshots. Adds SAML, SCIM and dedicated cores. On your own machines: 160 shared forks, 500 GB disk.",
-      "includedVcpuHours": 0,
-      "includedGibHours": 0,
-      "capped": true
+      "limits": "Per person per month, or $1,990 a person a year; it starts on yearly billing. 1,000 Cloud sandbox-hours a person, pooled, then usage billed per second up to the spend cap; up to 1,000 running at once, largest 16 vCPU / 32 GB, 100 persistent sandboxes, 1,000 snapshots. Adds SAML, SCIM and dedicated cores. On your own machines: 160 shared forks, 500 GB disk.",
+      "includedVcpuHours": 2000,
+      "includedGibHours": 4000,
+      "capped": false
      }
     ],
-    "freeTierKind": "none",
-    "freeTier": "No free tier, credit, trial or pay as you go. Every account adds a card and picks a plan, from $29 a month, charged at checkout, before it uses kosa8 on any platform, including your own computer. Accounts made before 16 November 2026 keep working until 1 December 2026, then need a plan.",
+    "freeTierKind": "credit",
+    "freeTier": "Starter: $10 of kosa8 Cloud usage once, with no card and no time limit, after you confirm your email. It runs 2 sandboxes at once, each up to 2 vCPU / 4 GB, in sessions of up to 60 minutes, with outbound network limited to an allow-list; work stops at the limit and Starter never sends a bill. Anyone can also try 15 minutes of run time per 24 hours on kosa8's website without an account.",
     "notes": [
-     "From 16 November 2026 kosa8 dropped its free tier and Cloud pay as you go. Accounts made before that date keep working until 1 December 2026; after that, until a plan is picked, new work is paused and running sandboxes sleep.",
+     "New accounts start on the free Starter tier, one per person. Accounts made before 16 November 2026 keep working until 1 December 2026, then need a plan for new work.",
      "One sandbox-hour is an hour of a 2 vCPU / 4 GB Cloud sandbox. Other sizes count by vCPU: a 1 vCPU template sandbox uses half an hour per hour, a 16 vCPU / 32 GiB one uses 8. Hours reset each month and do not roll over; on Team and Scale they are per person and pooled.",
-     "Limits are hard: at a limit new work stops, with nothing billed on top. Add-on packs raise one limit: +100 sandbox-hours for $15 a month, or +10 sandboxes running at once for $49 a month. The Cloud plan limits apply from December 2026.",
+     "Use above a plan's sandbox-hours is billed per second at $0.048 per vCPU-hour and $0.0154 per GiB-hour of memory (a 2 vCPU / 4 GiB sandbox is $0.158 an hour). A spend cap on usage above the plan is on by default at $50 a month; it can be changed or turned off, and at the cap new sandboxes are refused. A new account can run at most $50 above its plan a month until 30 days after its first payment. A first surprise charge above a plan is refunded on request, once per account.",
+     "kosa8's FAQ still says nothing is billed on top of a plan; its pricing page and Cloud docs bill use above the included hours per second, as described here.",
+     "Running sandboxes, sizes and features are hard limits: at one, new work stops. Add-on packs raise one limit: +100 sandbox-hours for $15 a month, or +10 sandboxes running at once for $49 a month. A Cloud Burst Pass ($99 once) adds 100 sandboxes running at once for 24 hours and 1,000 sandbox-hours that month. The Cloud plan limits apply from December 2026.",
+     "A sleeping sandbox's snapshot costs $0.08 per GiB a month.",
      "Sizes are 1 vCPU / 256 MiB (templates; node 384 MiB), then 2, 4, 8 or 16 vCPUs with 2 GiB of RAM per vCPU, any OCI image, and a disk of 8 to 200 GB. The largest size each plan can run goes from 2 vCPU / 4 GB on Solo to 16 vCPU / 32 GB on Scale.",
      "Small sizes for fleets of mostly idle sandboxes, on every plan: 0.25 vCPU / 512 MiB (0.125 sandbox-hours an hour), 0.5 vCPU / 1 GiB (0.25) and 1 vCPU / 2 GiB (0.5). They reserve that share of a vCPU and burst to a whole one (two for the 1 vCPU size) while the host has idle CPU; bursts are not billed.",
      "Browser sandboxes (headless Chromium driven over CDP) cost $0.12 per browser-hour, billed per second, and each browser-hour also uses 0.125 sandbox-hours. Solo runs 1 at once, Pro 3, Team 5, Scale 10.",
@@ -10985,171 +11019,261 @@
    },
    "bestFor": [
     "Teams that want the same sandboxes on laptops, their own servers and a hosted cloud",
-    "Teams that want a fixed monthly bill with no usage charges on top",
+    "Teams that want a monthly plan with a spend cap on usage above it, on by default at $50",
     "Fleets of mostly idle sandboxes, with small sizes from a quarter of a vCPU"
    ],
    "watchOut": [
-    "No free tier or trial: a paid plan, from $29 a month, is needed even to run sandboxes on your own computer",
+    "The free Starter tier is a one-time $10 of Cloud usage, with 60-minute sessions and outbound network limited to an allow-list",
     "kosa8 Cloud runs only in the US (Ashburn, Virginia); keeping data in the EU means running sandboxes on your own servers",
-    "Cloud sandbox-hours are capped per plan; new work stops at the limit until next month, a pack or an upgrade",
+    "Use above a plan's sandbox-hours is billed per second, up to $50 a month by default; turning the spend cap off removes that ceiling",
     "Bigger Cloud sizes need bigger plans: 8 vCPU needs Team and 16 vCPU needs Scale",
     "The API key broker and undo apply to local use and are not yet on Cloud"
    ],
    "sources": [
     {
      "url": "https://kosa8.com/pricing/",
-     "quote": "There is no free tier and no pay as you go.",
-     "checked": "2026-11-23"
+     "quote": "Start $0: Starter, no card, $10 of kosa8 Cloud usage with no time limit. Plans from $29 a month.",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "$10 of kosa8 Cloud usage, once, with no time limit. 2 sandboxes running at once, each up to 2 vCPU and 4 GB, sessions of up to 60 minutes",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "Work stops at the limit; Starter never sends a bill.",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "15 minutes of run time free per 24 hours on kosa8.com/try/",
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/faq/",
-     "quote": "Every account signs up, adds a card and picks a plan, from $29 a month, charged at checkout, before it uses kosa8 on any platform.",
-     "checked": "2026-11-23"
+     "quote": "Every account starts free on the Starter tier, with no card: $10 of kosa8 Cloud usage, no time limit. Plans start at $29 a month. Accounts made before 16 November 2026 keep working until 1 December 2026, then need a plan.",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://docs.kosa8.com/guides/cloud/",
+     "quote": "Use above the included hours is metered per second ($0.048 per vCPU-hour and $0.0154 per GiB-hour of memory) up to your spend cap, which is on by default at $50",
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
-     "quote": "Accounts on the free tier or kosa8 Cloud pay as you go keep working until 1 December 2026, and then need a plan.",
-     "checked": "2026-11-23"
+     "quote": "2 vCPU, 4 GiB ( 2x4 ) $0.158",
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
-     "quote": "Plans are charged at checkout; there is no trial period.",
-     "checked": "2026-11-23"
+     "quote": "Every plan starts with a $50 monthly cap on usage above its included hours. Change it, or turn it off, in your account's Settings.",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "A new account can run at most $50 above its plan a month until 30 days after its first payment.",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "A first surprise charge above a plan is refunded on request, once per account.",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "A sleeping sandbox $0.08 per GiB of snapshot a month",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "$99 once",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "+100 Cloud sandboxes running at once for 24 hours from when you activate it, and +1,000 sandbox-hours that month.",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "$49 /month each",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "$15 /month each",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "$0.10 per fork-hour for each copy above your plan's limit, only if you turn on overage",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "or $290 a year",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "or $890 a year",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "$1,690 /person /year",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "$1,990 /person /year",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "Team and Scale start on yearly",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/faq/",
+     "quote": "The plan is the cap: kosa8 Cloud charges nothing on top of a plan",
+     "checked": "2026-11-24"
+    },
+    {
+     "url": "https://kosa8.com/pricing/",
+     "quote": "It is one per person: one per email address and GitHub account",
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "Yes, as sandbox-hours each month: 100 on Solo, 500 on Pro, and 500 or 1,000 a person, pooled, on Team and Scale.",
-     "checked": "2026-11-23"
-    },
-    {
-     "url": "https://docs.kosa8.com/guides/cloud/",
-     "quote": "Apart from browser sandboxes, nothing is billed per second on top of a plan.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "An hour of a standard 2 vCPU / 4 GB Cloud sandbox running is one sandbox-hour",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "A sleeping sandbox uses none of the plan's sandbox-hours",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$29/month",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$89/month",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$169/person /month",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$199/person /month",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "Adds 100 Cloud sandbox-hours a month to your plan’s hours.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://docs.kosa8.com/guides/cloud/",
      "quote": "The limits apply from December 2026.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://docs.kosa8.com/guides/cloud/",
      "quote": "Sizes are 0.25x0.5, 0.5x1, 1x2, 2x4, 4x8, 8x16 and 16x32",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "2, 4, 8 or 16 vCPUs with 2 GiB of RAM per vCPU, any OCI image, and a disk of 8 to 200 GB",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "16 vCPU, 32 GiB (16x32)",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "Browser sandboxes $0.12 per browser-hour, billed per second.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "0.25 vCPU reserved, 512 MiB ( 0.25x0.5 ) 0.125 Solo",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "Region US East ( us-ash1 , Ashburn, Virginia), the one region today.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://docs.kosa8.com/guides/cloud/",
      "quote": "a plain create may run on kosa8's overflow capacity (Cloudflare Containers) ... It is the same API, at the same price as the size you asked for.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://docs.kosa8.com/guides/cloud-egress/",
      "quote": "An egress policy tells that network what to let out.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "each sandbox is hardware-virtualised with its own kernel (Apple's Virtualization framework on a Mac, Cloud Hypervisor on KVM on Linux)",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "kosa8 Cloud runs in one region today: us-ash1 (Ashburn, Virginia, US East). It has no EU region yet.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "To keep data in the EU, or in any other country, run sandboxes on machines you control there",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "join your Linux servers to kosa8 Cloud as hosts ($0.20 per host-hour, no compute charge)",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "Do sandboxes have a GPU? Not on kosa8 Cloud.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "kosa8 Cloud runs sandboxes and functions today, and those parts are coming to it.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-24"
     }
    ],
-   "lastChecked": "2026-11-23",
+   "lastChecked": "2026-11-24",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/kosa8",
    "score": {
     "code-sandbox": {
-     "total": 64,
-     "rank": 31,
+     "total": 66,
+     "rank": 29,
      "of": 62
     }
    },
    "comparablePrice": {
-    "code-sandbox": null
+    "code-sandbox": 40.9776
    },
    "benchmarks": [],
    "status": "active"
@@ -11365,8 +11489,8 @@
    "page": "https://aisandboxhunt.com/koyeb-sandboxes",
    "score": {
     "code-sandbox": {
-     "total": 75,
-     "rank": 6,
+     "total": 76,
+     "rank": 3,
      "of": 62
     },
     "gpu": {
@@ -11671,8 +11795,8 @@
    "page": "https://aisandboxhunt.com/langsmith-sandboxes",
    "score": {
     "code-sandbox": {
-     "total": 71,
-     "rank": 15,
+     "total": 72,
+     "rank": 13,
      "of": 62
     }
    },
@@ -11936,107 +12060,107 @@
     {
      "url": "https://lizard.build/pricing",
      "quote": "Mini (1 vCPU, 2 GB RAM) at $0.0081/hour",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/pricing",
      "quote": "1 vCPU · 2 GB RAM · 10 GB disk",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/pricing",
      "quote": "Large 8 vCPU · 16 GB RAM · 80 GB disk |$0.0648 per hour",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/pricing",
      "quote": "Pro costs $19 a month and includes $19 of usage for the whole platform: apps, databases, Sandboxes, storage and egress.",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/pricing",
      "quote": "Pro 5x ($99) and Pro 20x ($499) work the same way, include $99 and $499 of usage, and raise the sandbox limits.",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/pricing",
      "quote": "Pro starts with a 7-day trial that includes $5 of usage. You need a card to start it, but we charge nothing during the 7 days",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/pricing",
      "quote": "Persistent Volumes |$0.14 per GB/month",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/docs/platform/limits/",
      "quote": "Pro runs up to 40 vCPU of sandboxes at once, Pro 5x 220 and Pro 20x 1,200.",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/docs/platform/limits/",
      "quote": "Pro, Pro 5x and Pro 20x have no limit on sandbox starts.",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/docs/platform/limits/",
      "quote": "The trial runs 1 Small, 2 Mini and 2 Nano sandboxes at a time, only in US regions, and deletes each sandbox 1 hour after it starts at the latest.",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/docs/sandboxes/",
      "quote": "Sandboxes run as Firecracker microVMs, each with its own kernel.",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/docs/sandboxes/",
      "quote": "The public CLI does not provide a custom-template upload flow.",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build",
      "quote": "For longer tasks you can remove the deadline; the VM then stops after 596 hours (about 24 days).",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build",
      "quote": "Sandboxes run on CPUs only.",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/pricing",
      "quote": "Big (16 vCPU, 32 GB RAM; paid plans only) at $0.1296/hour",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/pricing",
      "quote": "A paused sandbox costs $0.14 per GB-month of used disk space until you resume or delete it, and so does each snapshot until you delete it.",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/docs/sandboxes/",
      "quote": "Running processes and memory end, and a resume boots the sandbox fresh with its files.",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/docs/sandboxes/",
      "quote": "fork copies a running sandbox, memory and processes included",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://lizard.build/docs/platform/limits/",
      "quote": "During the trial, you can start 50 Small, 100 Mini and 100 Nano sandboxes in total across all your workspaces.",
-     "checked": "2026-11-15"
+     "checked": "2026-11-24"
     }
    ],
-   "lastChecked": "2026-11-15",
+   "lastChecked": "2026-11-24",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/lizard",
    "score": {
     "code-sandbox": {
      "total": 76,
-     "rank": 3,
+     "rank": 4,
      "of": 62
     }
    },
@@ -12236,7 +12360,7 @@
    "score": {
     "dev-box": {
      "total": 60,
-     "rank": 23,
+     "rank": 24,
      "of": 37
     },
     "code-sandbox": {
@@ -12369,7 +12493,7 @@
    "score": {
     "code-sandbox": {
      "total": 68,
-     "rank": 23,
+     "rank": 24,
      "of": 62
     }
    },
@@ -13134,12 +13258,12 @@
    "score": {
     "dev-box": {
      "total": 65,
-     "rank": 17,
+     "rank": 18,
      "of": 37
     },
     "code-sandbox": {
-     "total": 66,
-     "rank": 28,
+     "total": 67,
+     "rank": 26,
      "of": 62
     }
    },
@@ -13296,7 +13420,7 @@
    "score": {
     "code-sandbox": {
      "total": 74,
-     "rank": 9,
+     "rank": 10,
      "of": 62
     }
    },
@@ -13427,82 +13551,82 @@
     {
      "url": "https://namespacelabs.com/pricing",
      "quote": "Devbox Minutes cost $0.004 each",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespacelabs.com/pricing",
      "quote": "Persistent storage is billed for the storage used at $0.20 per GB-month",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespacelabs.com/pricing",
      "quote": "50,000 Devbox Minutes",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespacelabs.com/pricing",
      "quote": "400GB-month storage",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespacelabs.com/pricing",
-     "quote": "No, Devbox usage is billed separately in Devbox Minutes and follows a pay-as-you-go model by default.",
-     "checked": "2026-11-14"
+     "quote": "Devbox Minutes are different from Unit Minutes and are included in the Devbox Plus plan. All other plans, and any usage beyond the included minutes, are pay-as-you-go.",
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespacelabs.com/pricing",
      "quote": "When you sign up, you get access to the Developer plan for 30 days.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespacelabs.com/pricing",
      "quote": "The limit counts both running and stopped Devboxes.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespacelabs.com/pricing",
      "quote": "For example, a medium Linux Devbox uses 2 Devbox Minutes per minute.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespace.so/docs/devbox/lifecycle",
      "quote": "The limit applies even while you are working in the Devbox.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespace.so/docs/devbox/lifecycle",
      "quote": "A persistent Devbox is a machine you come back to. You create it once, work in it over days or weeks, and it stops when nobody is using it.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespace.so/docs/devbox",
      "quote": "Linux Devboxes run from a container image you choose and include Docker.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespace.so/docs/devbox",
      "quote": "Windows Devboxes are in early access.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespace.so/docs/security/egress-policy",
      "quote": "Egress policies control outbound connections from your workloads.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://namespacelabs.com",
      "quote": "Run untrusted or agent-generated code in isolated Mac, Windows, and Linux instances.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-24"
     }
    ],
-   "lastChecked": "2026-11-14",
+   "lastChecked": "2026-11-24",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/namespace",
    "score": {
     "dev-box": {
-     "total": 60,
-     "rank": 24,
+     "total": 61,
+     "rank": 22,
      "of": 37
     },
     "code-sandbox": {
@@ -14197,7 +14321,7 @@
    "score": {
     "dev-box": {
      "total": 47,
-     "rank": 33,
+     "rank": 32,
      "of": 37
     }
    },
@@ -14754,8 +14878,8 @@
    "page": "https://aisandboxhunt.com/orgo",
    "score": {
     "dev-box": {
-     "total": 59,
-     "rank": 26,
+     "total": 60,
+     "rank": 25,
      "of": 37
     },
     "browser": {
@@ -15554,7 +15678,7 @@
      "of": 62
     },
     "dev-box": {
-     "total": 62,
+     "total": 63,
      "rank": 21,
      "of": 37
     }
@@ -16062,7 +16186,7 @@
      "of": 62
     },
     "dev-box": {
-     "total": 60,
+     "total": 61,
      "rank": null,
      "of": 37
     }
@@ -16445,7 +16569,7 @@
    "page": "https://aisandboxhunt.com/sailboxes",
    "score": {
     "dev-box": {
-     "total": 85,
+     "total": 86,
      "rank": 1,
      "of": 37
     }
@@ -16752,8 +16876,8 @@
    "page": "https://aisandboxhunt.com/sandbox0",
    "score": {
     "dev-box": {
-     "total": 66,
-     "rank": 15,
+     "total": 67,
+     "rank": 14,
      "of": 37
     }
    },
@@ -16775,7 +16899,7 @@
     "browser"
    ],
    "tagline": "A persistent cloud Ubuntu desktop with Chrome and a shell that Claude, ChatGPT and coding agents drive over MCP.",
-   "summary": "Box by Simular gives an AI agent a cloud Linux computer of its own: an Ubuntu desktop with Chrome, files and a persistent shell, driven through one hosted MCP server by Claude, ChatGPT, Gemini, Claude Code, Codex, Cursor or any MCP client. Each account gets a box that sleeps when idle (except on the M plan, where it never sleeps), wakes in about a second with files and logins kept, and can be watched live and taken over in the browser. API keys can be stored so commands on the box use them while the agent only sees a stand-in. The box is paid for with box credits (1,000 credits = $1): the free plan gives 5,000 credits once, valid 90 days, and its box uses 100 credits an hour, so about 50 box-hours. Paid plans are S at $19 a month with 5,000 credits a month and M at $39 a month with 10,000 credits a month and a box that never sleeps. A box left asleep for 14 days in a row is deleted (30 days if the account has ever paid; never while it is on S or M).",
+   "summary": "Box by Simular gives an AI agent a cloud Linux computer of its own: an Ubuntu desktop with Chrome, files and a persistent shell, driven through one hosted MCP server by Claude, ChatGPT, Gemini, Claude Code, Codex, Cursor or any MCP client. Each account gets a box that sleeps when idle (except on the M plan, where it never sleeps), wakes in about a second with files and logins kept, and can be watched live and taken over in the browser. API keys can be stored so commands on the box use them while the agent only sees a stand-in. The box is paid for with box credits (1,000 credits = $1): the free plan gives 5,000 credits once, valid 90 days, on a 4 vCPU / 8 GB box that uses 200 credits an hour while awake, so about 25 box-hours. Paid plans are S at $19 a month with 5,000 credits a month and M at $39 a month with 10,000 credits a month and a box that never sleeps. A box left asleep for 14 days in a row is deleted (30 days if the account has ever paid; never while it is on S or M).",
    "isolation": "Not stated; a cloud Ubuntu desktop per account",
    "isolationKind": "unknown",
    "openSource": false,
@@ -16802,14 +16926,14 @@
     "rates": {
      "vcpuHour": null,
      "gibHour": null,
-     "instanceHour": 0.1,
-     "instance": "2 vCPU / 4 GB box, 100 credits; 4 vCPU / 8 GB is 200 credits, $0.20",
+     "instanceHour": 0.2,
+     "instance": "4 vCPU / 8 GB box, 200 credits an hour",
      "storageGibMonth": null,
      "billingIncrement": "Per second while the box is awake, in credits",
-     "billedWhile": "Credits pay for box time per second while a box is awake. A paid plan's own box is not charged by the hour; extra boxes are, at 100 or 200 credits an hour by size.",
+     "billedWhile": "Credits pay for box time per second while a box is awake. A paid plan's own box is not charged by the hour; extra boxes are, at 200 credits an hour for a 4 vCPU / 8 GB box.",
      "cpuActiveOnly": false,
-     "unitVcpu": 2,
-     "unitGib": 4,
+     "unitVcpu": 4,
+     "unitGib": 8,
      "browserHour": null
     },
     "gpu": [],
@@ -16818,7 +16942,7 @@
       "name": "Free",
       "monthlyFee": 0,
       "includedUsageUsd": 0,
-      "limits": "5,000 credits once ($5), valid 90 days, about 50 hours on the Free box (2 vCPU / 4 GB). One box per account, which sleeps when idle.",
+      "limits": "5,000 credits once ($5), valid 90 days, on the Free box (4 vCPU / 8 GB) at 200 credits an hour: about 25 hours. One box per account, which sleeps when idle.",
       "includedVcpuHours": 0,
       "includedGibHours": 0,
       "capped": false
@@ -16827,7 +16951,7 @@
       "name": "S",
       "monthlyFee": 19,
       "includedUsageUsd": 5,
-      "limits": "One 4 vCPU / 8 GB box that sleeps when idle, not charged by the hour, plus 5,000 credits a month ($5) for extra boxes (100 or 200 credits an hour), residential IP (10,000 credits a GB) and the box's own model calls. Annual billing gives 2 months free.",
+      "limits": "One 4 vCPU / 8 GB box that sleeps when idle, not charged by the hour, plus 5,000 credits a month ($5) for extra boxes (200 credits an hour), residential IP (10,000 credits a GB) and the box's own model calls. Annual billing gives 2 months free.",
       "includedVcpuHours": 0,
       "includedGibHours": 0,
       "capped": false
@@ -16836,17 +16960,17 @@
       "name": "M",
       "monthlyFee": 39,
       "includedUsageUsd": 10,
-      "limits": "One 4 vCPU / 8 GB box that never sleeps, not charged by the hour, plus 10,000 credits a month ($10) for extra boxes (100 or 200 credits an hour), residential IP (10,000 credits a GB) and the box's own model calls. Annual billing gives 2 months free.",
+      "limits": "One 4 vCPU / 8 GB box that never sleeps, not charged by the hour, plus 10,000 credits a month ($10) for extra boxes (200 credits an hour), residential IP (10,000 credits a GB) and the box's own model calls. Annual billing gives 2 months free.",
       "includedVcpuHours": 0,
       "includedGibHours": 0,
       "capped": false
      }
     ],
     "freeTierKind": "credit",
-    "freeTier": "5,000 box credits once ($5), valid 90 days: about 50 hours of box time at 100 credits an hour.",
+    "freeTier": "5,000 box credits once ($5), valid 90 days: about 25 hours of box time on the Free box (4 vCPU / 8 GB) at 200 credits an hour.",
     "notes": [
-     "Box credits: 1,000 credits = $1. They pay for the free plan's box time (100 credits an hour), extra boxes (from 100 credits an hour), residential IP on paid plans (10,000 credits a GB) and the box's own model calls. The AI app that drives the box keeps using its own plan.",
-     "No CPU, memory or disk price is published for the box, and no machine size is stated, so no cost estimate is shown.",
+     "Box credits: 1,000 credits = $1. They pay for the free plan's box time (200 credits an hour), extra boxes (200 credits an hour), residential IP on paid plans (10,000 credits a GB) and the box's own model calls. The AI app that drives the box keeps using its own plan.",
+     "The only box size Simular now lists is 4 vCPU / 8 GB, at 200 credits ($0.20) an hour while awake, so cost estimates use that size. Until late November 2026 it also listed a 2 vCPU / 4 GB box at 100 credits an hour, which was the free plan's box. No disk size is stated.",
      "Until mid-November 2026 the box itself was free and only its model calls used credits. An older Simular guide still says the box is free during its beta and will have a freemium version afterwards.",
      "Simular's general pricing page describes plans for its Sai assistant and does not list the box plans.",
      "A box that stays asleep for 14 days in a row is deleted with its files; the limit is 30 days if the account has ever paid for box or Sai, and a box is never deleted this way while the account is on the S or M plan. Any wake resets the count."
@@ -16859,105 +16983,105 @@
    ],
    "watchOut": [
     "Use is through the MCP server only; there is no SDK or REST API for creating machines from code",
-    "Machine size, isolation and regions are not documented",
-    "The free plan is a one-time 5,000 credits (about 50 box-hours) that expires after 90 days; a box that never sleeps needs the $39 M plan",
+    "Isolation, regions and disk size are not documented",
+    "The free plan is a one-time 5,000 credits (about 25 box-hours) that expires after 90 days; a box that never sleeps needs the $39 M plan",
     "An unused box on the free plan is deleted after 14 days asleep (30 days if the account has ever paid)"
    ],
    "sources": [
     {
      "url": "https://box.simular.ai/llms.txt",
-     "quote": "box credits pay for box time by size, per second while the box is awake (2 vCPU / 4 GB: 100 credits an hour; 4 vCPU / 8 GB: 200 credits an hour)",
-     "checked": "2026-11-20"
+     "quote": "box credits pay for box time by size, per second while the box is awake (4 vCPU / 8 GB: 200 credits an hour)",
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/llms.txt",
      "quote": "residential IP on paid plans (10,000 credits a GB) and box's own model calls",
-     "checked": "2026-11-20"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/llms.txt",
-     "quote": "Free: 5,000 credits once, valid 90 days, about 50 hours on the Free box (2 vCPU / 4 GB).",
-     "checked": "2026-11-20"
+     "quote": "Free: 5,000 credits once, valid 90 days, on the Free box (4 vCPU / 8 GB).",
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/llms.txt",
      "quote": "S, $19/month: one 4 vCPU / 8 GB box that sleeps when idle, plus 5,000 credits a month.",
-     "checked": "2026-11-20"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/llms.txt",
      "quote": "M, $39/month: one 4 vCPU / 8 GB box that never sleeps, plus 10,000 credits a month.",
-     "checked": "2026-11-20"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/llms.txt",
      "quote": "Annual billing gives 2 months free.",
-     "checked": "2026-11-20"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/llms.txt",
      "quote": "It sleeps when no one uses it (except on the M plan, where it never sleeps)",
-     "checked": "2026-11-20"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/llms.txt",
      "quote": "A box asleep 14 days in a row is deleted with its files and saves (30 days if the account has ever paid for box or Sai; never while it has an S or M plan); any wake resets the count.",
-     "checked": "2026-11-20"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/docs/mcp.md",
      "quote": "It wakes in about a second when your AI connects; files and state persist while it sleeps.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/docs/mcp.md",
      "quote": "One box per account, with Chrome and a persistent shell.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/docs",
      "quote": "a cloud Ubuntu desktop with Chrome and a shell, which your AI drives over MCP",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/docs/secrets.md",
      "quote": "A secret is an API key that commands on your box can use while your AI never sees it.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.simular.ai/articles/linux-desktop-in-the-cloud",
      "quote": "box by Simular is free during its beta and has a freemium version afterwards.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://www.simular.ai/pricing",
      "quote": "Try Sai and build your first workflow with visible usage.",
-     "checked": "2026-11-17"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/llms.txt",
      "quote": "1,000 credits = $1.",
-     "checked": "2026-11-20"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/llms.txt",
      "quote": "A plan's own box is not charged by the hour; extra boxes are, at the rates above.",
-     "checked": "2026-11-20"
+     "checked": "2026-11-24"
     },
     {
      "url": "https://box.simular.ai/llms.txt",
      "quote": "Pay as you go: top up from $5 (10% bonus at $20, 20% at $50); top-ups are valid 12 months.",
-     "checked": "2026-11-20"
+     "checked": "2026-11-24"
     }
    ],
-   "lastChecked": "2026-11-20",
+   "lastChecked": "2026-11-24",
    "notice": null,
    "added": "2026-11-15",
    "page": "https://aisandboxhunt.com/simular-box",
    "score": {
     "dev-box": {
-     "total": 51,
-     "rank": 30,
+     "total": 44,
+     "rank": 35,
      "of": 37
     },
     "browser": {
@@ -16967,7 +17091,7 @@
     }
    },
    "comparablePrice": {
-    "dev-box": 22,
+    "dev-box": 44,
     "browser": null
    },
    "benchmarks": [],
@@ -17155,7 +17279,7 @@
    "score": {
     "code-sandbox": {
      "total": 68,
-     "rank": 24,
+     "rank": 25,
      "of": 62
     }
    },
@@ -17510,12 +17634,12 @@
    "page": "https://aisandboxhunt.com/superserve",
    "score": {
     "code-sandbox": {
-     "total": 68,
-     "rank": 25,
+     "total": 69,
+     "rank": 19,
      "of": 62
     },
     "dev-box": {
-     "total": 68,
+     "total": 69,
      "rank": 11,
      "of": 37
     }
@@ -18018,7 +18142,7 @@
    "score": {
     "code-sandbox": {
      "total": 67,
-     "rank": 26,
+     "rank": 27,
      "of": 62
     },
     "ci-runner": {
@@ -18246,11 +18370,11 @@
    "score": {
     "code-sandbox": {
      "total": 76,
-     "rank": 4,
+     "rank": 5,
      "of": 62
     },
     "dev-box": {
-     "total": 77,
+     "total": 78,
      "rank": 3,
      "of": 37
     },
@@ -19334,12 +19458,12 @@
    "score": {
     "dev-box": {
      "total": 68,
-     "rank": 12,
+     "rank": 13,
      "of": 37
     },
     "code-sandbox": {
      "total": 67,
-     "rank": 27,
+     "rank": 28,
      "of": 62
     }
    },

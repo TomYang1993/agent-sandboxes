@@ -1,1 +1,154 @@
-[]
+[
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "comparablePrice > code-sandbox",
+  "from": null,
+  "to": 40.9776
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "freeTier",
+  "from": "No free tier, credit, trial or pay as you go. Every account adds a card and picks a plan, from $29 a month, charged at checkout, before it uses kosa8 on any platform, including your own computer. Accounts made before 16 November 2026 keep working until 1 December 2026, then need a plan.",
+  "to": "Starter: $10 of kosa8 Cloud usage once, with no card and no time limit, after you confirm your email. It runs 2 sandboxes at once, each up to 2 vCPU / 4 GB, in sessions of up to 60 minutes, with outbound network limited to an allow-list; work stops at the limit and Starter never sends a bill. Anyone can also try 15 minutes of run time per 24 hours on kosa8's website without an account."
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "freeTierKind",
+  "from": "none",
+  "to": "credit"
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "plans > Pro > includedGibHours",
+  "from": 0,
+  "to": 2000
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "plans > Pro > includedVcpuHours",
+  "from": 0,
+  "to": 1000
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "plans > Scale > includedGibHours",
+  "from": 0,
+  "to": 4000
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "plans > Scale > includedVcpuHours",
+  "from": 0,
+  "to": 2000
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "plans > Solo > includedGibHours",
+  "from": 0,
+  "to": 400
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "plans > Solo > includedVcpuHours",
+  "from": 0,
+  "to": 200
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "plans > Team > includedGibHours",
+  "from": 0,
+  "to": 2000
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "plans > Team > includedVcpuHours",
+  "from": 0,
+  "to": 1000
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "rates > gibHour",
+  "from": null,
+  "to": 0.0154
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "rates > storageGibMonth",
+  "from": null,
+  "to": 0.08
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "kosa8",
+  "name": "kosa8 Cloud",
+  "field": "rates > vcpuHour",
+  "from": null,
+  "to": 0.048
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "simular-box",
+  "name": "Box by Simular",
+  "field": "comparablePrice > dev-box",
+  "from": 22,
+  "to": 44
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "simular-box",
+  "name": "Box by Simular",
+  "field": "freeTier",
+  "from": "5,000 box credits once ($5), valid 90 days: about 50 hours of box time at 100 credits an hour.",
+  "to": "5,000 box credits once ($5), valid 90 days: about 25 hours of box time on the Free box (4 vCPU / 8 GB) at 200 credits an hour."
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "simular-box",
+  "name": "Box by Simular",
+  "field": "rates > instanceHour",
+  "from": 0.1,
+  "to": 0.2
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "simular-box",
+  "name": "Box by Simular",
+  "field": "rates > unitGib",
+  "from": 4,
+  "to": 8
+ },
+ {
+  "date": "2026-11-24",
+  "slug": "simular-box",
+  "name": "Box by Simular",
+  "field": "rates > unitVcpu",
+  "from": 2,
+  "to": 4
+ }
+]
