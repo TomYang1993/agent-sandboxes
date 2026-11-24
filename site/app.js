@@ -14,7 +14,7 @@ function h(tag, props, ...kids) {
   return el;
 }
 const $ = id => document.getElementById(id);
-const unk = (t = 'unknown') => h('span', { class: 'u' }, t);
+const unk = (t = 'unavailable') => h('span', { class: 'u' }, t);
 const ext = (u, t) => { const s = safeUrl(u); return s ? h('a', { href: s, rel: 'noopener noreferrer' }, t || s) : h('span', {}, t || 'no link'); };
 const num = v => typeof v === 'number';
 const usd = (v, d) => num(v) ? '$' + v.toLocaleString('en-US', { minimumFractionDigits: d ?? (v % 1 ? 2 : 0), maximumFractionDigits: d ?? (v && v < 0.1 ? 4 : 2) }) : unk();
@@ -24,8 +24,9 @@ const badge = (t, c = '') => h('span', { class: 'b ' + c }, t);
 const VIEWS = [['overall', 'Overall'], ['cost', 'Cost'], ['free', 'Free tier'], ['paid', 'Pro tier'], ['tokens', 'Token efficiency'],
   ['caps', 'Capabilities'], ['onboarding', 'Onboarding'], ['startup', 'Startup'], ['compare', 'Compare'], ['changes', 'Price changes'], ['method', 'Method']];
 const KIND = { recurring: ['Every month', 'good'], software: ['Free software, your machine', 'good'], credit: ['One-off credit', ''], trial: ['Trial', 'warn'], none: ['None', 'bad'] };
+const kind = p => { const k = p.effective.freeKind; return k ? badge(...(KIND[k] || [k])) : unk(); };
 const RISK = { hard_stop: ['Hard stop', 'good'], can_auto_charge: ['Can auto-charge', 'bad'], auto_moves_to_paid: ['Moves to paid', 'bad'], trial_converts: ['Trial converts to paid', 'bad'] };
-const FIT = { gpu_free: ['Free GPU', 'good'], gpu_sold: ['GPU sold, not free', 'warn'], cpu_sold: ['CPU only, sold, not free', 'warn'], too_small: ['Too small', 'bad'], unknown: ['Unknown', ''] };
+const FIT = { gpu_free: ['Free GPU', 'good'], gpu_sold: ['GPU sold, not free', 'warn'], cpu_sold: ['CPU only, sold, not free', 'warn'], too_small: ['Too small', 'bad'], unknown: ['Unavailable', ''] };
 const SRC = { computesdk: 'ComputeSDK', starsling: 'StarSling', aisandboxbench: 'AI Sandbox Bench' };
 const CALC = { cpu: 2, ram: 4, hrs: 176, busy: 30, idle: 0 };
 let D, S, META, CATS, seq = 0;
@@ -41,7 +42,7 @@ function go(patch, replace) {
 const link = patch => { const s = state(); for (const [k, v] of Object.entries(patch)) v === null ? s.delete(k) : s.set(k, v); return '?' + s; };
 // Logos are same-origin PNGs. No logo: the first letter.
 const logo = p => p.logo ? h('img', { class: 'logo', src: p.logo, alt: '', width: 32, height: 32, loading: 'lazy' }) : h('span', { class: 'logo', 'aria-hidden': 'true' }, p.name[0].toUpperCase());
-const company = p => p.company && p.company.toLowerCase() === p.name.toLowerCase() ? null : h('span', { class: 'co' }, p.company ? p.company.replace(/ \(.*\)$/, '') : unk('company unknown'));
+const company = p => p.company && p.company.toLowerCase() === p.name.toLowerCase() ? null : h('span', { class: 'co' }, p.company ? p.company.replace(/ \(.*\)$/, '') : unk('company unavailable'));
 const who = p => h('div', { class: 'who' }, logo(p), h('div', {}, provLink(p), company(p)));
 const provLink = p => h('a', { href: link({ view: 'provider', p: p.slug }), 'data-nav': true }, p.name);
 document.addEventListener('click', e => {
@@ -83,7 +84,7 @@ function filterBar(count, opts = {}) {
     h('details', { id: 'more', open: more.some(k => S.get(k)) || openIds.has('more') }, h('summary', {}, 'More filters'),
       h('div', { class: 'fields' },
         select('Free tier', 'kind', [['', 'Any'], ...Object.entries(KIND).map(([k, v]) => [k, v[0]])]),
-        select('Isolation', 'iso', [['', 'Any'], ...[...Object.keys(ISO), 'unknown'].map(k => [k, k])]),
+        select('Isolation', 'iso', [['', 'Any'], ...[...Object.keys(ISO), 'unknown'].map(k => [k, k === 'unknown' ? 'unavailable' : k])]),
         select('Inkling 2 Mini', 'ink', [['', 'Any'], ...Object.entries(FIT).map(([k, v]) => [k, v[0]])]),
         check('No card (known)', 'nocard'), check('Has GPU', 'gpu'), check('Can pause', 'pause'), check('Open source', 'os'), check('Self-host', 'self'))));
 }
@@ -93,10 +94,10 @@ const openIds = new Set();
 function nameCell(p) {
   const age = ageDays(p.lastChecked), on = cmpList().includes(p.slug);
   return [who(p),
-    h('span', { class: 'cmp' }, 'checked ', p.lastChecked || 'unknown'),
+    h('span', { class: 'cmp' }, 'checked ', p.lastChecked || 'unavailable'),
     p.status === 'shutting-down' && badge('Shutting down', 'bad'), p.status !== 'active' && p.status !== 'shutting-down' && badge(p.status, 'warn'),
-    age === null ? badge('check date unknown', 'warn') : age > 30 && badge('older than 30 days', 'warn'),
-    p.manual && badge('manual, not refreshed', 'warn'), p.conflicts.length > 0 && badge('sources conflict', 'warn'), p.reviewCount > 0 && badge('needs review', 'bad'),
+    age === null ? badge('check date unavailable', 'warn') : age > 30 && badge('older than 30 days', 'warn'),
+    p.manual && badge('manual, not refreshed', 'warn'), p.official?.some(c => c.status === 'unavailable') && badge('partly unavailable on official site', 'warn'), p.reviewCount > 0 && badge('needs review', 'bad'),
     h('label', { class: 'cmp' }, h('input', { type: 'checkbox', id: 'cmp-' + p.slug, checked: on, 'aria-label': 'Compare ' + p.name, onchange: e => {
       const l = cmpList().filter(s => s !== p.slug); if (e.target.checked) { if (l.length >= 4) { e.target.checked = false; return alert('Compare up to 4.'); } l.push(p.slug); }
       go({ compare: l.join(',') }, true); } }), 'compare')];
@@ -201,14 +202,15 @@ function vFree() {
   const rows = filtered(), e = p => p.effective, ord = { recurring: 0, software: 1, credit: 2, trial: 3, none: 4 };
   return [head('Free tier', 'What you get without paying, whether a card is needed, when it ends, and whether you can be charged. Dollar amounts are the vendor’s own credit units, so they are not like for like.'), filterBar(rows.length),
     h('p', { class: 'small dim' }, 'The feed calls trials “credit”; we list one as a trial only where its own text says so. Likewise free software is split from hosted free plans.'),
-    table(rows, [NAME, { k: 'kind', label: 'Kind', get: p => ord[e(p).freeKind] ?? null, cell: p => badge(...(KIND[e(p).freeKind] || [e(p).freeKind])) },
+    table(rows, [NAME, { k: 'kind', label: 'Kind', get: p => ord[e(p).freeKind] ?? null, cell: p => kind(p) },
       { k: 'amount', label: 'Amount', num: true, asc: false, get: p => p.derived.freeAmountUsd, cell: p => num(p.derived.freeAmountUsd) ? [(p.derived.freeAmountUpTo ? 'up to ' : ''), usd(p.derived.freeAmountUsd), e(p).freeKind === 'recurring' ? ' / month' : ' once'] : e(p).freeKind === 'none' ? '–' : unk('not in dollars') },
       { k: 'card', label: 'Card required', get: p => e(p).freeKind === 'none' ? null : e(p).cardRequiredForFree === null ? null : +e(p).cardRequiredForFree, cell: p => e(p).freeKind === 'none' ? '–' : e(p).cardRequiredForFree === true ? badge('card needed', 'warn') : e(p).cardRequiredForFree === false ? badge('no card', 'good') : unk() },
       { k: 'expiry', label: 'Ends', get: p => p.derived.freeExpiry, cell: p => p.derived.freeExpiry ?? (e(p).freeKind === 'none' || e(p).freeKind === 'software' ? '–' : unk()) },
       { k: 'risk', label: 'Stop or charge', get: p => e(p).freeRisk, cell: p => e(p).freeRisk ? badge(...(RISK[e(p).freeRisk] || [e(p).freeRisk, 'warn'])) : unk() },
-      { k: 'text', label: 'What the source says', txt: true, get: p => e(p).freeTier, cell: p => [h('div', {}, e(p).freeTier), 'freeTier' in p.override && h('div', { class: 'small dim' }, `Feed says: ${p.pricing.freeTier}`), conflictNotes(p)] }], 'kind')];
+      { k: 'text', label: 'Detail', txt: true, get: p => e(p).freeTier, cell: p => [h('div', {}, e(p).freeTier ?? unk()), 'freeTier' in p.override && h('div', { class: 'small dim' }, `Feed says: ${p.pricing.freeTier}`), officialNotes(p, true)] }], 'kind')];
 }
-const conflictNotes = p => p.conflicts.map(c => h('div', { class: 'note small' }, h('strong', {}, 'Conflict. '), c.note, ' ', ext(c.url, 'Source'), ` (${c.sourceLevel}, checked ${c.checked})`));
+const FREEISH = /free|card|credit|trial|bonus|facts/i;
+const officialNotes = (p, freeOnly) => (p.official || []).filter(c => !freeOnly || FREEISH.test(c.what)).map(c => h('div', { class: 'note small' }, h('strong', {}, `${c.what}${c.status === 'unavailable' ? ': unavailable' : ''}. `), c.note, ' ', ext(c.url, 'Official site'), ` (checked ${c.checked})`));
 
 function vPaid() {
   const rows = filtered(), pl = p => p.derived.cheapestPaidPlan;
@@ -235,7 +237,7 @@ function vCaps() {
   const rows = filtered(), f = p => p.features, b = k => ({ get: p => f(p)[k] === true ? 1 : f(p)[k] === false ? 0 : null, asc: false, cell: p => yn(f(p)[k]) });
   const o = k => ({ get: p => p[k] === true ? 1 : p[k] === false ? 0 : null, asc: false, cell: p => yn(p[k]) });
   const fo = ['gpu_free', 'gpu_sold', 'cpu_sold', 'too_small', 'unknown'];
-  return [head('Capabilities', 'What each sandbox can do, from published facts. Unknown means the vendor did not say.'), filterBar(rows.length),
+  return [head('Capabilities', 'What each sandbox can do, from published facts. Unavailable means we found no official statement.'), filterBar(rows.length),
     h('div', { class: 'note' }, h('strong', {}, 'Can it run Inkling 2 Mini? '), 'It needs a 24 GB GPU, or 32 GB RAM (slow), and about 30 GB of disk. “Sold” is not “free”: it means a large enough size can be bought, not that a free tier includes it. Disk is not checked.'),
     table(rows, [NAME, { k: 'ink', label: 'Runs Inkling 2 Mini?', get: p => fo.indexOf(p.effective.inkling2MiniFit.verdict), cell: p => { const x = p.effective.inkling2MiniFit; return [badge(...(FIT[x.verdict] || [x.verdict])), h('div', { class: 'small dim' }, x.why), 'inkling2MiniFit' in p.override && h('div', { class: 'small dim' }, `Derived from feed: ${FIT[p.derived.inkling2MiniFit.verdict][0]}`)]; } },
       { k: 'cpu', label: 'Max vCPU', num: true, asc: false, get: p => f(p).maxVcpu ?? null }, { k: 'ram', label: 'Max RAM GiB', num: true, asc: false, get: p => f(p).maxMemoryGib ?? null },
@@ -252,7 +254,7 @@ function vOnb() {
   const rows = filtered(), O = new Map(rows.map(p => [p.slug, onboarding(p)])), sum = p => O.get(p.slug).reduce((a, x) => a + x.earned, 0);
   const labels = onboarding(D[0]), max = labels.reduce((a, x) => a + x.points, 0);
   return [head('Onboarding ease', `Points for published facts, out of ${max}. This is documentation-based; we did not sign up or test anything.`), filterBar(rows.length),
-    h('p', { class: 'small dim' }, 'Unknown earns no points and shows as unknown. The feed has no invite field: one point is lost for a stated invite, and otherwise it stays unknown. An interface that is not listed is unknown, not “no”.'),
+    h('p', { class: 'small dim' }, 'Unavailable earns no points and shows as unavailable. The feed has no invite field: one point is lost for a stated invite, and otherwise it stays unavailable. An interface that is not listed is unavailable, not “no”.'),
     table(rows, [NAME, { k: 'pts', label: 'Points', num: true, asc: false, get: sum, cell: p => [h('strong', {}, `${sum(p)} / ${max}`), meter(100 * sum(p) / max)] },
       ...labels.map((l, i) => ({ k: 'o' + i, label: `${l.label} (${l.points})`, asc: false, get: p => { const v = O.get(p.slug)[i].value; return v === null ? null : +v; }, cell: p => { const x = O.get(p.slug)[i]; return x.value === true ? badge(`yes +${x.points}`, 'good') : x.value === false ? badge('no', '') : unk(); } })),
       { k: 'docs', label: 'Docs', get: p => p.docsUrl ?? null, cell: p => p.docsUrl ? ext(p.docsUrl, 'Open') : unk() }], 'pts')];
@@ -283,7 +285,7 @@ function vCompare() {
       ps.map(p => h('button', { type: 'button', onclick: () => go({ compare: l.filter(s => s !== p.slug).join(',') }, true) }, `Remove ${p.name}`)))];
   if (ps.length < 2) return [...out, h('p', {}, 'Add at least two providers.')];
   const e = p => p.effective, f = p => p.features, r = p => p.pricing.rates, pl = p => p.derived.cheapestPaidPlan;
-  const rowsDef = [['Categories', p => p.categories.join(', ')], ['Free tier', p => [badge(...KIND[e(p).freeKind]), h('div', {}, e(p).freeTier), conflictNotes(p)]], ['Card required', p => e(p).freeKind === 'none' ? '–' : yn(e(p).cardRequiredForFree)],
+  const rowsDef = [['Categories', p => p.categories.join(', ')], ['Free tier', p => [kind(p), h('div', {}, e(p).freeTier ?? unk()), officialNotes(p, true)]], ['Card required', p => e(p).freeKind === 'none' ? '–' : yn(e(p).cardRequiredForFree)],
     ['Stop or charge', p => e(p).freeRisk ? badge(...(RISK[e(p).freeRisk] || [e(p).freeRisk])) : unk()],
     ['Reference price', p => Object.entries(p.comparablePrice).map(([c, v]) => h('div', {}, `${c}: `, usd(v)))], ['vCPU-hour', p => usd(r(p).vcpuHour)], ['GiB-hour', p => usd(r(p).gibHour)], ['Fixed size / hour', p => num(r(p).instanceHour) ? [usd(r(p).instanceHour), ' ', r(p).instance] : unk('none listed')],
     ['CPU billed only when active', p => yn(r(p).cpuActiveOnly)], ['Billed while', p => r(p).billedWhile ?? unk()], ['Cheapest paid plan', p => pl(p) ? [`${pl(p).name}: `, usd(pl(p).monthlyFee), h('div', { class: 'small dim' }, pl(p).limits)] : unk('none listed')],
@@ -299,7 +301,7 @@ function vCompare() {
 
 async function vChanges() {
   const [ev, days] = await Promise.all([get('data/changes.json'), get('data/history/index.json')]);
-  const show = v => v === null || v === undefined ? 'unknown' : String(v);
+  const show = v => v === null || v === undefined ? 'unavailable' : String(v);
   const evs = ev.filter(x => !S.get('p') || x.slug === S.get('p')).reverse();
   return [head('Price changes', `Differences between dated feed snapshots, since ${META.historySince}. A change in the feed is not always a change by the vendor: it can be a correction.`),
     evs.length ? h('div', { class: 'scroll', tabindex: '0', role: 'region', 'aria-label': 'Changes' }, h('table', {}, h('thead', {}, h('tr', {}, ['Date', 'Company / project', 'What', 'Before', 'After'].map(t => h('th', { scope: 'col' }, t)))),
@@ -320,9 +322,9 @@ async function vProvider() {
     h('p', {}, p.categories.map(c => badge(catName(c))), badge(`last checked ${p.lastChecked}`, (ageDays(p.lastChecked) ?? 99) > 30 ? 'warn' : ''), p.manual && badge('manual, does not refresh', 'warn')),
     p.status !== 'active' && h('div', { class: 'note' }, h('strong', {}, `Status: ${p.status}. `), p.notice?.text, ' ', p.notice?.url && ext(p.notice.url, 'Notice')),
     p.review.length > 0 && h('div', { class: 'note' }, h('strong', {}, 'Needs review. '), 'The feed changed after our correction: ', p.review.map(x => x.field).join(', ')),
-    conflictNotes(p),
-    Object.keys(p.override).length > 0 && h('div', { class: 'note' }, h('strong', {}, `Our manual corrections (${p.overrideDate}, do not refresh): `), h('ul', {}, Object.entries(p.override).map(([k, v]) => h('li', {}, `${k}: `, v === null ? 'unknown' : typeof v === 'object' ? `${v.verdict}: ${v.why}` : String(v), k === 'freeTier' || k === 'freeTierKind' ? ` (feed says: ${p.pricing[k]})` : k === 'cardRequiredForFree' ? ` (derived from feed: ${p.derived[k] ?? 'unknown'})` : k === 'inkling2MiniFit' ? ` (derived from feed: ${p.derived[k].verdict})` : '')))),
-    h('h2', {}, 'Free tier'), kv([['Kind', badge(...KIND[e.freeKind])], ['Detail', e.freeTier], ['Card required', e.freeKind === 'none' ? '–' : yn(e.cardRequiredForFree)], ['Ends', p.derived.freeExpiry], ['Stop or charge', e.freeRisk ? badge(...(RISK[e.freeRisk] || [e.freeRisk])) : null]]),
+    officialNotes(p),
+    Object.keys(p.override).length > 0 && h('div', { class: 'note' }, h('strong', {}, `Our corrections from the official site (${p.overrideDate}, do not refresh): `), h('ul', {}, Object.entries(p.override).map(([k, v]) => h('li', {}, `${k}: `, v === null ? 'unavailable' : typeof v === 'object' ? `${v.verdict}: ${v.why}` : String(v), k === 'freeTier' || k === 'freeTierKind' ? ` (feed says: ${p.pricing[k]})` : k === 'cardRequiredForFree' ? ` (derived from feed: ${p.derived[k] ?? 'unavailable'})` : k === 'inkling2MiniFit' ? ` (derived from feed: ${p.derived[k].verdict})` : '')))),
+    h('h2', {}, 'Free tier'), kv([['Kind', kind(p)], ['Detail', e.freeTier], ['Card required', e.freeKind === 'none' ? '–' : yn(e.cardRequiredForFree)], ['Ends', p.derived.freeExpiry], ['Stop or charge', e.freeRisk ? badge(...(RISK[e.freeRisk] || [e.freeRisk])) : null]]),
     h('h2', {}, 'Plans'), p.pricing.plans.length ? h('div', { class: 'scroll cards', tabindex: '0', role: 'region', 'aria-label': 'Plans' }, h('table', {}, h('thead', {}, h('tr', {}, ['Plan', 'Monthly fee', 'Included usage', 'Stops at allowance', 'Limits'].map(t => h('th', { scope: 'col' }, t)))),
       h('tbody', {}, p.pricing.plans.map(x => h('tr', {}, h('th', { scope: 'row' }, x.name), [['Monthly fee', usd(x.monthlyFee)], ['Included usage', [x.includedUsageUsd ? usd(x.includedUsageUsd) : 'no dollar usage in data', x.includedVcpuHours ? `, ${+x.includedVcpuHours.toFixed(1)} vCPU-h` : '', x.includedGibHours ? `, ${x.includedGibHours} GiB-h` : '']], ['Stops at allowance', yn(x.capped)], ['Limits', x.limits ?? unk()]].map(([t, v]) => h('td', { class: t === 'Limits' ? 'txt' : null, 'data-label': t }, h('div', { class: 'cell' }, v)))))))) : h('p', {}, unk('No plan listed')),
     h('h2', {}, 'Rates'), kv([['vCPU-hour', usd(r.vcpuHour)], ['GiB-hour', usd(r.gibHour)], ['Fixed size / hour', num(r.instanceHour) ? [usd(r.instanceHour), ` ${r.instance || ''}`] : unk('none listed')], ['Storage GiB-month', usd(r.storageGibMonth)], ['Browser-hour', num(r.browserHour) ? usd(r.browserHour) : unk('none listed')], ['Billing increment', r.billingIncrement], ['Billed while', r.billedWhile], ['CPU billed only when active', yn(r.cpuActiveOnly)],
@@ -332,7 +334,7 @@ async function vProvider() {
     h('h2', {}, 'Onboarding points'), kv(onboarding(p).map(x => [`${x.label} (${x.points})`, x.value === true ? badge(`yes +${x.points}`, 'good') : x.value === false ? badge('no') : unk()])),
     h('h2', {}, 'Watch out'), list(p.watchOut), h('h2', {}, 'Best for, per the directory'), list(p.bestFor), h('h2', {}, 'Pricing notes'), list(p.pricing.notes),
     p.benchmarks.length > 0 && [h('h2', {}, 'Benchmarks by others'), h('ul', {}, p.benchmarks.map(b => h('li', {}, `${SRC[b.source] || b.source}, ${b.metric}: ${b.value} ${b.unit} (${b.date})${b.note ? '. ' + b.note : ''}`)))],
-    h('h2', {}, 'Source quotes'), p.sources?.length ? h('details', { open: p.sources.length < 6 }, h('summary', {}, `${p.sources.length} sources`), p.sources.map(s => [s.quote && h('blockquote', {}, s.quote), h('p', { class: 'small' }, ext(s.url), ` · checked ${s.checked || 'unknown'}`)])) : list([])];
+    h('h2', {}, 'Source quotes'), p.sources?.length ? h('details', { open: p.sources.length < 6 }, h('summary', {}, `${p.sources.length} sources`), p.sources.map(s => [s.quote && h('blockquote', {}, s.quote), h('p', { class: 'small' }, ext(s.url), ` · checked ${s.checked || 'date unavailable'}`)])) : list([])];
 }
 
 function vMethod() {
@@ -340,18 +342,18 @@ function vMethod() {
   return [head('Method', 'How the data is gathered, what we change, and how scores work.'),
     h('h2', {}, 'Data'), li([`A daily job fetches the AI Sandbox Hunt feed, checks it and rebuilds this site. The page uses that committed copy, so a feed outage does not blank it. Last good fetch: ${META.lastGoodFetch}; the feed says it was updated ${META.feedUpdated}.`,
       'If the feed is unreachable, not valid JSON, missing fields, or loses more than 10% of providers, the last good data stays, with its date.',
-      'Unknown is never counted as zero or “no”. Conflicts are shown, not silently settled.', 'Corrections and 9 manual rows are written by hand, dated, and do not refresh. If the feed later changes a field a correction covers, the provider is marked “needs review”.',
+      'Unavailable is never counted as zero or “no”.', 'Where sources disagree, the vendor’s official website decides. If it does not state the fact, or its own pages contradict each other, we show “unavailable”. These checks are dated and done by hand. The daily job cannot redo them: it flags new disagreements for review.', 'Corrections and 9 manual rows are written by hand, dated, and do not refresh. If the feed later changes a field a correction covers, the provider is marked “needs review”.',
       'Luxor Agent Cloud Sandbox is the renamed Tenki Sandbox: one product, listed once.', 'We tested nothing and received no money.']),
     META.reviewNeeded.length > 0 && [h('h2', {}, 'Waiting for review'), li(META.reviewNeeded.map(x => `${x.slug}: ${x.what}`))],
     h('h2', {}, 'Overall formula'), h('p', {}, 'score = Σ(weight × known share × value) ÷ Σ(weight × known share), times 100. coverage = Σ(weight × known share) ÷ Σ weight. Default minimum coverage to rank: 60%. Ranked inside one category only.'),
-    li([`Cost (${WEIGHTS.cost}): share of providers in the category with a higher reference price. Ties count half. Unknown price: left out.`,
+    li([`Cost (${WEIGHTS.cost}): share of providers in the category with a higher reference price. Ties count half. Unavailable price: left out.`,
       `Free tier (${WEIGHTS.free}): kind 6 parts (${Object.entries(FREE).map(([k, v]) => `${k} ${v}`).join(', ')}), no card 2 parts, hard stop rather than possible charge 2 parts.`,
       `Paid plan value (${WEIGHTS.paid}): share of the category with less included usage per dollar on its cheapest paid plan.`,
       `Capabilities (${WEIGHTS.caps}): equal parts pause, snapshots, custom images, network controls, GPU, vCPU (16 or more is full), memory (32 GiB or more is full).`,
       `Isolation (${WEIGHTS.iso}), our opinion: ${Object.entries(ISO).map(([k, v]) => `${k} ${v}`).join(', ')}.`,
       `Onboarding (${WEIGHTS.onb}): points shown in that view ÷ total points; the known share is the points we have an answer for.`,
       `Startup (${WEIGHTS.start}): share of the category slower in ComputeSDK’s burst start test. Not measured: left out.`, 'Token efficiency has no weight because nobody has measured it.', 'AI Sandbox Hunt’s own score is not used. Provider pages show it, labelled theirs.']),
-    h('h2', {}, 'Calculator'), li(['Metered: vCPU × hours × vCPU rate + GiB × hours × GiB rate. Where CPU is billed only while active, vCPU hours are multiplied by CPU busy %, with any published minimum.', 'Idle hours are free of compute only where pause is documented; some vendors bill memory while paused, and unknown pause is billed as running.', 'Plan: fee + usage above what it includes; a plan that stops at its allowance is skipped if your usage does not fit.', 'Vendors that price physical cores are converted by the feed at 2 vCPU per core, and flagged.', 'Storage, traffic, session limits, regional multipliers and one-off credits are left out.'])];
+    h('h2', {}, 'Calculator'), li(['Metered: vCPU × hours × vCPU rate + GiB × hours × GiB rate. Where CPU is billed only while active, vCPU hours are multiplied by CPU busy %, with any published minimum.', 'Idle hours are free of compute only where pause is documented; some vendors bill memory while paused, and pause we could not confirm is billed as running.', 'Plan: fee + usage above what it includes; a plan that stops at its allowance is skipped if your usage does not fit.', 'Vendors that price physical cores are converted by the feed at 2 vCPU per core, and flagged.', 'Storage, traffic, session limits, regional multipliers and one-off credits are left out.'])];
 }
 
 // ---- shell -------------------------------------------------------------------

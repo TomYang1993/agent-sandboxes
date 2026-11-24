@@ -1,169 +1,361 @@
 {
- "note": "Hand-written facts. They do not refresh. \"override\" keys present with null mean unknown. \"baseline\" is what the feed said when the correction was written; if it changes the record is flagged for review.",
  "entries": {
   "daytona": {
    "date": "2026-11-23",
-   "override": {
-    "cardRequiredForFree": null,
-    "inkling2MiniFit": {
-     "verdict": "unknown",
-     "why": "sources conflict on size"
-    }
-   },
-   "conflicts": [
+   "official": [
     {
-     "note": "Max size conflict: directory lists 4 vCPU/8 GiB per sandbox; an earlier read of Daytona pricing listed 128 GiB for Starter; a competitor page (Fly) says tier one shares 10 GiB. Docs describe free-credit grants on connecting a card and verifying email, while pricing says no card.",
+     "what": "Maximum size",
+     "status": "official",
+     "note": "64 cores, 128 GiB RAM and 512 GiB disk per sandbox on Starter. The feed says 4 vCPU and 8 GiB. The limit is given in cores, so a vCPU maximum is unavailable.",
+     "url": "https://www.daytona.com/docs/limits.md",
+     "checked": "2026-11-23"
+    },
+    {
+     "what": "Session limit",
+     "status": "official",
+     "note": "24 hours on Starter, 48 hours on Team.",
+     "url": "https://www.daytona.com/docs/limits.md",
+     "checked": "2026-11-23"
+    },
+    {
+     "what": "Plans",
+     "status": "official",
+     "note": "Starter $0 and Team $250 a month with $100 of monthly credits. The feed still lists the older Tier 1 to 4 plan.",
+     "url": "https://www.daytona.com/pricing",
+     "checked": "2026-11-23"
+    },
+    {
+     "what": "CPU rate",
+     "status": "official",
+     "note": "On-demand $0.101 per core-hour for the cheapest CPU, where one core is 2 vCPUs: $0.0505 per vCPU-hour. RAM $0.0162 per GiB-hour. The feed says $0.0504 per vCPU-hour.",
+     "url": "https://www.daytona.com/pricing",
+     "checked": "2026-11-23"
+    },
+    {
+     "what": "Stopped and paused time",
+     "status": "official",
+     "note": "Not metered; ephemeral disk is free; volumes are billed separately. The feed says reserved disk is billed.",
      "url": "https://www.daytona.com/docs/billing.md",
-     "checked": "2026-11-23",
-     "sourceLevel": "vendor"
+     "checked": "2026-11-23"
+    },
+    {
+     "what": "Free credit",
+     "status": "official",
+     "note": "$200 one-time free credits; \"no credit card required\".",
+     "url": "https://www.daytona.com/pricing",
+     "checked": "2026-11-23"
+    },
+    {
+     "what": "Summary",
+     "status": "official",
+     "note": "The feed summary described the older tiers and disk billing; rewritten from the pricing page and docs.",
+     "url": "https://www.daytona.com/pricing",
+     "checked": "2026-11-23"
     }
    ],
-   "baseline": {
-    "features.gpu": true,
-    "features.maxMemoryGib": 8,
-    "features.maxVcpu": 4,
-    "pricing.freeTier": "$200 in free compute on sign-up, no credit card required; free credits cannot be used for GPU sandboxes. Startups can apply for up to $50k in credits.",
-    "pricing.gpu": [
+   "set": {
+    "features.maxVcpu": null,
+    "features.maxMemoryGib": 128,
+    "features.maxSessionHours": 48,
+    "pricing.plans": [
      {
-      "type": "Nvidia B300 (on-demand)",
-      "perHour": 8.99
+      "name": "Starter",
+      "monthlyFee": 0,
+      "includedUsageUsd": 0,
+      "limits": "$200 one-time credits; per sandbox up to 64 cores, 128 GiB RAM, 512 GiB disk, 1 GPU card; sessions up to 24 hours; 100 sandboxes; 3 members.",
+      "includedVcpuHours": 0,
+      "includedGibHours": 0,
+      "capped": null
      },
      {
-      "type": "Nvidia B200 (on-demand)",
-      "perHour": 7.49
-     },
-     {
-      "type": "AMD MI355X (on-demand)",
-      "perHour": 6.2
-     },
-     {
-      "type": "Nvidia H200 (on-demand)",
-      "perHour": 4.99
-     },
-     {
-      "type": "Nvidia H100 (on-demand)",
-      "perHour": 4.29
-     },
-     {
-      "type": "Nvidia RTX PRO 6000 (on-demand)",
-      "perHour": 3.39
-     },
-     {
-      "type": "Nvidia L40S (on-demand)",
-      "perHour": 1.99
-     },
-     {
-      "type": "Nvidia RTX 5090 (on-demand)",
-      "perHour": 1.29
-     },
-     {
-      "type": "Nvidia RTX 4090 (on-demand)",
-      "perHour": 0.99
-     },
-     {
-      "type": "Nvidia B300 (preemptible)",
-      "perHour": 5.17
-     },
-     {
-      "type": "Nvidia B200 (preemptible)",
-      "perHour": 4.3
-     },
-     {
-      "type": "AMD MI355X (preemptible)",
-      "perHour": 3.56
-     },
-     {
-      "type": "Nvidia H200 (preemptible)",
-      "perHour": 2.87
-     },
-     {
-      "type": "Nvidia H100 (preemptible)",
-      "perHour": 2.47
-     },
-     {
-      "type": "Nvidia RTX PRO 6000 (preemptible)",
-      "perHour": 1.95
-     },
-     {
-      "type": "Nvidia L40S (preemptible)",
-      "perHour": 1.14
-     },
-     {
-      "type": "Nvidia RTX 5090 (preemptible)",
-      "perHour": 0.74
-     },
-     {
-      "type": "Nvidia RTX 4090 (preemptible)",
-      "perHour": 0.57
+      "name": "Team",
+      "monthlyFee": 250,
+      "includedUsageUsd": 100,
+      "limits": "$100 of credits a month; per sandbox up to 64 cores, 128 GiB RAM, 1 TiB disk, 8 GPU cards; sessions up to 48 hours; 5,000 sandboxes; unlimited members.",
+      "includedVcpuHours": 0,
+      "includedGibHours": 0,
+      "capped": null
      }
-    ]
+    ],
+    "pricing.rates.vcpuHour": 0.0505,
+    "pricing.rates.billedWhile": "CPU and memory while running. A stopped or paused sandbox is not metered; volumes are billed separately.",
+    "summary": "Daytona sandboxes are isolated environments with their own kernel, filesystem and network stack, offered as Linux, Windows, macOS and GPU sandboxes. CPU and memory are billed only while a sandbox runs; a stopped or paused sandbox is not metered, and volumes are billed separately. Plans are Starter ($0) and Team ($250 a month) plus compute."
+   },
+   "override": {
+    "cardRequiredForFree": false
+   },
+   "drop": [
+    "Default per-sandbox size limit is 4 vCPU / 8 GiB RAM / 10 GiB disk for non-GPU sandboxes.",
+    "Ambiguity: the limits page lists Tier 1 memory as 10 GiB in the Tiers table and 20 GiB in the Limits table.",
+    "Tier 1 and Tier 2 organizations cannot change network restrictions per sandbox; full internet access needs Tier 3 ($500 top-up).",
+    "CPU and memory rates are per reserved resource: $0.0504/vCPU-hour and $0.0162/GiB-hour, billed per second.",
+    "Windows sandboxes are priced at $0.0858/vCPU-hour instead of $0.0504.",
+    "macOS sandboxes, which run on dedicated Apple silicon hardware, are listed at $0.0082 per core-hour. The pricing page does not say whether memory and storage are billed on top, or whether this replaces or adds to the $0.0504 vCPU rate.",
+    "Stopped and paused sandboxes keep paying for reserved disk; archive container sandboxes (moves the filesystem to object storage) to stop all billing. Snapshots created from a sandbox remain billed for storage after the sandbox is deleted.",
+    "Storage is $0.000108 per GiB-hour after the first 5 GiB free; $0.07884 per GiB-month is our conversion at 730 hours/month.",
+    "Ambiguity: the pricing page says '$200 in free compute included' without saying whether it recurs; we treat it as a one-time credit."
+   ],
+   "baseline": {
+    "features.maxVcpu": 4,
+    "features.maxMemoryGib": 8,
+    "features.maxSessionHours": null,
+    "pricing.plans": [
+     {
+      "name": "Pay as you go (Tier 1-4)",
+      "monthlyFee": 0,
+      "includedUsageUsd": 0,
+      "limits": "No plan fee. Org-wide pools by tier: Tier 1 (email verified) 10 vCPU / 10-20 GiB RAM (docs conflict) / 30 GiB disk; Tier 2 (card + $25 top-up) 100 / 200 / 300; Tier 3 ($500 top-up) 250 / 500 / 2,000; Tier 4 ($2,000 top-up every 30 days) 500 / 1,000 / 5,000. Per sandbox: max 4 vCPU, 8 GiB RAM, 10 GiB disk (non-GPU). Tier 1-2 cannot override the default network restrictions.",
+      "includedVcpuHours": 0,
+      "includedGibHours": 0,
+      "capped": false
+     }
+    ],
+    "pricing.rates.vcpuHour": 0.0504,
+    "pricing.rates.billedWhile": "Wall-clock for reserved resources: vCPU, RAM and disk while started (and while creating, starting, stopping or pausing); disk only while stopped or paused; nothing while archived or deleted.",
+    "pricing.freeTier": "$200 in free compute on sign-up, no credit card required; free credits cannot be used for GPU sandboxes. Startups can apply for up to $50k in credits.",
+    "summary": "Daytona sandboxes are isolated environments with their own kernel, filesystem and network stack, offered as container, Linux VM, Windows, macOS and GPU sandbox classes. Billing is per second for the vCPU, RAM and disk reserved while a sandbox is started; stopped or paused sandboxes are billed for disk only, and archived sandboxes are not billed. There is no monthly plan fee: organizations move through usage tiers (Tier 1 to 4) by verifying and topping up credit, which raises resource pools, rate limits and network freedom. SDKs cover Python, TypeScript, Ruby, Go and Java."
    }
   },
   "fly-sprites": {
    "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Free tier",
+     "status": "official",
+     "note": "$1 once for 7 days without a card; with a card, $5 a month plus a $30 Sprites credit for new Free organizations. Using up the $5 moves the organization to Pay As You Go and bills the month from the first cent. When the $30 expires: unavailable.",
+     "url": "https://docs.fly.io/about/free-plan.md",
+     "checked": "2026-11-23"
+    },
+    {
+     "what": "Billing increment",
+     "status": "official",
+     "note": "Billed hourly, based on actual usage.",
+     "url": "https://fly.io/pricing/",
+     "checked": "2026-11-23"
+    },
+    {
+     "what": "Legend plan price",
+     "status": "unavailable",
+     "note": "Fly.io's own pages give two prices ($500 and $200).",
+     "url": "https://sprites.dev",
+     "checked": "2026-11-23"
+    }
+   ],
+   "set": {
+    "pricing.rates.billingIncrement": "Billed hourly, based on actual usage",
+    "pricing.plans": [
+     {
+      "name": "Pay-as-you-go",
+      "monthlyFee": 0,
+      "includedUsageUsd": 0,
+      "limits": "Usage at standard rates; 10 Sprite creations per minute; community support. Concurrency limit for this tier not stated on the pricing page.",
+      "includedVcpuHours": 0,
+      "includedGibHours": 0,
+      "capped": false
+     },
+     {
+      "name": "Adventurer",
+      "monthlyFee": 20,
+      "includedUsageUsd": 0,
+      "limits": "Includes 450 CPU-hours, 1,800 RAM GB-hours, 50 GB-months storage; 20 concurrent active and 20 warm Sprites; 60 creations/minute; community support.",
+      "includedVcpuHours": 450,
+      "includedGibHours": 1800,
+      "capped": false
+     },
+     {
+      "name": "Veteran",
+      "monthlyFee": 50,
+      "includedUsageUsd": 0,
+      "limits": "Includes 800 CPU-hours, 3,200 RAM GB-hours, 100 GB-months storage; 50 concurrent active and 50 warm Sprites; community support.",
+      "includedVcpuHours": 800,
+      "includedGibHours": 3200,
+      "capped": false
+     },
+     {
+      "name": "Hero",
+      "monthlyFee": 100,
+      "includedUsageUsd": 0,
+      "limits": "Includes 1,200 CPU-hours, 4,800 RAM GB-hours, 150 GB storage; 100 concurrently running and 100 warm Sprites, cold unlimited; standard email support.",
+      "includedVcpuHours": 1200,
+      "includedGibHours": 4800,
+      "capped": false
+     },
+     {
+      "name": "Champion",
+      "monthlyFee": 200,
+      "includedUsageUsd": 0,
+      "limits": "Includes 1,800 CPU-hours, 7,200 RAM GB-hours, 225 GB-months storage; 200 concurrent active and 200 warm Sprites; standard email support.",
+      "includedVcpuHours": 1800,
+      "includedGibHours": 7200,
+      "capped": false
+     },
+     {
+      "name": "Legend",
+      "monthlyFee": null,
+      "includedUsageUsd": 0,
+      "limits": "Includes 3,200 CPU-hours, 12,500 RAM GB-hours, 400 GB-months storage; 500 concurrent active and 500 warm Sprites; standard email support.",
+      "includedVcpuHours": 3200,
+      "includedGibHours": 12500,
+      "capped": false
+     },
+     {
+      "name": "Epic",
+      "monthlyFee": 1000,
+      "includedUsageUsd": 0,
+      "limits": "Includes 4,800 CPU-hours, 18,750 RAM GB-hours, 600 GB-months storage; 1,000 concurrent active and 1,000 warm Sprites; premium email support.",
+      "includedVcpuHours": 4800,
+      "includedGibHours": 18750,
+      "capped": false
+     },
+     {
+      "name": "Mythic",
+      "monthlyFee": 2000,
+      "includedUsageUsd": 0,
+      "limits": "Includes 7,200 CPU-hours, 28,000 RAM GB-hours, 900 GB-months storage; 2,000 concurrent active and 2,000 warm Sprites; 240 creations/minute; premium email support; arranged via billing@fly.io.",
+      "includedVcpuHours": 7200,
+      "includedGibHours": 28000,
+      "capped": false
+     }
+    ]
+   },
    "override": {
     "freeTierKind": "recurring",
-    "freeTier": "$1 once without a card (7 days). With a card: $5/month, plus a $30 Sprites credit for new Free organizations (expiry not confirmed).",
-    "cardRequiredForFree": null,
-    "riskFlag": "auto_moves_to_paid"
+    "freeTier": "$5 a month with a card, plus a $30 Sprites credit for new Free organizations (its expiry is unavailable). Without a card: $1 once, for 7 days.",
+    "cardRequiredForFree": true,
+    "riskFlag": "auto_moves_to_paid",
+    "freeAmountUsd": 5
    },
-   "conflicts": [
-    {
-     "note": "Directory says $1 trial and waiver. Fly says: $1 for 7 days without card; with card $5/month, plus a $30 Sprites credit for new Free organizations. Using up the $5 moves the org to Pay As You Go and bills the whole month from the first cent.",
-     "url": "https://docs.fly.io/about/free-plan.md",
-     "checked": "2026-11-23",
-     "sourceLevel": "vendor"
-    }
+   "drop": [
+    "Billing increment is unclear: the pricing page says resources are 'billed hourly, based on actual usage', while the docs overview says 'Per-second' billing.",
+    "Plan table ambiguity: the current sprites.dev FAQ confirms only Hero ($100/mo, 1,200 CPU-h, 4,800 RAM GB-h, 150 GB, 100 running/100 warm) and Mythic ($2,000/mo, 28,000 RAM GB-h) and names the other tiers without prices. The other fees and allowances come from Fly.io's 2026-01-16 changelog. Fly.io's 2026-01-22 release notes list only four tiers and price Legend at $200/mo instead of $500."
    ],
    "baseline": {
     "pricing.freeTier": "Every new Fly.io account gets a one-time $1 trial credit (no credit card, lasts 7 days); invoices under $5 are waived.",
-    "pricing.freeTierKind": "credit"
+    "pricing.freeTierKind": "credit",
+    "pricing.rates.billingIncrement": "metered usage (CPU time from cpu.stat, memory in use), rates quoted per hour",
+    "pricing.plans": [
+     {
+      "name": "Pay-as-you-go",
+      "monthlyFee": 0,
+      "includedUsageUsd": 0,
+      "limits": "Usage at standard rates; 10 Sprite creations per minute; community support. Concurrency limit for this tier not stated on the pricing page.",
+      "includedVcpuHours": 0,
+      "includedGibHours": 0,
+      "capped": false
+     },
+     {
+      "name": "Adventurer",
+      "monthlyFee": 20,
+      "includedUsageUsd": 0,
+      "limits": "Includes 450 CPU-hours, 1,800 RAM GB-hours, 50 GB-months storage; 20 concurrent active and 20 warm Sprites; 60 creations/minute; community support.",
+      "includedVcpuHours": 450,
+      "includedGibHours": 1800,
+      "capped": false
+     },
+     {
+      "name": "Veteran",
+      "monthlyFee": 50,
+      "includedUsageUsd": 0,
+      "limits": "Includes 800 CPU-hours, 3,200 RAM GB-hours, 100 GB-months storage; 50 concurrent active and 50 warm Sprites; community support.",
+      "includedVcpuHours": 800,
+      "includedGibHours": 3200,
+      "capped": false
+     },
+     {
+      "name": "Hero",
+      "monthlyFee": 100,
+      "includedUsageUsd": 0,
+      "limits": "Includes 1,200 CPU-hours, 4,800 RAM GB-hours, 150 GB storage; 100 concurrently running and 100 warm Sprites, cold unlimited; standard email support.",
+      "includedVcpuHours": 1200,
+      "includedGibHours": 4800,
+      "capped": false
+     },
+     {
+      "name": "Champion",
+      "monthlyFee": 200,
+      "includedUsageUsd": 0,
+      "limits": "Includes 1,800 CPU-hours, 7,200 RAM GB-hours, 225 GB-months storage; 200 concurrent active and 200 warm Sprites; standard email support.",
+      "includedVcpuHours": 1800,
+      "includedGibHours": 7200,
+      "capped": false
+     },
+     {
+      "name": "Legend",
+      "monthlyFee": 500,
+      "includedUsageUsd": 0,
+      "limits": "Includes 3,200 CPU-hours, 12,500 RAM GB-hours, 400 GB-months storage; 500 concurrent active and 500 warm Sprites; standard email support.",
+      "includedVcpuHours": 3200,
+      "includedGibHours": 12500,
+      "capped": false
+     },
+     {
+      "name": "Epic",
+      "monthlyFee": 1000,
+      "includedUsageUsd": 0,
+      "limits": "Includes 4,800 CPU-hours, 18,750 RAM GB-hours, 600 GB-months storage; 1,000 concurrent active and 1,000 warm Sprites; premium email support.",
+      "includedVcpuHours": 4800,
+      "includedGibHours": 18750,
+      "capped": false
+     },
+     {
+      "name": "Mythic",
+      "monthlyFee": 2000,
+      "includedUsageUsd": 0,
+      "limits": "Includes 7,200 CPU-hours, 28,000 RAM GB-hours, 900 GB-months storage; 2,000 concurrent active and 2,000 warm Sprites; 240 creations/minute; premium email support; arranged via billing@fly.io.",
+      "includedVcpuHours": 7200,
+      "includedGibHours": 28000,
+      "capped": false
+     }
+    ]
    }
   },
   "maritime": {
    "date": "2026-11-23",
-   "override": {
-    "riskFlag": "trial_converts"
-   },
-   "conflicts": [
+   "official": [
     {
-     "note": "Trial converts to a $20 charge unless cancelled, per directory.",
-     "url": "https://aisandboxhunt.com/maritime",
-     "checked": "2026-11-23",
-     "sourceLevel": "directory"
+     "what": "Trial",
+     "status": "official",
+     "note": "A card is needed to start the first machine. 7 days and $20 of usage; $20 is charged on day 7 unless cancelled.",
+     "url": "https://maritime.sh/pricing",
+     "checked": "2026-11-23"
     }
    ],
+   "override": {
+    "riskFlag": "trial_converts",
+    "cardRequiredForFree": true
+   },
    "baseline": {
     "pricing.freeTier": "7-day free trial on Starter terms with up to $20 of usage. A card is needed to start the first machine but is not charged unless the trial is not cancelled, in which case $20 is charged on day 7 as that month's credit."
    }
   },
   "modal": {
    "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Card",
+     "status": "official",
+     "note": "A payment method must be on file to use Modal. Usage past the $30 monthly credit is charged at the end of the cycle.",
+     "url": "https://modal.com/docs/guide/billing",
+     "checked": "2026-11-23"
+    }
+   ],
    "override": {
     "cardRequiredForFree": true,
     "riskFlag": "can_auto_charge"
    },
-   "conflicts": [
-    {
-     "note": "A payment method must be on file to use Modal; usage beyond credit is auto-charged at cycle end.",
-     "url": "https://modal.com/docs/guide/billing",
-     "checked": "2026-11-23",
-     "sourceLevel": "vendor"
-    }
-   ],
    "baseline": {
     "pricing.freeTier": "Starter plan: $0/month with $30 of compute credit every month (CPU, memory, GPU for Functions and Sandboxes)."
    }
   },
   "runloop": {
    "date": "2026-11-23",
-   "override": {},
-   "conflicts": [
+   "official": [
     {
-     "note": "Winding down, per competitor comparison (Upstash) and directory status.",
-     "url": "https://aisandboxhunt.com/runloop",
-     "checked": "2026-11-23",
-     "sourceLevel": "third_party"
+     "what": "Shutdown",
+     "status": "official",
+     "note": "Winding down; support ran through November 13, 2026.",
+     "url": "https://docs.runloop.ai/docs/transitions/overview",
+     "checked": "2026-11-23"
     }
    ],
    "baseline": {
@@ -178,29 +370,358 @@
   },
   "tenki": {
    "date": "2026-11-23",
-   "override": {
-    "riskFlag": "can_auto_charge",
-    "cardRequiredForFree": true,
-    "inkling2MiniFit": {
-     "verdict": "unknown",
-     "why": "sources conflict on size"
-    }
-   },
-   "conflicts": [
+   "official": [
     {
-     "note": "Directory and an earlier check disagree on maximum size (64 GiB vs 8 GB). Adding a card turns on auto-reload per the directory. Same product as \"Tenki Sandbox\" (renamed; the feed keeps one record). The feed's plan text may explain the gap: Starter caps a VM at 8 GB, Team at 64 GB.",
-     "url": "https://aisandboxhunt.com/tenki",
-     "checked": "2026-11-23",
-     "sourceLevel": "directory"
+     "what": "Maximum size",
+     "status": "official",
+     "note": "Starter 4 cores and 8 GB; Team 16 cores and 64 GB per VM.",
+     "url": "https://luxor.ai/pricing",
+     "checked": "2026-11-23"
+    },
+    {
+     "what": "Free credit",
+     "status": "official",
+     "note": "$100 once when a payment method is added. Adding it turns on auto-reload ($20 when the balance drops below $5), which can be turned off.",
+     "url": "https://luxor.ai/docs/account/free-credits",
+     "checked": "2026-11-23"
     }
    ],
+   "override": {
+    "riskFlag": "can_auto_charge",
+    "cardRequiredForFree": true
+   },
    "baseline": {
-    "features.gpu": null,
     "features.maxMemoryGib": 64,
     "features.maxVcpu": 16,
-    "pricing.freeTier": "One-time $100 in free credits the first time a payment method is added; nothing is credited before a card is on file. Adding the card also turns on auto-reload, which adds $20 whenever the balance drops below $5, and can be turned off.",
-    "pricing.gpu": []
+    "pricing.freeTier": "One-time $100 in free credits the first time a payment method is added; nothing is credited before a card is on file. Adding the card also turns on auto-reload, which adds $20 whenever the balance drops below $5, and can be turned off."
    }
+  },
+  "aether": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Default size",
+     "status": "unavailable",
+     "note": "The vendor's homepage and docs disagree (Small, 1 vCPU and 4 GB, or Medium, 2 vCPU and 8 GB). The rates agree.",
+     "url": "https://www.runaether.dev",
+     "checked": "2026-11-23"
+    }
+   ],
+   "drop": [
+    "Conflict between vendor pages: the homepage says 1 credit = 12 minutes on a default Small devbox (1 vCPU, 4 GB), with Medium (2 vCPU, 8 GB) at 2x and Large (4 vCPU, 16 GB) at 4x. The docs list only Medium, Large and XL, say Medium is the default size, and price Medium at 10 credits per hour. The rates agree (Small would be 5 credits = $0.50 per hour); we show Medium because both pages list it.",
+    "The homepage and docs disagree on the default size and whether a 1 vCPU Small size exists."
+   ],
+   "baseline": {}
+  },
+  "airtop": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "One-time signup bonus",
+     "status": "unavailable",
+     "note": "The vendor's pages disagree: 10,000 credits on pricing, 30,000 on the billing help page. The 1,000 credits a month agree.",
+     "url": "https://www.airtop.ai/pricing",
+     "checked": "2026-11-23"
+    }
+   ],
+   "override": {
+    "freeTier": "Free plan with 1,000 credits every month and 3 simultaneous sessions. The size of the one-time signup bonus is unavailable."
+   },
+   "drop": [
+    "Signup bonus ambiguity: the pricing page lists a 10,000 one-time credit bonus, while the billing help page says new accounts get a one-time grant of 30,000 credits."
+   ],
+   "baseline": {
+    "pricing.freeTier": "Free plan with 1,000 credits every month and 3 simultaneous sessions, plus a one-time signup credit bonus in the first month."
+   }
+  },
+  "blaxel": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "CPU for a 16 GB sandbox",
+     "status": "unavailable",
+     "note": "The vendor's docs give both 6 and 8 cores. 8 GB gives 4 cores. CPU is not billed separately.",
+     "url": "https://docs.blaxel.ai",
+     "checked": "2026-11-23"
+    }
+   ],
+   "drop": [
+    "CPU is not billed separately: it is allocated from memory (docs: 8 GB gives 4 cores; the overview page says 16 GB gives 6 cores while a troubleshooting page says 16 GB gives 8 cores). So we show no separate vCPU rate; the calculator charges memory only."
+   ],
+   "baseline": {}
+  },
+  "boat": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Public IPv4 address",
+     "status": "unavailable",
+     "note": "The vendor's homepage, docs index and limits page disagree.",
+     "url": "https://boat.dev",
+     "checked": "2026-11-23"
+    }
+   ],
+   "drop": [
+    "Pages differ on networking: the homepage says sandboxes have a public IPv6 address and outbound IPv4, while the docs index says each has a public IPv4; the limits text says some sandboxes have no IPv4 address of their own."
+   ],
+   "baseline": {}
+  },
+  "boxd": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Maximum size",
+     "status": "official",
+     "note": "Up to 8 vCPU and 32 GiB.",
+     "url": "https://boxd.sh/pricing/",
+     "checked": "2026-11-23"
+    }
+   ],
+   "drop": [
+    "Self-serve sizes per the FAQ are 1 vCPU / 4 GiB, 2 vCPU / 8 GiB and 4 vCPU / 16 GiB, with 8 vCPU / 32 GiB or larger by email; the pricing page lists pay-as-you-go machines up to 8 vCPU / 32 GiB. We show 8 vCPU / 32 GiB."
+   ],
+   "baseline": {
+    "features.maxVcpu": 8,
+    "features.maxMemoryGib": 32
+   }
+  },
+  "codesandbox": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Scale plan included credits",
+     "status": "unavailable",
+     "note": "The vendor's pages disagree: 160 hours on pricing, 1,100 credits in the SDK docs.",
+     "url": "https://codesandbox.io/pricing",
+     "checked": "2026-11-23"
+    },
+    {
+     "what": "Smallest size and its price",
+     "status": "unavailable",
+     "note": "The vendor's pages disagree: Pico is 1 core, 2 GB, $0.075 an hour on pricing and 2 cores, 1 GB, $0.0743 in the docs.",
+     "url": "https://codesandbox.io/docs/sdk/pricing",
+     "checked": "2026-11-23"
+    }
+   ],
+   "set": {
+    "pricing.plans.1.limits": "From $170 a month per workspace. Up to 20 members, 250 concurrent VMs, 1,000 new sandboxes an hour, 10,000 requests an hour, VMs up to 16 vCPU / 32 GiB, on-demand credits. Included VM credits: unavailable.",
+    "pricing.plans.1.includedUsageUsd": null,
+    "pricing.rates.instanceHour": null,
+    "pricing.rates.instance": null,
+    "pricing.rates.unitVcpu": null,
+    "pricing.rates.unitGib": null,
+    "summary": "CodeSandbox runs VM Sandboxes as microVMs that use memory snapshotting to start, resume and fork in seconds, either from the CodeSandbox SDK or as cloud development environments in its browser editor and VS Code. Runtime is billed in VM credits by machine size, metered per minute. The free Build plan includes 400 credits a month and 10 concurrent VMs; the Scale plan from $170 a month raises concurrency to 250 VMs and sizes to 16 vCPU. CodeSandbox is part of Together AI.",
+    "comparablePrice": {
+     "code-sandbox": null,
+     "dev-box": null
+    }
+   },
+   "drop": [
+    "Build plan's 400 credits are worth $6 at $0.015 per credit (our conversion). Scale's included credits are stated inconsistently (160 hours vs 1,100 credits), so we show no included dollar amount.",
+    "Prices and included credits differ between the pricing page and the docs"
+   ],
+   "baseline": {
+    "pricing.plans.1.limits": "From $170 a month per workspace. Up to 20 members, 250 concurrent VMs, 1,000 new sandboxes an hour, 10,000 requests an hour, VMs up to 16 vCPU / 32 GiB, on-demand credits. The included VM credits are stated as 160 hours a month on the pricing page and 1,100 credits in the SDK docs.",
+    "pricing.plans.1.includedUsageUsd": 0,
+    "pricing.rates.instanceHour": 0.075,
+    "pricing.rates.instance": "Pico: 1 core / 2 GB (5 credits per hour)",
+    "pricing.rates.unitVcpu": 1,
+    "pricing.rates.unitGib": 2,
+    "summary": "CodeSandbox runs VM Sandboxes as microVMs that use memory snapshotting to start, resume and fork in seconds, either from the CodeSandbox SDK or as cloud development environments in its browser editor and VS Code. Runtime is billed in VM credits by machine size, from 5 credits ($0.075) an hour for Pico to 320 credits ($4.80) an hour for XLarge, metered per minute. The free Build plan includes 400 credits a month and 10 concurrent VMs; the Scale plan from $170 a month raises concurrency to 250 VMs and sizes to 16 vCPU. CodeSandbox is part of Together AI.",
+    "comparablePrice": {
+     "code-sandbox": 26.4,
+     "dev-box": 33
+    }
+   }
+  },
+  "freestyle": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Persistent VMs and custom sizes on the Free plan",
+     "status": "unavailable",
+     "note": "The vendor's pricing page says no; its Pricing and Limits doc says yes.",
+     "url": "https://www.freestyle.sh/docs/vms/pricing-and-limits",
+     "checked": "2026-11-23"
+    }
+   ],
+   "drop": [
+    "Free plan maximum per VM is the default size (4 vCPU, 8 GiB, 32 GB). The pricing page marks Persistent VMs, Persistent Snapshots and Custom Sizing as unavailable on Free and lists disk in GiB, while the Pricing and Limits doc marks Persistent VMs available on every plan, allows smaller sizes on Free and lists disk in GB."
+   ],
+   "baseline": {}
+  },
+  "isorun": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Memory unit",
+     "status": "official",
+     "note": "The docs price RAM per GiB.",
+     "url": "https://docs.isorun.ai/getting-started/pricing",
+     "checked": "2026-11-23"
+    }
+   ],
+   "drop": [
+    "Unit wording differs: the homepage says '1 vCPU + 1 GB RAM' while the docs price RAM per GiB. We use the docs' GiB rate."
+   ],
+   "baseline": {}
+  },
+  "morph": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Free tier",
+     "status": "unavailable",
+     "note": "The vendor's pages disagree: 0 MCUs on pricing, 300 MCUs in the Plans doc, 300 hours a month in the FAQ.",
+     "url": "https://cloud.morph.so/web/pricing",
+     "checked": "2026-11-23"
+    }
+   ],
+   "set": {
+    "pricing.plans.0.limits": "Starting MCUs: unavailable. MorphVM quota up to 64 vCPU, 256 GB RAM, 1024 GB storage; Devboxes: 8 concurrent, 32 total"
+   },
+   "override": {
+    "freeTier": null,
+    "freeTierKind": null,
+    "cardRequiredForFree": null,
+    "riskFlag": null
+   },
+   "drop": [
+    "Free tier is unclear: pricing page shows 0 MCUs while docs promise 300 free MCUs or compute hours"
+   ],
+   "baseline": {
+    "pricing.plans.0.limits": "0 starting MCUs on the pricing page (buy credits to use compute); MorphVM quota up to 64 vCPU, 256 GB RAM, 1024 GB storage; Devboxes: 8 concurrent, 32 total",
+    "pricing.freeTier": "Conflicting: the pricing page lists the free Developer tier with 0 starting MCUs ('Purchase credits to use compute'), while the Plans doc says 300 MCUs free and the FAQ/Signing Up docs say 300 free compute hours per month. Access may require an invite.",
+    "pricing.freeTierKind": "credit"
+   }
+  },
+  "novita-sandbox": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Longest paid session",
+     "status": "unavailable",
+     "note": "The vendor's product page says 24 hours, its docs 3 hours. Long-running mode lifts the cap.",
+     "url": "https://novita.ai/sandbox",
+     "checked": "2026-11-23"
+    }
+   ],
+   "set": {
+    "pricing.plans.1.limits": "Unlocks automatically once the account balance is above $0: 100 concurrent sandboxes, up to 8 vCPU and 8 GiB per sandbox, priority scheduling. Session cap: unavailable; long-running mode lifts it."
+   },
+   "drop": [
+    "Session length: default timeout 5 minutes. The docs cap the timeout at 1 hour (Free), 3 hours (Paid) and 4 hours (Enterprise), while the product page says 24 hours on the paid tier. Long-running mode lifts the cap, so we show no fixed maximum.",
+    "Session limits differ between the product page (24 hours) and the docs (3 hours)"
+   ],
+   "baseline": {
+    "pricing.plans.1.limits": "Unlocks automatically once the account balance is above $0: 100 concurrent sandboxes, up to 8 vCPU and 8 GiB per sandbox, priority scheduling. Session cap is 3 hours in the docs (24 hours on the product page); long-running mode lifts it."
+   }
+  },
+  "podflare": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Regions",
+     "status": "unavailable",
+     "note": "The vendor's pricing page lists two regions, its docs five.",
+     "url": "https://podflare.ai/pricing",
+     "checked": "2026-11-23"
+    }
+   ],
+   "set": {
+    "regions": null
+   },
+   "drop": [
+    "Region list differs between the pricing page (EU, US-West) and the docs (five regions)."
+   ],
+   "baseline": {
+    "regions": "The pricing page lists EU and US-West; the docs list five regions (us-west, us-central, us-east, eu, sg), routed to the nearest by default with optional region pinning."
+   }
+  },
+  "railway-sandboxes": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Maximum size",
+     "status": "official",
+     "note": "24 vCPU and 24 GB on Pro.",
+     "url": "https://docs.railway.com/sandboxes",
+     "checked": "2026-11-23"
+    }
+   ],
+   "drop": [
+    "Maximum size conflict: the sandboxes page lists 24 vCPU / 24 GB on Pro, the pricing page 32 vCPU / 32 GB. We show 24."
+   ],
+   "baseline": {
+    "features.maxVcpu": 24,
+    "features.maxMemoryGib": 24
+   }
+  },
+  "render": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Suspend and resume",
+     "status": "official",
+     "note": "A sandbox can be suspended and resumed; both pages say so.",
+     "url": "https://render.com/sandboxes",
+     "checked": "2026-11-23"
+    }
+   ],
+   "drop": [
+    "Wording differs between pages: the docs introduction calls sandboxes 'managed, ephemeral environments', while the product page says a suspended sandbox resumes 'with its files, memory, and running processes intact'."
+   ],
+   "baseline": {}
+  },
+  "tembo": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Pause and resume",
+     "status": "unavailable",
+     "note": "The vendor's docs say sandboxes are destroyed at the end; its pricing page lists pausable sessions.",
+     "url": "https://www.tembo.io/pricing",
+     "checked": "2026-11-23"
+    }
+   ],
+   "drop": [
+    "Conflict between vendor pages: the sandbox docs say sandboxes are ephemeral and destroyed when the session ends, while the pricing page lists pausable and resumable sessions and says snapshotted VMs accrue no compute. Whether a session VM can be paused and resumed later is not clear, so we leave that unknown."
+   ],
+   "baseline": {
+    "features.pauseResume": null
+   }
+  },
+  "tensorlake": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "CPU minimum",
+     "status": "official",
+     "note": "20% of allocated vCPU is the minimum billed.",
+     "url": "https://www.tensorlake.ai/pricing",
+     "checked": "2026-11-23"
+    }
+   ],
+   "drop": [
+    "Conflict: the pricing page states the 20% CPU minimum; the billing docs page does not mention it and says only that CPU tracks active execution."
+   ],
+   "baseline": {}
+  },
+  "workpaper": {
+   "date": "2026-11-23",
+   "official": [
+    {
+     "what": "Session limit",
+     "status": "official",
+     "note": "No time limit per start; a computer pauses after an hour idle.",
+     "url": "https://docs.workpaper.co/limits",
+     "checked": "2026-11-23"
+    }
+   ],
+   "drop": [
+    "Conflict: the Limits page says there is no time limit per start and computers pause after an hour idle, while the How it works page still says computers stop 'after an hour of running'. We show no session limit. Either way, stopping keeps disk and memory and starting again resumes."
+   ],
+   "baseline": {}
   }
  },
  "manual": [
@@ -214,13 +735,16 @@
     "notebook"
    ],
    "pricing": {
-    "freeTier": "About 30 GPU-hours/week (varies, not guaranteed); phone verification; 2x T4 16 GB; 12 h sessions; 20 GB saved disk",
+    "freeTier": "GPU quota of 30 hours a week, sometimes higher; P100 or 2x T4; 12 h sessions; 20 GB saved disk",
     "freeTierKind": "recurring",
     "plans": [],
     "rates": {},
     "gpu": []
    },
-   "features": {},
+   "features": {
+    "gpu": true,
+    "maxSessionHours": 12
+   },
    "benchmarks": [],
    "score": {},
    "comparablePrice": {},
@@ -228,18 +752,33 @@
     {
      "url": "https://www.kaggle.com/docs/notebooks",
      "checked": "2026-11-23",
-     "sourceLevel": "earlier_research"
+     "sourceLevel": "vendor"
+    },
+    {
+     "url": "https://www.kaggle.com/docs/efficient-gpu-usage",
+     "checked": "2026-11-23",
+     "sourceLevel": "vendor"
     }
    ],
    "lastChecked": "2026-11-23",
    "company": "Google",
    "manualFacts": {
-    "cardRequiredForFree": false,
+    "cardRequiredForFree": null,
+    "riskFlag": null,
     "inkling2MiniFit": {
-     "verdict": "gpu_free",
-     "why": "split across two 16 GB GPUs with llama.cpp; not tested"
+     "verdict": "unknown",
+     "why": "2x T4 with 29 GB RAM; GPU memory is unavailable on the vendor page; not tested"
     }
-   }
+   },
+   "official": [
+    {
+     "what": "Card and phone verification",
+     "status": "unavailable",
+     "note": "Not stated on the pages read.",
+     "url": "https://www.kaggle.com/docs/notebooks",
+     "checked": "2026-11-23"
+    }
+   ]
   },
   {
    "slug": "lightning",
@@ -251,7 +790,7 @@
     "code-sandbox"
    ],
    "pricing": {
-    "freeTier": "5 credits after phone verification; +25 with card; one-off",
+    "freeTier": "Up to 30 credits to start; 1 Studio free 24/7 with a restart every 4 h. No credit card",
     "freeTierKind": "credit",
     "plans": [],
     "rates": {},
@@ -259,6 +798,10 @@
      {
       "type": "L4 24 GB",
       "perHour": 0.79
+     },
+     {
+      "type": "T4",
+      "perHour": 0.55
      }
     ]
    },
@@ -277,11 +820,21 @@
    "company": "Lightning AI",
    "manualFacts": {
     "cardRequiredForFree": false,
+    "riskFlag": null,
     "inkling2MiniFit": {
      "verdict": "gpu_sold",
-     "why": "free-user GPU menu unverified"
+     "why": "sells L4; which GPUs free users get is unavailable"
     }
-   }
+   },
+   "official": [
+    {
+     "what": "Phone verification and how the 30 credits are split",
+     "status": "unavailable",
+     "note": "Not stated on the pricing page.",
+     "url": "https://lightning.ai/pricing",
+     "checked": "2026-11-23"
+    }
+   ]
   },
   {
    "slug": "colab",
@@ -293,13 +846,15 @@
     "notebook"
    ],
    "pricing": {
-    "freeTier": "Free dynamic GPU, no published quota, sessions up to 12 h",
+    "freeTier": "Free GPU access; GPU types and limits are not published; sessions of at most 12 h",
     "freeTierKind": "recurring",
     "plans": [],
     "rates": {},
     "gpu": []
    },
-   "features": {},
+   "features": {
+    "gpu": true
+   },
    "benchmarks": [],
    "score": {},
    "comparablePrice": {},
@@ -313,12 +868,29 @@
    "lastChecked": "2026-11-23",
    "company": "Google",
    "manualFacts": {
-    "cardRequiredForFree": false,
+    "cardRequiredForFree": null,
+    "riskFlag": null,
     "inkling2MiniFit": {
-     "verdict": "too_small",
-     "why": "usually 16 GB by user reports; SSH and web UIs restricted"
+     "verdict": "unknown",
+     "why": "GPU size is unavailable on the official FAQ"
     }
-   }
+   },
+   "official": [
+    {
+     "what": "GPU type, GPU memory and quota",
+     "status": "unavailable",
+     "note": "The FAQ says these vary and are not published.",
+     "url": "https://research.google.com/colaboratory/faq.html",
+     "checked": "2026-11-23"
+    },
+    {
+     "what": "Card",
+     "status": "unavailable",
+     "note": "Not stated on the FAQ.",
+     "url": "https://research.google.com/colaboratory/faq.html",
+     "checked": "2026-11-23"
+    }
+   ]
   },
   {
    "slug": "zerogpu",
@@ -330,13 +902,15 @@
     "notebook"
    ],
    "pricing": {
-    "freeTier": "5 GPU-minutes/day on a free account; hosting needs verified account older than 30 days",
+    "freeTier": "5 GPU-minutes a day on a free account; hosting needs a verified email and an account older than 30 days, up to 2 Spaces",
     "freeTierKind": "recurring",
     "plans": [],
     "rates": {},
     "gpu": []
    },
-   "features": {},
+   "features": {
+    "gpu": true
+   },
    "benchmarks": [],
    "score": {},
    "comparablePrice": {},
@@ -351,11 +925,21 @@
    "company": "Hugging Face",
    "manualFacts": {
     "cardRequiredForFree": null,
+    "riskFlag": null,
     "inkling2MiniFit": {
-     "verdict": "too_small",
-     "why": "Gradio demos only"
+     "verdict": "unknown",
+     "why": "48 GB GPU, but Gradio apps only and 5 minutes a day"
     }
-   }
+   },
+   "official": [
+    {
+     "what": "Card",
+     "status": "unavailable",
+     "note": "Not stated on the docs page.",
+     "url": "https://huggingface.co/docs/hub/en/spaces-zerogpu",
+     "checked": "2026-11-23"
+    }
+   ]
   },
   {
    "slug": "paperspace-gradient",
@@ -367,13 +951,15 @@
     "notebook"
    ],
    "pricing": {
-    "freeTier": "Free M4000 8 GB, 6 h sessions, 5 GB storage",
+    "freeTier": "Free M4000 GPU on the Free plan; 5 GB storage",
     "freeTierKind": "recurring",
     "plans": [],
     "rates": {},
     "gpu": []
    },
-   "features": {},
+   "features": {
+    "gpu": true
+   },
    "benchmarks": [],
    "score": {},
    "comparablePrice": {},
@@ -381,31 +967,46 @@
     {
      "url": "https://www.paperspace.com/gradient/pricing",
      "checked": "2026-11-23",
-     "sourceLevel": "earlier_research"
+     "sourceLevel": "vendor"
+    },
+    {
+     "url": "https://docs.digitalocean.com/products/paperspace/pricing/",
+     "checked": "2026-11-23",
+     "sourceLevel": "vendor"
     }
    ],
    "lastChecked": "2026-11-23",
    "company": "DigitalOcean",
    "manualFacts": {
     "cardRequiredForFree": null,
+    "riskFlag": null,
     "inkling2MiniFit": {
-     "verdict": "too_small",
-     "why": "8 GB GPU"
+     "verdict": "unknown",
+     "why": "GPU memory is unavailable on the vendor pages"
     }
-   }
+   },
+   "official": [
+    {
+     "what": "GPU memory, session length and card",
+     "status": "unavailable",
+     "note": "Not stated on the pages read.",
+     "url": "https://www.paperspace.com/gradient/pricing",
+     "checked": "2026-11-23"
+    }
+   ]
   },
   {
    "slug": "declaw",
    "name": "Declaw",
    "website": "https://declaw.ai",
    "dataOrigin": "manual research",
-   "status": "active",
+   "status": "unreachable",
    "categories": [
     "code-sandbox"
    ],
    "pricing": {
-    "freeTier": "$300 credit; not reconfirmed (page unreadable)",
-    "freeTierKind": "credit",
+    "freeTier": null,
+    "freeTierKind": null,
     "plans": [],
     "rates": {},
     "gpu": []
@@ -418,18 +1019,28 @@
     {
      "url": "https://declaw.ai",
      "checked": "2026-11-23",
-     "sourceLevel": "earlier_research"
+     "sourceLevel": "vendor"
     }
    ],
    "lastChecked": "2026-11-23",
    "company": null,
    "manualFacts": {
     "cardRequiredForFree": null,
+    "riskFlag": null,
     "inkling2MiniFit": {
      "verdict": "unknown",
-     "why": "32 GB size unverified"
+     "why": "vendor site unavailable"
     }
-   }
+   },
+   "official": [
+    {
+     "what": "All facts",
+     "status": "unavailable",
+     "note": "declaw.ai could not be reached.",
+     "url": "https://declaw.ai",
+     "checked": "2026-11-23"
+    }
+   ]
   },
   {
    "slug": "instavm",
@@ -441,7 +1052,7 @@
     "code-sandbox"
    ],
    "pricing": {
-    "freeTier": "$50 credit with card on file",
+    "freeTier": "$50 free credits; a card on file, no charge to get started",
     "freeTierKind": "credit",
     "plans": [],
     "rates": {},
@@ -453,7 +1064,7 @@
    "comparablePrice": {},
    "sources": [
     {
-     "url": "https://instavm.io",
+     "url": "https://instavm.io/pricing",
      "checked": "2026-11-23",
      "sourceLevel": "vendor"
     }
@@ -462,11 +1073,21 @@
    "company": null,
    "manualFacts": {
     "cardRequiredForFree": true,
+    "riskFlag": null,
     "inkling2MiniFit": {
      "verdict": "unknown",
-     "why": "32 GB size unverified"
+     "why": "VM size is unavailable on the vendor site"
     }
-   }
+   },
+   "official": [
+    {
+     "what": "Company and VM size",
+     "status": "unavailable",
+     "note": "Not stated on the vendor site.",
+     "url": "https://instavm.io/pricing",
+     "checked": "2026-11-23"
+    }
+   ]
   },
   {
    "slug": "replicas",
@@ -484,7 +1105,10 @@
     "rates": {},
     "gpu": []
    },
-   "features": {},
+   "features": {
+    "maxVcpu": 8,
+    "maxMemoryGib": 32
+   },
    "benchmarks": [],
    "score": {},
    "comparablePrice": {},
@@ -493,17 +1117,24 @@
      "url": "https://replicas.dev",
      "checked": "2026-11-23",
      "sourceLevel": "vendor"
+    },
+    {
+     "url": "https://replicas.dev/pricing",
+     "checked": "2026-11-23",
+     "sourceLevel": "vendor"
     }
    ],
    "lastChecked": "2026-11-23",
-   "company": null,
+   "company": "Replicas Group Inc.",
    "manualFacts": {
     "cardRequiredForFree": false,
+    "riskFlag": null,
     "inkling2MiniFit": {
-     "verdict": "unknown",
-     "why": "VM specs unverified"
+     "verdict": "cpu_sold",
+     "why": "largest size has 32 GB RAM; CPU only, slow; sold, not free; disk not checked"
     }
-   }
+   },
+   "official": []
   },
   {
    "slug": "runtime",
@@ -515,32 +1146,45 @@
     "code-sandbox"
    ],
    "pricing": {
-    "freeTier": "$5 credit",
-    "freeTierKind": "credit",
+    "freeTier": "No free plan. 7-day Pro trial with $5 of usage; a card is asked for at the first sandbox; usage past $5 is added to the day-8 charge",
+    "freeTierKind": "trial",
     "plans": [],
     "rates": {},
     "gpu": []
    },
-   "features": {},
+   "features": {
+    "maxVcpu": 32,
+    "maxMemoryGib": 96
+   },
    "benchmarks": [],
    "score": {},
    "comparablePrice": {},
    "sources": [
     {
-     "url": "https://withruntime.com",
+     "url": "https://withruntime.com/pricing",
      "checked": "2026-11-23",
-     "sourceLevel": "earlier_research"
+     "sourceLevel": "vendor"
     }
    ],
    "lastChecked": "2026-11-23",
-   "company": null,
+   "company": "Runtime LLC",
    "manualFacts": {
-    "cardRequiredForFree": null,
+    "cardRequiredForFree": true,
+    "riskFlag": "trial_converts",
     "inkling2MiniFit": {
-     "verdict": "unknown",
-     "why": "specs unverified"
+     "verdict": "cpu_sold",
+     "why": "largest size has 96 GB RAM; CPU only, slow; sold, not free; disk not checked"
     }
-   }
+   },
+   "official": [
+    {
+     "what": "Free tier",
+     "status": "official",
+     "note": "There is no free plan; the trial converts on day 8 with the first $25 of Pro.",
+     "url": "https://withruntime.com/pricing",
+     "checked": "2026-11-23"
+    }
+   ]
   }
  ]
 }

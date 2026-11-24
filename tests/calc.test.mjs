@@ -80,3 +80,8 @@ f=json.load(open(${JSON.stringify(root + 'tests/feed-2026-11-24.json')}));json.d
     else assert.ok(bad.length <= 4, String(bad));
   }
 });
+
+test('an unavailable free tier is never counted as no', () => {
+  const p = { derived: {}, effective: { freeKind: null, cardRequiredForFree: null }, pricing: { plans: [] } };
+  assert.equal(onboarding(p)[0].value, null);
+});

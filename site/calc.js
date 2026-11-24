@@ -73,11 +73,11 @@ export const LABELS = { cost: 'Cost', free: 'Free tier', paid: 'Paid plan value'
 export function onboarding(p) {
   const d = p.derived || {}, e = p.effective || {};
   const invite = /\binvite (code|is)|require an invite|invite-only/i.test(`${e.freeTier || ''} ${(p.pricing.plans || []).map(x => x.limits || '').join(' ')}`);
-  const free = ['recurring', 'credit', 'trial', 'software'].includes(e.freeKind);
+  const free = e.freeKind ? ['recurring', 'credit', 'trial', 'software'].includes(e.freeKind) : null;
   const t = v => (v === true ? true : v === false ? false : null);
   return [
     ['Free to start', 2, free],
-    ['No card to start free', 2, free && e.cardRequiredForFree !== null && e.cardRequiredForFree !== undefined ? e.cardRequiredForFree === false : (e.freeKind === 'software' ? true : null)],
+    ['No card to start free', 2, free === true && e.cardRequiredForFree !== null && e.cardRequiredForFree !== undefined ? e.cardRequiredForFree === false : (e.freeKind === 'software' ? true : null)],
     ['No invite needed', 1, invite ? false : null],
     ['Docs link', 1, p.docsUrl ? true : null],
     ['Python SDK', 1, t(d.hasPython)], ['TypeScript SDK', 1, t(d.hasTypescript)],

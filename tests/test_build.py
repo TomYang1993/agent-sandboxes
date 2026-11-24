@@ -40,6 +40,40 @@ class Overlay(unittest.TestCase):
         for p in build.make(FEED, EMPTY)[0]:
             self.assertEqual(p["tokenEfficiency"], {"value": None, "status": "not_measured"})
 
+class OfficialRule(unittest.TestCase):
+    OV = json.loads((ROOT / "data/overlay.json").read_text())
+    def test_links_are_the_vendors_own(self):
+        own = {"daytona": "daytona.com", "blaxel": "blaxel.ai", "tenki": "luxor.ai", "codesandbox": "codesandbox.io", "kaggle": "kaggle.com", "colab": "google.com", "fly-sprites": ("fly.io", "sprites.dev"),
+               "novita-sandbox": "novita.ai", "railway-sandboxes": "railway.com", "render": "render.com", "morph": "morph.so", "paperspace-gradient": ("paperspace.com", "digitalocean.com")}
+        import urllib.parse
+        rows = list(self.OV["entries"].items()) + [(m["slug"], m) for m in self.OV["manual"]]
+        site = {p["slug"]: p["website"] for p in FEED["providers"]} | {m["slug"]: m["website"] for m in self.OV["manual"]}
+        for s, e in rows:
+            dom = own.get(s) or ".".join(urllib.parse.urlsplit(site[s]).hostname.split(".")[-2:])
+            for c in e["official"]:
+                host = urllib.parse.urlsplit(c["url"]).hostname
+                self.assertTrue(any(host == d or host.endswith("." + d) for d in ([dom] if isinstance(dom, str) else dom)), (s, host))
+                self.assertIn(c["status"], ("official", "unavailable"))
+    def test_official_value_beats_feed_and_null_means_unavailable(self):
+        ps, _ = build.make(FEED, self.OV)
+        self.assertEqual(one(ps, "daytona")["features"]["maxMemoryGib"], 128)
+        self.assertEqual(one(ps, "daytona")["feedSaid"]["features.maxMemoryGib"], 8)
+        self.assertEqual(one(ps, "daytona")["derived"]["freeAmountUsd"], 200)
+        m = one(ps, "morph")
+        self.assertIsNone(m["effective"]["freeTier"]); self.assertIsNone(m["effective"]["freeKind"]); self.assertIsNone(m["derived"]["freeAmountUsd"])
+        self.assertIsNone(one(ps, "podflare")["regions"])
+        self.assertIn("Free: unavailable | kind=unavailable", build.markdown(ps, {"lastGoodFetch": "x"}))
+    def test_no_disagreement_is_left_unsettled(self):
+        ps, warn = build.make(FEED, self.OV)
+        self.assertEqual([w for w in warn if "official site" in w["what"] or "replaced" in w["what"]], [])
+    def test_new_disagreement_is_flagged(self):
+        f = copy.deepcopy(FEED)
+        p = next(p for p in f["providers"] if p["slug"] == "e2b")
+        p["pricing"]["notes"].append("The docs and the pricing page disagree on the price.")
+        ps, warn = build.make(f, self.OV)
+        self.assertTrue(one(ps, "e2b")["review"])
+        self.assertTrue(any(w["slug"] == "e2b" and "official site" in w["what"] for w in warn))
+
 class Untrusted(unittest.TestCase):
     def test_urls(self):
         for u in ("javascript:alert(1)", "data:text/html,x", "//x.com", "https://a@b.com", 'https://x.com/"onclick', "https://x .com", "ftp://x", None, 5, "https://"):
