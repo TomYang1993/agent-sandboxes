@@ -1,0 +1,546 @@
+{
+ "note": "Hand-written facts. They do not refresh. \"override\" keys present with null mean unknown. \"baseline\" is what the feed said when the correction was written; if it changes the record is flagged for review.",
+ "entries": {
+  "daytona": {
+   "date": "2026-11-23",
+   "override": {
+    "cardRequiredForFree": null,
+    "inkling2MiniFit": {
+     "verdict": "unknown",
+     "why": "sources conflict on size"
+    }
+   },
+   "conflicts": [
+    {
+     "note": "Max size conflict: directory lists 4 vCPU/8 GiB per sandbox; an earlier read of Daytona pricing listed 128 GiB for Starter; a competitor page (Fly) says tier one shares 10 GiB. Docs describe free-credit grants on connecting a card and verifying email, while pricing says no card.",
+     "url": "https://www.daytona.com/docs/billing.md",
+     "checked": "2026-11-23",
+     "sourceLevel": "vendor"
+    }
+   ],
+   "baseline": {
+    "features.gpu": true,
+    "features.maxMemoryGib": 8,
+    "features.maxVcpu": 4,
+    "pricing.freeTier": "$200 in free compute on sign-up, no credit card required; free credits cannot be used for GPU sandboxes. Startups can apply for up to $50k in credits.",
+    "pricing.gpu": [
+     {
+      "type": "Nvidia B300 (on-demand)",
+      "perHour": 8.99
+     },
+     {
+      "type": "Nvidia B200 (on-demand)",
+      "perHour": 7.49
+     },
+     {
+      "type": "AMD MI355X (on-demand)",
+      "perHour": 6.2
+     },
+     {
+      "type": "Nvidia H200 (on-demand)",
+      "perHour": 4.99
+     },
+     {
+      "type": "Nvidia H100 (on-demand)",
+      "perHour": 4.29
+     },
+     {
+      "type": "Nvidia RTX PRO 6000 (on-demand)",
+      "perHour": 3.39
+     },
+     {
+      "type": "Nvidia L40S (on-demand)",
+      "perHour": 1.99
+     },
+     {
+      "type": "Nvidia RTX 5090 (on-demand)",
+      "perHour": 1.29
+     },
+     {
+      "type": "Nvidia RTX 4090 (on-demand)",
+      "perHour": 0.99
+     },
+     {
+      "type": "Nvidia B300 (preemptible)",
+      "perHour": 5.17
+     },
+     {
+      "type": "Nvidia B200 (preemptible)",
+      "perHour": 4.3
+     },
+     {
+      "type": "AMD MI355X (preemptible)",
+      "perHour": 3.56
+     },
+     {
+      "type": "Nvidia H200 (preemptible)",
+      "perHour": 2.87
+     },
+     {
+      "type": "Nvidia H100 (preemptible)",
+      "perHour": 2.47
+     },
+     {
+      "type": "Nvidia RTX PRO 6000 (preemptible)",
+      "perHour": 1.95
+     },
+     {
+      "type": "Nvidia L40S (preemptible)",
+      "perHour": 1.14
+     },
+     {
+      "type": "Nvidia RTX 5090 (preemptible)",
+      "perHour": 0.74
+     },
+     {
+      "type": "Nvidia RTX 4090 (preemptible)",
+      "perHour": 0.57
+     }
+    ]
+   }
+  },
+  "fly-sprites": {
+   "date": "2026-11-23",
+   "override": {
+    "freeTierKind": "recurring",
+    "freeTier": "$1 once without a card (7 days). With a card: $5/month, plus a $30 Sprites credit for new Free organizations (expiry not confirmed).",
+    "cardRequiredForFree": null,
+    "riskFlag": "auto_moves_to_paid"
+   },
+   "conflicts": [
+    {
+     "note": "Directory says $1 trial and waiver. Fly says: $1 for 7 days without card; with card $5/month, plus a $30 Sprites credit for new Free organizations. Using up the $5 moves the org to Pay As You Go and bills the whole month from the first cent.",
+     "url": "https://docs.fly.io/about/free-plan.md",
+     "checked": "2026-11-23",
+     "sourceLevel": "vendor"
+    }
+   ],
+   "baseline": {
+    "pricing.freeTier": "Every new Fly.io account gets a one-time $1 trial credit (no credit card, lasts 7 days); invoices under $5 are waived.",
+    "pricing.freeTierKind": "credit"
+   }
+  },
+  "maritime": {
+   "date": "2026-11-23",
+   "override": {
+    "riskFlag": "trial_converts"
+   },
+   "conflicts": [
+    {
+     "note": "Trial converts to a $20 charge unless cancelled, per directory.",
+     "url": "https://aisandboxhunt.com/maritime",
+     "checked": "2026-11-23",
+     "sourceLevel": "directory"
+    }
+   ],
+   "baseline": {
+    "pricing.freeTier": "7-day free trial on Starter terms with up to $20 of usage. A card is needed to start the first machine but is not charged unless the trial is not cancelled, in which case $20 is charged on day 7 as that month's credit."
+   }
+  },
+  "modal": {
+   "date": "2026-11-23",
+   "override": {
+    "cardRequiredForFree": true,
+    "riskFlag": "can_auto_charge"
+   },
+   "conflicts": [
+    {
+     "note": "A payment method must be on file to use Modal; usage beyond credit is auto-charged at cycle end.",
+     "url": "https://modal.com/docs/guide/billing",
+     "checked": "2026-11-23",
+     "sourceLevel": "vendor"
+    }
+   ],
+   "baseline": {
+    "pricing.freeTier": "Starter plan: $0/month with $30 of compute credit every month (CPU, memory, GPU for Functions and Sandboxes)."
+   }
+  },
+  "runloop": {
+   "date": "2026-11-23",
+   "override": {},
+   "conflicts": [
+    {
+     "note": "Winding down, per competitor comparison (Upstash) and directory status.",
+     "url": "https://aisandboxhunt.com/runloop",
+     "checked": "2026-11-23",
+     "sourceLevel": "third_party"
+    }
+   ],
+   "baseline": {
+    "notice": {
+     "kind": "shutdown",
+     "date": "2026-11-13",
+     "text": "Runloop is winding down its services. Support for existing customers continued through November 13, 2026. Runloop's docs link transition guides to Tensorlake, Modal and Freestyle.",
+     "url": "https://docs.runloop.ai/docs/transitions/overview"
+    },
+    "status": "shutting-down"
+   }
+  },
+  "tenki": {
+   "date": "2026-11-23",
+   "override": {
+    "riskFlag": "can_auto_charge",
+    "cardRequiredForFree": true,
+    "inkling2MiniFit": {
+     "verdict": "unknown",
+     "why": "sources conflict on size"
+    }
+   },
+   "conflicts": [
+    {
+     "note": "Directory and an earlier check disagree on maximum size (64 GiB vs 8 GB). Adding a card turns on auto-reload per the directory. Same product as \"Tenki Sandbox\" (renamed; the feed keeps one record). The feed's plan text may explain the gap: Starter caps a VM at 8 GB, Team at 64 GB.",
+     "url": "https://aisandboxhunt.com/tenki",
+     "checked": "2026-11-23",
+     "sourceLevel": "directory"
+    }
+   ],
+   "baseline": {
+    "features.gpu": null,
+    "features.maxMemoryGib": 64,
+    "features.maxVcpu": 16,
+    "pricing.freeTier": "One-time $100 in free credits the first time a payment method is added; nothing is credited before a card is on file. Adding the card also turns on auto-reload, which adds $20 whenever the balance drops below $5, and can be turned off.",
+    "pricing.gpu": []
+   }
+  }
+ },
+ "manual": [
+  {
+   "slug": "kaggle",
+   "name": "Kaggle Notebooks",
+   "website": "https://www.kaggle.com",
+   "dataOrigin": "manual research",
+   "status": "active",
+   "categories": [
+    "notebook"
+   ],
+   "pricing": {
+    "freeTier": "About 30 GPU-hours/week (varies, not guaranteed); phone verification; 2x T4 16 GB; 12 h sessions; 20 GB saved disk",
+    "freeTierKind": "recurring",
+    "plans": [],
+    "rates": {},
+    "gpu": []
+   },
+   "features": {},
+   "benchmarks": [],
+   "score": {},
+   "comparablePrice": {},
+   "sources": [
+    {
+     "url": "https://www.kaggle.com/docs/notebooks",
+     "checked": "2026-11-23",
+     "sourceLevel": "earlier_research"
+    }
+   ],
+   "lastChecked": "2026-11-23",
+   "company": null,
+   "manualFacts": {
+    "cardRequiredForFree": false,
+    "inkling2MiniFit": {
+     "verdict": "gpu_free",
+     "why": "split across two 16 GB GPUs with llama.cpp; not tested"
+    }
+   }
+  },
+  {
+   "slug": "lightning",
+   "name": "Lightning AI",
+   "website": "https://lightning.ai",
+   "dataOrigin": "manual research",
+   "status": "active",
+   "categories": [
+    "code-sandbox"
+   ],
+   "pricing": {
+    "freeTier": "5 credits after phone verification; +25 with card; one-off",
+    "freeTierKind": "credit",
+    "plans": [],
+    "rates": {},
+    "gpu": [
+     {
+      "type": "L4 24 GB",
+      "perHour": 0.79
+     }
+    ]
+   },
+   "features": {},
+   "benchmarks": [],
+   "score": {},
+   "comparablePrice": {},
+   "sources": [
+    {
+     "url": "https://lightning.ai/pricing",
+     "checked": "2026-11-23",
+     "sourceLevel": "vendor"
+    }
+   ],
+   "lastChecked": "2026-11-23",
+   "company": null,
+   "manualFacts": {
+    "cardRequiredForFree": false,
+    "inkling2MiniFit": {
+     "verdict": "gpu_sold",
+     "why": "free-user GPU menu unverified"
+    }
+   }
+  },
+  {
+   "slug": "colab",
+   "name": "Google Colab",
+   "website": "https://colab.research.google.com",
+   "dataOrigin": "manual research",
+   "status": "active",
+   "categories": [
+    "notebook"
+   ],
+   "pricing": {
+    "freeTier": "Free dynamic GPU, no published quota, sessions up to 12 h",
+    "freeTierKind": "recurring",
+    "plans": [],
+    "rates": {},
+    "gpu": []
+   },
+   "features": {},
+   "benchmarks": [],
+   "score": {},
+   "comparablePrice": {},
+   "sources": [
+    {
+     "url": "https://research.google.com/colaboratory/faq.html",
+     "checked": "2026-11-23",
+     "sourceLevel": "vendor"
+    }
+   ],
+   "lastChecked": "2026-11-23",
+   "company": null,
+   "manualFacts": {
+    "cardRequiredForFree": false,
+    "inkling2MiniFit": {
+     "verdict": "too_small",
+     "why": "usually 16 GB by user reports; SSH and web UIs restricted"
+    }
+   }
+  },
+  {
+   "slug": "zerogpu",
+   "name": "Hugging Face ZeroGPU",
+   "website": "https://huggingface.co",
+   "dataOrigin": "manual research",
+   "status": "active",
+   "categories": [
+    "notebook"
+   ],
+   "pricing": {
+    "freeTier": "5 GPU-minutes/day on a free account; hosting needs verified account older than 30 days",
+    "freeTierKind": "recurring",
+    "plans": [],
+    "rates": {},
+    "gpu": []
+   },
+   "features": {},
+   "benchmarks": [],
+   "score": {},
+   "comparablePrice": {},
+   "sources": [
+    {
+     "url": "https://huggingface.co/docs/hub/en/spaces-zerogpu",
+     "checked": "2026-11-23",
+     "sourceLevel": "vendor"
+    }
+   ],
+   "lastChecked": "2026-11-23",
+   "company": null,
+   "manualFacts": {
+    "cardRequiredForFree": null,
+    "inkling2MiniFit": {
+     "verdict": "too_small",
+     "why": "Gradio demos only"
+    }
+   }
+  },
+  {
+   "slug": "paperspace-gradient",
+   "name": "Paperspace Gradient",
+   "website": "https://www.paperspace.com",
+   "dataOrigin": "manual research",
+   "status": "active",
+   "categories": [
+    "notebook"
+   ],
+   "pricing": {
+    "freeTier": "Free M4000 8 GB, 6 h sessions, 5 GB storage",
+    "freeTierKind": "recurring",
+    "plans": [],
+    "rates": {},
+    "gpu": []
+   },
+   "features": {},
+   "benchmarks": [],
+   "score": {},
+   "comparablePrice": {},
+   "sources": [
+    {
+     "url": "https://www.paperspace.com/gradient/pricing",
+     "checked": "2026-11-23",
+     "sourceLevel": "earlier_research"
+    }
+   ],
+   "lastChecked": "2026-11-23",
+   "company": null,
+   "manualFacts": {
+    "cardRequiredForFree": null,
+    "inkling2MiniFit": {
+     "verdict": "too_small",
+     "why": "8 GB GPU"
+    }
+   }
+  },
+  {
+   "slug": "declaw",
+   "name": "Declaw",
+   "website": "https://declaw.ai",
+   "dataOrigin": "manual research",
+   "status": "active",
+   "categories": [
+    "code-sandbox"
+   ],
+   "pricing": {
+    "freeTier": "$300 credit; not reconfirmed (page unreadable)",
+    "freeTierKind": "credit",
+    "plans": [],
+    "rates": {},
+    "gpu": []
+   },
+   "features": {},
+   "benchmarks": [],
+   "score": {},
+   "comparablePrice": {},
+   "sources": [
+    {
+     "url": "https://declaw.ai",
+     "checked": "2026-11-23",
+     "sourceLevel": "earlier_research"
+    }
+   ],
+   "lastChecked": "2026-11-23",
+   "company": null,
+   "manualFacts": {
+    "cardRequiredForFree": null,
+    "inkling2MiniFit": {
+     "verdict": "unknown",
+     "why": "32 GB size unverified"
+    }
+   }
+  },
+  {
+   "slug": "instavm",
+   "name": "InstaVM",
+   "website": "https://instavm.io",
+   "dataOrigin": "manual research",
+   "status": "active",
+   "categories": [
+    "code-sandbox"
+   ],
+   "pricing": {
+    "freeTier": "$50 credit with card on file",
+    "freeTierKind": "credit",
+    "plans": [],
+    "rates": {},
+    "gpu": []
+   },
+   "features": {},
+   "benchmarks": [],
+   "score": {},
+   "comparablePrice": {},
+   "sources": [
+    {
+     "url": "https://instavm.io",
+     "checked": "2026-11-23",
+     "sourceLevel": "vendor"
+    }
+   ],
+   "lastChecked": "2026-11-23",
+   "company": null,
+   "manualFacts": {
+    "cardRequiredForFree": true,
+    "inkling2MiniFit": {
+     "verdict": "unknown",
+     "why": "32 GB size unverified"
+    }
+   }
+  },
+  {
+   "slug": "replicas",
+   "name": "Replicas",
+   "website": "https://replicas.dev",
+   "dataOrigin": "manual research",
+   "status": "active",
+   "categories": [
+    "code-sandbox"
+   ],
+   "pricing": {
+    "freeTier": "$100 free usage, no card",
+    "freeTierKind": "credit",
+    "plans": [],
+    "rates": {},
+    "gpu": []
+   },
+   "features": {},
+   "benchmarks": [],
+   "score": {},
+   "comparablePrice": {},
+   "sources": [
+    {
+     "url": "https://replicas.dev",
+     "checked": "2026-11-23",
+     "sourceLevel": "vendor"
+    }
+   ],
+   "lastChecked": "2026-11-23",
+   "company": null,
+   "manualFacts": {
+    "cardRequiredForFree": false,
+    "inkling2MiniFit": {
+     "verdict": "unknown",
+     "why": "VM specs unverified"
+    }
+   }
+  },
+  {
+   "slug": "runtime",
+   "name": "Runtime",
+   "website": "https://withruntime.com",
+   "dataOrigin": "manual research",
+   "status": "active",
+   "categories": [
+    "code-sandbox"
+   ],
+   "pricing": {
+    "freeTier": "$5 credit",
+    "freeTierKind": "credit",
+    "plans": [],
+    "rates": {},
+    "gpu": []
+   },
+   "features": {},
+   "benchmarks": [],
+   "score": {},
+   "comparablePrice": {},
+   "sources": [
+    {
+     "url": "https://withruntime.com",
+     "checked": "2026-11-23",
+     "sourceLevel": "earlier_research"
+    }
+   ],
+   "lastChecked": "2026-11-23",
+   "company": null,
+   "manualFacts": {
+    "cardRequiredForFree": null,
+    "inkling2MiniFit": {
+     "verdict": "unknown",
+     "why": "specs unverified"
+    }
+   }
+  }
+ ]
+}

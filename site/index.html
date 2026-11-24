@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Agent Sandbox Leaderboard</title>
+<meta name="description" content="Compare agent sandbox providers on cost, free tier, paid plans, capabilities, onboarding and startup. Sourced, dated, with unknowns shown.">
+<link rel="canonical" href="https://tomyang1993.github.io/agent-sandboxes/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/json" href="agent-sandboxes.json">
+<link rel="alternate" type="text/markdown" href="agent-sandboxes.md">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <p class="brand"><a href="./">Agent Sandbox Leaderboard</a></p>
+    <p class="fresh" id="fresh" role="status"></p>
+  </div>
+  <nav class="wrap" id="nav" aria-label="Views"></nav>
+</header>
+<main id="main" class="wrap" tabindex="-1"><p>Loading data…</p>
+<noscript><p>This page needs JavaScript. The same data is in <a href="agent-sandboxes.md">Markdown</a> and <a href="agent-sandboxes.json">JSON</a>.</p></noscript></main>
+<div id="tray" class="tray" hidden></div>
+<footer class="wrap">
+  <p>Provider facts from <a href="https://aisandboxhunt.com">AI Sandbox Hunt</a>, licensed <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. <strong>Changed by us:</strong> we added derived fields, conflict notes, dated corrections and 9 manual rows, removed unsafe links, and computed the scores on this site with our own formula. AI Sandbox Hunt does not endorse this site. Each provider links to its source page.</p>
+  <p>Vendor claims are claims. We tested nothing. No affiliate links and no trackers.</p>
+  <p>For agents: <a href="llms.txt">llms.txt</a> · <a href="agent-sandboxes.json">JSON</a> · <a href="agent-sandboxes.md">Markdown</a> · <a href="https://github.com/TomYang1993/agent-sandboxes">Source code</a> · Related: <a href="https://tomyang1993.github.io/compute-tracker/">Compute tracker</a></p>
+</footer>
+</body>
+</html>
