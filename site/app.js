@@ -39,6 +39,10 @@ function go(patch, replace) {
   render(!replace);
 }
 const link = patch => { const s = state(); for (const [k, v] of Object.entries(patch)) v === null ? s.delete(k) : s.set(k, v); return '?' + s; };
+// Logos are same-origin PNGs. No logo: the first letter.
+const logo = p => p.logo ? h('img', { class: 'logo', src: p.logo, alt: '', width: 32, height: 32, loading: 'lazy' }) : h('span', { class: 'logo', 'aria-hidden': 'true' }, p.name[0].toUpperCase());
+const company = p => p.company && p.company.toLowerCase() === p.name.toLowerCase() ? null : h('span', { class: 'co' }, p.company ? p.company.replace(/ \(.*\)$/, '') : unk('company unknown'));
+const who = p => h('div', { class: 'who' }, logo(p), h('div', {}, provLink(p), company(p)));
 const provLink = p => h('a', { href: link({ view: 'provider', p: p.slug }), 'data-nav': true }, p.name);
 document.addEventListener('click', e => {
   const a = e.target.closest?.('a[data-nav]');
@@ -88,7 +92,7 @@ const openIds = new Set();
 // ---- table ------------------------------------------------------------------
 function nameCell(p) {
   const age = ageDays(p.lastChecked), on = cmpList().includes(p.slug);
-  return [provLink(p),
+  return [who(p),
     h('span', { class: 'cmp' }, 'checked ', p.lastChecked || 'unknown'),
     p.status === 'shutting-down' && badge('Shutting down', 'bad'), p.status !== 'active' && p.status !== 'shutting-down' && badge(p.status, 'warn'),
     age === null ? badge('check date unknown', 'warn') : age > 30 && badge('older than 30 days', 'warn'),
@@ -119,7 +123,7 @@ function table(rows, cols, def, opts = {}) {
       : h('td', { class: (c.num ? 'num ' : '') + (c.txt ? 'txt' : ''), 'data-label': c.label }, h('div', { class: 'cell' }, c.cell ? c.cell(p) : val(c, p) ?? unk())))))
       : h('tr', {}, h('td', { colspan: cols.length }, 'No provider matches these filters.')))))];
 }
-const NAME = { k: 'name', label: 'Provider', get: p => p.name.toLowerCase() };
+const NAME = { k: 'name', label: 'Company / project', get: p => p.name.toLowerCase() };
 const live = p => p.status !== 'shutting-down';
 const head = (t, lead) => [h('h1', {}, t), h('p', { class: 'lead' }, lead)];
 const meter = v => { const ns = 'http://www.w3.org/2000/svg', s = document.createElementNS(ns, 'svg'), r = document.createElementNS(ns, 'rect');
@@ -288,7 +292,7 @@ function vCompare() {
     ['Open source', p => yn(p.openSource)], ['Self-host', p => yn(p.selfHost)], ['Regions', p => p.regions ?? unk()], ['Interfaces', p => p.sdks?.join(', ') ?? unk()],
     ['Onboarding points', p => `${onboarding(p).reduce((a, x) => a + x.earned, 0)} / ${onboarding(p).reduce((a, x) => a + x.points, 0)}`], ['Token efficiency', () => unk('Not measured')],
     ['Inkling 2 Mini', p => [badge(...FIT[e(p).inkling2MiniFit.verdict]), ' ', e(p).inkling2MiniFit.why]], ['Burst start', p => { const b = p.benchmarks.find(x => x.metric === BURST); return b ? `${b.value} ${b.unit} (${SRC[b.source] || b.source}, ${b.date})` : unk('not measured'); }], ['Last checked', p => p.lastChecked]];
-  out.push(h('div', { class: 'scroll', tabindex: '0', role: 'region', 'aria-label': 'Comparison' }, h('table', {}, h('thead', {}, h('tr', {}, h('th', { scope: 'col' }, 'Fact'), ps.map(p => h('th', { scope: 'col' }, provLink(p), p.status === 'shutting-down' && badge('Shutting down', 'bad'), p.manual && badge('manual', 'warn'))))),
+  out.push(h('div', { class: 'scroll', tabindex: '0', role: 'region', 'aria-label': 'Comparison' }, h('table', {}, h('thead', {}, h('tr', {}, h('th', { scope: 'col' }, 'Fact'), ps.map(p => h('th', { scope: 'col' }, who(p), p.status === 'shutting-down' && badge('Shutting down', 'bad'), p.manual && badge('manual', 'warn'))))),
     h('tbody', {}, rowsDef.map(([t, fn]) => h('tr', {}, h('th', { scope: 'row' }, t), ps.map(p => h('td', { class: 'txt' }, fn(p)))))))));
   return out;
 }
@@ -298,8 +302,8 @@ async function vChanges() {
   const show = v => v === null || v === undefined ? 'unknown' : String(v);
   const evs = ev.filter(x => !S.get('p') || x.slug === S.get('p')).reverse();
   return [head('Price changes', `Differences between dated feed snapshots, since ${META.historySince}. A change in the feed is not always a change by the vendor: it can be a correction.`),
-    evs.length ? h('div', { class: 'scroll', tabindex: '0', role: 'region', 'aria-label': 'Changes' }, h('table', {}, h('thead', {}, h('tr', {}, ['Date', 'Provider', 'What', 'Before', 'After'].map(t => h('th', { scope: 'col' }, t)))),
-      h('tbody', {}, evs.slice(0, 500).map(x => h('tr', {}, h('td', {}, x.date), h('td', {}, D.some(p => p.slug === x.slug) ? provLink(x) : x.name), h('td', {}, x.field), h('td', { class: 'txt' }, show(x.from)), h('td', { class: 'txt' }, show(x.to)))))))
+    evs.length ? h('div', { class: 'scroll', tabindex: '0', role: 'region', 'aria-label': 'Changes' }, h('table', {}, h('thead', {}, h('tr', {}, ['Date', 'Company / project', 'What', 'Before', 'After'].map(t => h('th', { scope: 'col' }, t)))),
+      h('tbody', {}, evs.slice(0, 500).map(x => h('tr', {}, h('td', {}, x.date), h('td', {}, D.some(p => p.slug === x.slug) ? who(D.find(p => p.slug === x.slug)) : x.name), h('td', {}, x.field), h('td', { class: 'txt' }, show(x.from)), h('td', { class: 'txt' }, show(x.to)))))))
       : h('p', {}, 'No price change recorded yet. The first snapshot is the starting point.'),
     h('h2', {}, 'Dated snapshots'), h('ul', {}, days.slice().reverse().map(d => h('li', {}, h('a', { href: `data/history/${encodeURIComponent(d)}.json` }, d))))];
 }
@@ -310,7 +314,7 @@ async function vProvider() {
   const p = await get(`data/p/${base.slug}.json`), e = p.effective, r = p.pricing.rates, f = p.features;
   const kv = rows => h('dl', { class: 'kv' }, rows.map(([k, v]) => [h('dt', {}, k), h('dd', {}, v ?? unk())]));
   const list = a => a?.length ? h('ul', {}, a.map(x => h('li', {}, x))) : h('p', {}, unk('none in the data'));
-  return [h('h1', {}, p.name), h('p', { class: 'lead' }, p.summary || p.tagline || 'Manual row: few facts, not refreshed.'),
+  return [h('h1', { class: 'who' }, logo(p), p.name), h('p', { class: 'dim' }, 'Company: ', p.company || unk()), h('p', { class: 'lead' }, p.summary || p.tagline || 'Manual row: few facts, not refreshed.'),
     h('p', {}, ext(p.website, 'Website'), ' · ', p.docsUrl && [ext(p.docsUrl, 'Docs'), ' · '], p.pricingUrl && [ext(p.pricingUrl, 'Pricing'), ' · '], p.page ? ext(p.page, 'Source: AI Sandbox Hunt page') : 'Source: manual research', ' · ', h('a', { href: `data/p/${p.slug}.json` }, 'JSON'), ' · ',
       h('a', { href: link({ view: 'changes' }), 'data-nav': true }, 'Price changes')),
     h('p', {}, p.categories.map(c => badge(catName(c))), badge(`last checked ${p.lastChecked}`, (ageDays(p.lastChecked) ?? 99) > 30 ? 'warn' : ''), p.manual && badge('manual, does not refresh', 'warn')),

@@ -24,6 +24,10 @@ python3 fetch.py && python3 build.py && python3 -m http.server -d _site
 python3 -m unittest discover -s tests && node --test tests/*.test.mjs
 ```
 
+## Logos
+
+`tools/logos.py` (run by hand, needs Pillow and macOS) fetches each vendor's own icon, re-encodes it as PNG and records the source in `data/logos.json`. Logos are trademarks of their owners and are not under CC BY. A provider without one shows its first letter.
+
 ## Limits
 
 - Token efficiency is not measured for anyone.

@@ -1,0 +1,446 @@
+{
+ "aether": {
+  "from": "https://www.runaether.dev/apple-touch-icon.png",
+  "px": 180
+ },
+ "airtop": {
+  "from": "https://www.airtop.ai/favicon.ico",
+  "px": 48
+ },
+ "alibaba-agent-sandbox": {
+  "from": "https://img.alicdn.com/tfs/TB1ugg7M9zqK1RjSZPxXXc4tVXa-32-32.png",
+  "px": 32
+ },
+ "amp": {
+  "from": "https://ampcode.com/app-icon.png?v=4",
+  "px": 512
+ },
+ "anchor-browser": {
+  "from": "https://cdn.prod.website-files.com/68e76a236cc487333075990b/68e76a236cc487333075996a_webclip.png",
+  "px": 256
+ },
+ "anthropic-sandbox-runtime": {
+  "from": "https://github.com/anthropics.png?size=128",
+  "px": 128
+ },
+ "archil": {
+  "from": "https://archil.com/icon.svg?icon.25kgqruito4pb.svg",
+  "px": 128
+ },
+ "aws-agentcore-code-interpreter": {
+  "from": "https://a0.awsstatic.com/libra-css/images/site/touch-icon-iphone-114-smile.png",
+  "px": 114
+ },
+ "aws-lambda-microvms": {
+  "from": "https://a0.awsstatic.com/libra-css/images/site/touch-icon-iphone-114-smile.png",
+  "px": 114
+ },
+ "aws-nitro-sandboxes": {
+  "from": "https://a0.awsstatic.com/libra-css/images/site/touch-icon-iphone-114-smile.png",
+  "px": 114
+ },
+ "azure-dynamic-sessions": {
+  "from": "https://learn.microsoft.com/apple-touch-icon.png",
+  "px": 192
+ },
+ "beam": {
+  "from": "https://www.beam.cloud/apple-touch-icon.png",
+  "px": 180
+ },
+ "bitrise": {
+  "from": "https://cdn.prod.website-files.com/5db35de024bb983af1b4e151/5e6222627b1e83310cd3bc98_favicon_256x256.svg",
+  "px": 128
+ },
+ "bitrise-rde": {
+  "from": "https://cdn.prod.website-files.com/5db35de024bb983af1b4e151/5e6222627b1e83310cd3bc98_favicon_256x256.svg",
+  "px": 128
+ },
+ "blacksmith": {
+  "from": "https://www.blacksmith.sh/apple-icon.png?apple-icon.00ka_9_k1rsty.png",
+  "px": 180
+ },
+ "blaxel": {
+  "from": "https://blaxel.ai/apple-touch-icon.png",
+  "px": 180
+ },
+ "boat": {
+  "from": "https://boat.dev/apple-touch-icon.png",
+  "px": 180
+ },
+ "boxd": {
+  "from": "https://boxd.sh/favicon.svg",
+  "px": 128
+ },
+ "boxes-dev": {
+  "from": "https://boxes.dev/apple-touch-icon-180.png?dpl=gh-45299611335-1",
+  "px": 180
+ },
+ "browser-use": {
+  "from": "https://browser-use.com/apple-touch-icon.png",
+  "px": 180
+ },
+ "browserbase": {
+  "from": "https://www.browserbase.com/favicon.ico",
+  "px": 32
+ },
+ "browserless": {
+  "from": "https://www.browserless.io/favicon.ico",
+  "px": 256
+ },
+ "buildkite": {
+  "from": "https://buildkite.com/_site/favicon.png",
+  "px": 64
+ },
+ "claude-code-web": {
+  "from": "https://claude.ai/apple-touch-icon.png",
+  "px": 180
+ },
+ "cloudflare-dynamic-workers": {
+  "from": "https://developers.cloudflare.com/favicon.ico",
+  "px": 96
+ },
+ "cloudflare-sandbox": {
+  "from": "https://developers.cloudflare.com/favicon.ico",
+  "px": 96
+ },
+ "coder": {
+  "from": "https://coder.com/favicon-180x180-light.png",
+  "px": 180
+ },
+ "codesandbox": {
+  "from": "https://github.com/codesandbox.png?size=128",
+  "px": 128
+ },
+ "colab": {
+  "from": "https://ssl.gstatic.com/colaboratory-static/common/0ea41fd9652063808f30f21b82428eb7/img/favicon.ico",
+  "px": 128
+ },
+ "containarium": {
+  "from": "https://github.com/FootprintAI.png?size=128",
+  "px": 420
+ },
+ "createos": {
+  "from": "https://createos.sh/apple-touch-icon.png",
+  "px": 180
+ },
+ "cubesandbox": {
+  "from": "https://github.com/TencentCloud.png?size=128",
+  "px": 128
+ },
+ "cursor-cloud-agents": {
+  "from": "https://cursor.com/marketing-static/apple-touch-icon-light.png",
+  "px": 180
+ },
+ "daytona": {
+  "from": "https://framerusercontent.com/images/6WPclDLAHHQgPFeA2DRTW1OXVSU.png",
+  "px": 192
+ },
+ "depot": {
+  "from": "https://depot.dev/favicon-light/apple-touch-icon.png",
+  "px": 180
+ },
+ "devin": {
+  "from": "https://devin.ai/favicon.ico",
+  "px": 48
+ },
+ "digitalocean-harness-runtime": {
+  "from": "https://docs.digitalocean.com/apple-touch-icon.png",
+  "px": 180
+ },
+ "docker-sandboxes": {
+  "from": "https://docs.docker.com/apple-touch-icon.png?v=2",
+  "px": 180
+ },
+ "e2b": {
+  "from": "https://e2b.dev/apple-icon.png?apple-icon.2h_70q4cu8mj-.png",
+  "px": 512
+ },
+ "e2b-runtime": {
+  "from": "https://github.com/e2b-dev.png?size=128",
+  "px": 128
+ },
+ "exe-dev": {
+  "from": "https://exe.dev/apple-touch-icon.png",
+  "px": 180
+ },
+ "factory": {
+  "from": "https://factory.com/favicon.ico",
+  "px": 48
+ },
+ "firecracker": {
+  "from": "https://github.com/firecracker-microvm.png?size=128",
+  "px": 128
+ },
+ "fly-sprites": {
+  "from": "https://fly.io/phx/ui/images/favicon/apple-touch-icon-3e4c9ce127b5cd6f5516638d4bbf1dd5.png?vsn=d",
+  "px": 180
+ },
+ "freestyle": {
+  "from": "https://www.freestyle.sh/favicon.png",
+  "px": 355
+ },
+ "github-actions-runners": {
+  "from": "https://github.com/fluidicon.png",
+  "px": 512
+ },
+ "github-codespaces": {
+  "from": "https://github.com/fluidicon.png",
+  "px": 512
+ },
+ "github-copilot-coding-agent": {
+  "from": "https://github.com/fluidicon.png",
+  "px": 512
+ },
+ "google-cloud-workstations": {
+  "from": "https://www.gstatic.com/cgc/super_cloud_gradient.png",
+  "px": 192
+ },
+ "gvisor": {
+  "from": "https://github.com/google.png?size=128",
+  "px": 128
+ },
+ "hopx": {
+  "from": "https://www.bunnyshell.com/icons/icon-72x72.png?v=501ab13a45b1ae267db9024a1516d977",
+  "px": 72
+ },
+ "hyperbrowser": {
+  "from": "https://www.hyperbrowser.ai/favicon.ico",
+  "px": 48
+ },
+ "instabox": {
+  "from": "https://instabox.sh/assets/b1977a3af2375970/favicon.svg",
+  "px": 128
+ },
+ "instavm": {
+  "from": "https://instavm.io/apple-touch-icon.png",
+  "px": 180
+ },
+ "islo": {
+  "from": "https://islo.dev/apple-touch-icon.png?v=2025-11-17b",
+  "px": 180
+ },
+ "isorun": {
+  "from": "https://isorun.ai/favicon.svg",
+  "px": 128
+ },
+ "judge0": {
+  "from": "https://judge0.com/assets/icons/apple-touch-icon.png",
+  "px": 180
+ },
+ "kaggle": {
+  "from": "https://www.kaggle.com/static/images/favicon-new.ico",
+  "px": 48
+ },
+ "kata-containers": {
+  "from": "https://katacontainers.io/img/apple-touch-icon.png",
+  "px": 180
+ },
+ "kernel": {
+  "from": "https://www.kernel.sh/apple-touch-icon.png",
+  "px": 180
+ },
+ "kortix": {
+  "from": "https://kortix.com/apple-touch-icon.png",
+  "px": 180
+ },
+ "kosa8": {
+  "from": "https://kosa8.com/apple-touch-icon.png",
+  "px": 180
+ },
+ "koyeb-sandboxes": {
+  "from": "https://www.koyeb.com/favicon/apple-touch-icon.png",
+  "px": 180
+ },
+ "kubernetes-agent-sandbox": {
+  "from": "https://agent-sandbox.sigs.k8s.io/favicons/apple-touch-icon-180x180.png",
+  "px": 180
+ },
+ "langsmith-sandboxes": {
+  "from": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a17e4f0c916c644f4de1cd_webclip%20lg.png",
+  "px": 256
+ },
+ "lightning": {
+  "from": "https://lightning.ai/favicon/favicon.ico",
+  "px": 48
+ },
+ "lightpanda": {
+  "from": "https://cdn.lightpanda.io/website/assets/images/favicon/apple-icon-72x72.png",
+  "px": 72
+ },
+ "lizard": {
+  "from": "https://lizard.build/favicon.ico",
+  "px": 32
+ },
+ "maritime": {
+  "from": "https://maritime.sh/apple-touch-icon.png",
+  "px": 180
+ },
+ "microsandbox": {
+  "from": "https://github.com/superradcompany.png?size=128",
+  "px": 128
+ },
+ "microsoft-nvx": {
+  "from": "https://github.com/microsoft.png?size=128",
+  "px": 128
+ },
+ "miosa": {
+  "from": "https://miosa.ai/apple-touch-icon.png",
+  "px": 180
+ },
+ "modal": {
+  "from": "https://modal.com/assets/favicon.ico",
+  "px": 48
+ },
+ "morph": {
+  "from": "https://cloud.morph.so/web/icons/apple-touch-icon.png",
+  "px": 180
+ },
+ "mosaic-sandbox": {
+  "from": "https://sandbox.mosaicos.com/favicon.ico",
+  "px": 48
+ },
+ "namespace": {
+  "from": "https://namespace.so/favicon.svg",
+  "px": 128
+ },
+ "northflank": {
+  "from": "https://northflank.com/favicon.ico",
+  "px": 128
+ },
+ "novita-sandbox": {
+  "from": "https://novita.ai/favicon-dark.ico",
+  "px": 256
+ },
+ "nvidia-openshell": {
+  "from": "https://github.com/NVIDIA.png?size=128",
+  "px": 128
+ },
+ "okteto": {
+  "from": "https://www.okteto.com/apple-touch-icon.png",
+  "px": 180
+ },
+ "openai-codex": {
+  "from": "https://developers.openai.com/favicon.png",
+  "px": 48
+ },
+ "opencomputer": {
+  "from": "https://opencomputer.dev/favicon.ico",
+  "px": 32
+ },
+ "orgo": {
+  "from": "https://www.orgo.ai/apple-icon.png?e93769d711d571f3",
+  "px": 180
+ },
+ "paperspace-gradient": {
+  "from": "https://cdn.prod.website-files.com/5db99670374d1d829291af4f/66e9b9e0cd2da80a84ae9ba7_DO_Bug_Black_Circle_256_256.webp",
+  "px": 256
+ },
+ "podflare": {
+  "from": "https://podflare.ai/favicon.png",
+  "px": 512
+ },
+ "promigence": {
+  "from": "https://www.promigence.ai/apple-touch-icon.png",
+  "px": 180
+ },
+ "railway-sandboxes": {
+  "from": "https://railway.com/apple-touch-icon.png",
+  "px": 180
+ },
+ "render": {
+  "from": "https://github.com/renderinc.png?size=128",
+  "px": 128
+ },
+ "replicas": {
+  "from": "https://replicas.dev/apple-touch-icon.png",
+  "px": 1024
+ },
+ "replit": {
+  "from": "https://replit.com/public/icons/favicon-prompt-192-rebrand.png",
+  "px": 192
+ },
+ "riza": {
+  "from": "https://riza.io/favicon.ico",
+  "px": 32
+ },
+ "runloop": {
+  "from": "https://cdn.prod.website-files.com/68f6566c0817e720021136f4/6900ce80a12232928ce2040c_Webclip.png",
+  "px": 256
+ },
+ "runs-on": {
+  "from": "https://runs-on.com/apple-touch-icon.png",
+  "px": 180
+ },
+ "runtime": {
+  "from": "https://withruntime.com/favicon.ico",
+  "px": 48
+ },
+ "sailboxes": {
+  "from": "https://www.sailresearch.com/favicon.ico?favicon.3hei879b_calg.ico",
+  "px": 32
+ },
+ "sandbase": {
+  "from": "https://www.sandbase.ai/favicon.ico",
+  "px": 32
+ },
+ "sandbox0": {
+  "from": "https://sandbox0.ai/favicon.ico",
+  "px": 128
+ },
+ "simular-box": {
+  "from": "https://box.simular.ai/apple-touch-icon.png",
+  "px": 180
+ },
+ "solo-agent-substrate": {
+  "from": "https://cdn.prod.website-files.com/66dba20a96c0aa281999f399/6a9023539159a42c22fd11e5_Webclip-1.png",
+  "px": 180
+ },
+ "steel": {
+  "from": "https://steel.dev/favicons/website-180.png",
+  "px": 180
+ },
+ "superserve": {
+  "from": "https://github.com/superserve-ai.png?size=128",
+  "px": 128
+ },
+ "tembo": {
+  "from": "https://www.tembo.io/apple-touch-icon.png",
+  "px": 180
+ },
+ "tenki": {
+  "from": "https://luxor.ai/apple-icon.png?apple-icon.0qv68m37vxkiy.png",
+  "px": 180
+ },
+ "tensorlake": {
+  "from": "https://www.tensorlake.ai/apple-icon.png?apple-icon.0n0jwj0cto3ha.png",
+  "px": 180
+ },
+ "thunder-compute": {
+  "from": "https://www.thundercompute.com/apple-icon.png",
+  "px": 180
+ },
+ "ubicloud": {
+  "from": "https://cdn.prod.website-files.com/64f9d9b4e737e7b37d4e39a4/64fe41a59732cbbaa5762828_Webclip.png",
+  "px": 256
+ },
+ "upstash-box": {
+  "from": "https://upstash.com/docs/_favicons/apple-touch-icon.png",
+  "px": 180
+ },
+ "vercel-sandbox": {
+  "from": "https://assets.vercel.com/image/upload/q_auto/front/favicon/vercel/apple-touch-icon-72x72.png",
+  "px": 72
+ },
+ "warpbuild": {
+  "from": "https://www.warpbuild.com/favicons/apple-touch-icon.png?v=2",
+  "px": 180
+ },
+ "workpaper": {
+  "from": "https://workpaper.co/apple-touch-icon.png",
+  "px": 180
+ },
+ "zerogpu": {
+  "from": "https://huggingface.co/favicon.ico",
+  "px": 256
+ }
+}

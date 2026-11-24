@@ -69,7 +69,9 @@ def make(feed, overlay):
                  effective={"freeTier": text, "freeKind": d["freeKind"], "cardRequiredForFree": d["cardRequiredForFree"],
                             "freeRisk": d["freeRisk"], "inkling2MiniFit": d["inkling2MiniFit"]})
         out.append(p)
+    logos = json.loads((ROOT / "data/logos.json").read_text())
     for p in out:
+        p["logo"] = f"logos/{p['slug']}.png" if p["slug"] in logos and (ROOT / f"site/logos/{p['slug']}.png").exists() else None
         p["tokenEfficiency"] = {"value": None, "status": "not_measured"}
     out.sort(key=lambda p: p["name"].lower())
     return out, warn
@@ -90,7 +92,7 @@ def markdown(ps, meta):
     for p in ps:
         P, e, r, f = p["pricing"], p["effective"], p["pricing"]["rates"], p["features"]
         src = p.get("page") or (p.get("sources") or [{}])[0].get("url")
-        L += [f"## {md(p['name'])} ({p['slug']})",
+        L += [f"## {md(p['name'])} ({p['slug']})", f"- Company: {md(p.get('company'))}",
               f"- Website: {p['website']} | Source: {src} | Checked: {p['lastChecked']} | Status: {md(p['status'])} | Categories: {md(', '.join(p['categories']))} | Origin: {'manual, does not refresh' if p['manual'] else 'feed'}",
               f"- Free: {md(e['freeTier'])} | kind={e['freeKind']} | card required={mdjson(e['cardRequiredForFree'])} | risk={e['freeRisk'] or 'unknown'}"]
         if "freeTier" in p["override"]:
@@ -134,7 +136,8 @@ def main(out=ROOT / "_site", data=ROOT / "data"):
     meta = {"title": "Agent sandbox provider dataset", "lastGoodFetch": status["lastGoodFetch"], "feedUpdated": feed["updated"],
             "liveFeed": fetch.FEED, "license": feed["license"], "attribution": CREDIT, "categories": clean_urls(feed["categories"]),
             "nothingTested": True, "reviewNeeded": warn, "historySince": min((x.stem for x in (data / "history").glob("*.json")), default=None),
-            "fieldNotes": {"override": "our dated manual correction; shown with the source value. A key holding null means unknown",
+            "fieldNotes": {"logo": "the vendor's own icon; trademark of its owner, not CC BY; where it came from is in data/logos.json. null means none found",
+                           "override": "our dated manual correction; shown with the source value. A key holding null means unknown",
                            "effective": "value used on the site: override if the key is present, else derived or source value",
                            "derived": "computed by derive.py; null means unknown, never zero or no",
                            "review": "the feed changed a field after our correction was written",

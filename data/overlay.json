@@ -232,7 +232,7 @@
     }
    ],
    "lastChecked": "2026-11-23",
-   "company": null,
+   "company": "Google",
    "manualFacts": {
     "cardRequiredForFree": false,
     "inkling2MiniFit": {
@@ -274,7 +274,7 @@
     }
    ],
    "lastChecked": "2026-11-23",
-   "company": null,
+   "company": "Lightning AI",
    "manualFacts": {
     "cardRequiredForFree": false,
     "inkling2MiniFit": {
@@ -311,7 +311,7 @@
     }
    ],
    "lastChecked": "2026-11-23",
-   "company": null,
+   "company": "Google",
    "manualFacts": {
     "cardRequiredForFree": false,
     "inkling2MiniFit": {
@@ -348,7 +348,7 @@
     }
    ],
    "lastChecked": "2026-11-23",
-   "company": null,
+   "company": "Hugging Face",
    "manualFacts": {
     "cardRequiredForFree": null,
     "inkling2MiniFit": {
@@ -385,7 +385,7 @@
     }
    ],
    "lastChecked": "2026-11-23",
-   "company": null,
+   "company": "DigitalOcean",
    "manualFacts": {
     "cardRequiredForFree": null,
     "inkling2MiniFit": {

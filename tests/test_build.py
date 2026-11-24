@@ -70,6 +70,15 @@ class Site(unittest.TestCase):
             self.assertIn("creativecommons.org/licenses/by/4.0", html); self.assertIn("aisandboxhunt.com", html); self.assertIn("compute-tracker", html)
             self.assertIn("CC BY 4.0", (out / "llms.txt").read_text())
 
+class Logos(unittest.TestCase):
+    def test_logos_are_small_local_pngs(self):
+        for s, v in json.loads((ROOT / "data/logos.json").read_text()).items():
+            b = (ROOT / f"site/logos/{s}.png").read_bytes()
+            self.assertEqual(b[:8], b"\x89PNG\r\n\x1a\n", s); self.assertLess(len(b), 30000, s); self.assertTrue(build.safe_url(v["from"]) or v["from"].startswith("data:image/"), s)
+    def test_no_logo_is_null(self):
+        f = copy.deepcopy(FEED); f["providers"][0]["slug"] = "brand-new"
+        self.assertIsNone(one(build.make(f, EMPTY)[0], "brand-new")["logo"])
+
 class Derive(unittest.TestCase):
     def card(self, t, k="credit"): return derive.card_required(t, k)
     def test_card(self):
