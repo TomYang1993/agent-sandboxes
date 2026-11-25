@@ -2,7 +2,7 @@
  "source": "AI Sandbox Hunt",
  "url": "https://aisandboxhunt.com",
  "license": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit AI Sandbox Hunt with a link to the page the data comes from.",
- "updated": "2026-11-24",
+ "updated": "2026-11-25",
  "method": "https://aisandboxhunt.com/methodology",
  "methodVersion": "1.3 (2026-11-14)",
  "categories": [
@@ -2236,14 +2236,14 @@
     "dev-box"
    ],
    "tagline": "Container sandboxes with optional GPUs, plus persistent VMs, billed per vCPU and GiB with three CPU price tiers.",
-   "summary": "Beam sandboxes are disposable containers for agent code, controlled from Python or TypeScript SDKs, with process, filesystem, networking and snapshot APIs; a sandbox can also run in a microVM, and GPUs can be attached. CPU and memory bill by the millisecond while a sandbox runs, at $0.05 per vCPU-hour and $0.01 per GiB-hour on the default Performance tier, with cheaper Shared and Spot tiers. Beam also sells persistent Linux VMs for agents at the same rates, GPU machines and serverless endpoints. Plans start at $20 a month with $20 of credit, and the engine behind Beam is open source (Beta9) and can be self-hosted.",
+   "summary": "Beam sandboxes are disposable containers for agent code, controlled from Python or TypeScript SDKs, with process, filesystem, networking and snapshot APIs; a sandbox can also run in a microVM, and GPUs can be attached. CPU and memory bill by the millisecond while a sandbox runs, at $0.05 per vCPU-hour and $0.01 per GiB-hour on the default Performance tier, with cheaper Shared and Spot tiers. Beam also sells persistent Linux VMs for agents at the same rates, GPU machines and serverless endpoints. Plans start at $20 a month with $20 of credit. Beam's open-source engine, Beta9, is no longer public on GitHub; Beam offers a self-hosted product that runs in your own environment.",
    "isolation": "Isolated container by default; a sandbox can run in a microVM with its own kernel (use_vm=True). Persistent VMs are microVMs.",
    "isolationKind": "container",
-   "openSource": true,
+   "openSource": false,
    "selfHost": true,
-   "license": "AGPL-3.0",
-   "repoUrl": "https://github.com/beam-cloud/beta9",
-   "lastRelease": "2026-11-12",
+   "license": null,
+   "repoUrl": null,
+   "lastRelease": null,
    "sdks": [
     "Python",
     "JavaScript/TypeScript",
@@ -2315,13 +2315,14 @@
      "Persistent VMs bill at the same CPU-tier rates per second while running and can pause with memory intact; the smallest is 1 vCPU / 1 GiB with a 50 GiB disk at $0.06/hour. Sandboxes themselves have a TTL rather than pause/resume; state carries over through snapshots.",
      "Sandbox defaults: 1 CPU, 128 MiB memory, 600-second lifetime; keep_warm_seconds=-1 keeps one until it is terminated. VM-backed sandboxes need at least 1 vCPU / 1 GiB.",
      "Outbound access can be restricted by hostname, IP or CIDR.",
+     "Beam's engine was published as open source (Beta9, AGPL-3.0) at github.com/beam-cloud/beta9. On 25 November 2026 that address returns page not found, and Beta9 is not among the public repositories of Beam's GitHub organization; no new home is given, so we no longer list Beam as open source. Beam's pricing page describes a self-hosted product that runs entirely in your own environment; its price is not published.",
      "Bring your own cloud: $0.019 per vCPU-hour and $0.009 per GB-hour management fee, with compute billed by your cloud provider. Volume discounts above $10K a month."
     ]
    },
    "bestFor": [
     "Agent sandboxes that sometimes need a GPU attached",
     "Cost-sensitive batch work that can use the Spot or Shared CPU tiers",
-    "Teams that may later self-host the open-source engine"
+    "Teams that may later run Beam in their own cloud account or environment"
    ],
    "watchOut": [
     "Sandboxes default to containers; microVM isolation must be requested",
@@ -2333,80 +2334,85 @@
     {
      "url": "https://www.beam.cloud/pricing",
      "quote": "$0.05 /hr · per vCPU",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.beam.cloud/pricing",
      "quote": "$0.01 /hr · per GiB",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.beam.cloud/pricing.md",
      "quote": "| shared | $0.011 | $0.0055 |",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.beam.cloud/pricing.md",
      "quote": "| spot | $0.0063 | $0.00135 |",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.beam.cloud/pricing",
      "quote": "Pay by the millisecond, only when the sandbox is running.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.beam.cloud/pricing",
      "quote": "Sandboxes and serverless apps run in isolated containers, and a sandbox can run in a microVM with use_vm=True.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.beam.cloud/pricing.md",
      "quote": "| RTX 4090 PCIE | 24 GB | $0.69 | $0.000192 | Start instantly |",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.beam.cloud/pricing.md",
      "quote": "| RTX 5090 PCIE | 32 GB | $1.09 | $0.000303 |",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.beam.cloud/pricing.md",
      "quote": "Prices follow the market: each is for one GPU on the cheapest machine in stock now, an on-demand one or, failing that, a spot one.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.beam.cloud/pricing.md",
      "quote": "| CPU | per vCPU | Attached to a GPU (same on every tier) | $0.18972 | $0.0000527 |",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.beam.cloud/pricing",
      "quote": "$20/month $20 in credits each month",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.beam.cloud/pricing",
      "quote": "Storage is not billed yet. Planned pricing is based on data stored, with no free allowance.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.beam.cloud/v2/sandbox/overview",
      "quote": "The Python sandbox defaults to 1 CPU, 128 MiB of memory, Python 3.11, and a 600-second lifetime.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.beam.cloud/v2/sandbox/overview",
      "quote": "Use it to run untrusted or agent-generated code, fan out work from a snapshot, or attach a GPU to a short-lived task.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-25"
     },
     {
-     "url": "https://github.com/beam-cloud/beta9",
-     "quote": "You can self-host Beta9 for free or choose managed cloud hosting through Beam.",
-     "checked": "2026-11-23"
+     "url": "https://www.beam.cloud/pricing.md",
+     "quote": "We also offer a self-hosted product that runs entirely in your own environment, so no data leaves your VPC.",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://github.com/beam-cloud",
+     "quote": "AI Infrastructure for Developers",
+     "checked": "2026-11-25"
     }
    ],
-   "lastChecked": "2026-11-23",
+   "lastChecked": "2026-11-25",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/beam",
@@ -3210,7 +3216,7 @@
     "snapshots": true,
     "gpu": false,
     "customImages": null,
-    "networkControls": false,
+    "networkControls": true,
     "maxSessionHours": null,
     "maxVcpu": 16,
     "maxMemoryGib": 32
@@ -3278,7 +3284,7 @@
      "Network egress is not billed. Disk is included in each size; there is no per-GB storage rate.",
      "Stop keeps the disk only; boat keeps the machine for 10 minutes (not billed), and a resume in that window usually keeps memory and processes. A stopped sandbox's disk is kept for at least 14 days, after which retention cleanup can delete it once enabled (currently report-only). Saved snapshots have no scheduled expiry.",
      "Auto-stop defaults to 1 hour after create or resume; it can be set up to 30 days or turned off on a paid plan.",
-     "boat has no API setting for network rules; outbound traffic is open and can be limited only with firewall rules inside the sandbox, which the root user can remove.",
+     "Network policy can be set per sandbox or for every sandbox of an environment, from the CLI, the API or the dashboard. Outbound is open by default and can be set to block everything or to allow a list of at most 100 domains and IP ranges; inbound can be limited so that only boat connects (SSH then stops). boat enforces the policy on the host, outside the sandbox, so root inside cannot remove it. Only admin keys can change a policy. Firewall rules inside the sandbox also work, but root can remove them.",
      "Pages differ on networking: the homepage says sandboxes have a public IPv6 address and outbound IPv4, while the docs index says each has a public IPv4; the limits text says some sandboxes have no IPv4 address of their own.",
      "Custom base images are not described; saved snapshots of a prepared sandbox are used as templates instead."
     ]
@@ -3292,91 +3298,112 @@
     "A $20 monthly plan is the minimum; the trial needs a card.",
     "No US or Asia region and no GPU on any size.",
     "Stopping keeps only the disk; memory and running processes are lost after about 10 minutes.",
-    "Starts above the plan's daily allowance cost extra and can fail; nothing is queued."
+    "Starts above the plan's daily allowance cost extra and can fail; nothing is queued.",
+    "Sandboxes are open to the internet in both directions until a network policy is set."
    ],
    "sources": [
     {
      "url": "https://docs.boat.dev/llms.txt",
      "quote": "`small`: 2 vCPU, 4 GB RAM, 51 GB disk, $0.018/h",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/llms.txt",
      "quote": "`xlarge`: 16 vCPU, 32 GB RAM, 251 GB disk, $0.20/h. Needs the $100 plan or higher.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/pricing",
      "quote": "One `default` sandbox that runs a full month (730 h) costs $26.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/pricing",
      "quote": "You pay per second, only while a sandbox runs. A stopped sandbox costs no machine time.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/pricing",
      "quote": "A plan is a monthly price that your card pays. It is not a fee. Every dollar comes back as VM time at the rates above.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/pricing",
      "quote": "$0.056 per snapshot per day ($1.68 for 30 days)",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/pricing",
      "quote": "Network traffic. boat does not bill egress.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/free-trial",
      "quote": "Your first plan starts with a free 7-day trial. Checkout asks for a card. There is no free tier without a card.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/limits",
      "quote": "Auto-stop | Default 1 hour. Maximum 30 days, or off. Trial: 2 hours maximum.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/security",
      "quote": "Each sandbox is its own virtual machine, with its own kernel, disk and IP address.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/security",
-     "quote": "boat has no API setting for network rules.",
-     "checked": "2026-11-14"
+     "quote": "boat enforces a network policy outside the sandbox. Root inside cannot remove it.",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://docs.boat.dev/network-policy/outbound.md",
+     "quote": "| `allow` | Only the entries that you list, at most 100 |",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://docs.boat.dev/llms.txt",
+     "quote": "`PUT /sandboxes/{sandboxId}/network`. CLI: `boat network set`",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://docs.boat.dev/network-policy.md",
+     "quote": "Without a policy, a sandbox is open in both directions.",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://docs.boat.dev/network-policy.md",
+     "quote": "A key needs the `network.write` action to change a policy. Only the `admin` preset holds it.",
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/llms.txt",
      "quote": "boat keeps the machine 10 minutes (not billed): a resume in that window usually gets the same machine with memory and processes alive.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://boat.dev",
      "quote": "Sandboxes run on machines in Germany, Finland and France. There is no US or Asia region.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/llms.txt",
      "quote": "$20/month: 100 sandboxes at once, starts 12/min, 60/h, 200/day",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/llms.txt",
      "quote": "$2000/month: 2,000 at once, starts 90/min, 600/h, 2,400/day",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.boat.dev/llms.txt",
      "quote": "Free trial: 7 days, card required. Until the first payment: 25 h of compute in total, 2 sandboxes at once",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     }
    ],
-   "lastChecked": "2026-11-14",
+   "lastChecked": "2026-11-25",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/boat",
@@ -7431,7 +7458,7 @@
       "name": "Personal",
       "monthlyFee": 15,
       "includedUsageUsd": 0,
-      "limits": "One pool of 2 vCPU / 4 GiB for $15 a month (4 vCPU / 8 GiB $35, 8 vCPU / 16 GiB $75, 16 vCPU / 32 GiB $155). 50 VMs, 100 GiB of filesystem usage, 200 GiB of network bandwidth. Standalone VMs are metered on top.",
+      "limits": "One pool of 2 vCPU / 4 GiB for $15 a month (4 vCPU / 8 GiB $35, 8 vCPU / 16 GiB $75, 16 vCPU / 32 GiB $155, 32 vCPU / 64 GiB $315). 50 VMs, 100 GiB of filesystem usage, 200 GiB of network bandwidth. Standalone VMs are metered on top.",
       "includedVcpuHours": 0,
       "includedGibHours": 0,
       "capped": false
@@ -7453,7 +7480,7 @@
      "Pool pricing is the usual way to use exe.dev: a Personal 2 vCPU / 4 GiB pool at $15 a month works out to $15 / 730 = about $0.0205 per hour, shared by every VM in the pool. Pool prices are not linear in size.",
      "Pool and plan allowances are reserved capacity, not hour or dollar credits; the Work plan's included 2 vCPU + 4 GiB is applied to whatever runs at the same time.",
      "Additional disk is $0.08 per GiB-month and additional bandwidth $0.05 per GiB.",
-     "Standalone VMs go up to 16 vCPU / 32 GiB on Personal and 32 vCPU / 64 GiB on Work, with up to 2 GiB of memory per vCPU; Work pools above 32 vCPU (up to 512) need approval.",
+     "Pools go up to 32 vCPU / 64 GiB on Personal; on Work, sizes up to 32 vCPU take effect at once and larger pools (up to 512 vCPU / 1,024 GiB) need approval. Standalone VMs go up to 32 vCPU / 64 GiB on both plans (on Personal, up to the plan's vCPUs), with up to 2 GiB of memory per vCPU.",
      "Pausing a standalone VM keeps its disk; whether memory is kept is not stated."
     ]
    },
@@ -7472,55 +7499,75 @@
     {
      "url": "https://exe.dev/docs/standalone-vms.md",
      "quote": "A standalone VM's reserved capacity is metered at $0.105 per 2 vCPU / 4 GiB unit-hour, the same rate as pool capacity.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://exe.dev/docs/standalone-vms.md",
      "quote": "Time is measured by the second, with no minimum charge and no rounding up to the hour.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://exe.dev/docs/standalone-vms.md",
      "quote": "stops a standalone VM, and its vCPU and memory are not billed ... A paused VM keeps its disk, and it still counts toward your VM limits.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://exe.dev/pricing",
-     "quote": "2 vCPUs, 4 GiB memory, $15 a month 4 vCPUs, 8 GiB memory, $35 a month 8 vCPUs, 16 GiB memory, $75 a month 16 vCPUs, 32 GiB memory, $155 a month",
-     "checked": "2026-11-24"
+     "quote": "2 vCPUs, 4 GiB memory, $15 a month 4 vCPUs, 8 GiB memory, $35 a month 8 vCPUs, 16 GiB memory, $75 a month 16 vCPUs, 32 GiB memory, $155 a month 32 vCPUs, 64 GiB memory, $315 a month",
+     "checked": "2026-11-25"
     },
     {
      "url": "https://exe.dev/pricing",
      "quote": "Try free for 7 days",
-     "checked": "2026-11-24"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://exe.dev/pricing/compare",
-     "quote": "Max size |16 vCPUs / 32 GiB memory |32 vCPUs / 64 GiB memory |Custom",
-     "checked": "2026-11-24"
+     "quote": "Max size |32 vCPUs / 64 GiB memory |32 vCPUs / 64 GiB memory |Custom",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://exe.dev/pricing/compare",
+     "quote": "Memory per pool |Up to 64 GiB |Up to 1,024 GiB |Custom",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://exe.dev/docs/pools.md",
+     "quote": "Personal has one pool: your account's capacity, from 2 to 32 vCPU",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://exe.dev/docs/pools.md",
+     "quote": "Pool sizes up to 32 vCPU take effect immediately. Larger sizes, up to 512 vCPU, need approval from exe.dev support",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://exe.dev/docs/standalone-vms.md",
+     "quote": "On Personal, Individual, and Team, it can be as large as your plan's vCPUs.",
+     "checked": "2026-11-25"
     },
     {
      "url": "https://exe.dev/pricing/compare",
      "quote": "Additional disk |$0.08 / GiB / month |$0.08 / GiB / month |Custom",
-     "checked": "2026-11-24"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://exe.dev/pricing/compare",
      "quote": "KVM-isolated VMs |Included |Included |Included",
-     "checked": "2026-11-24"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://exe.dev/docs/pools.md",
      "quote": "Work starts at $75/month and includes 2 vCPUs + 4 GiB of capacity, counted across all of the team's pools and standalone VMs together.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://exe.dev/docs/regions.md",
      "quote": "The PDX region is not accepting new accounts; SJC is the nearest substitute.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-25"
     }
    ],
-   "lastChecked": "2026-11-24",
+   "lastChecked": "2026-11-25",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/exe-dev",
@@ -14700,7 +14747,7 @@
     },
     "coding-agent": {
      "total": 35,
-     "rank": 12,
+     "rank": 11,
      "of": 12
     }
    },
@@ -15702,7 +15749,7 @@
     "coding-agent"
    ],
    "tagline": "Browser-based workspace where Replit Agent builds, runs and publishes apps; the machine is included in a plan.",
-   "summary": "Replit is a browser-based development platform built around Replit Agent, which builds apps from prompts in a hosted cloud workspace and publishes them with databases and storage. The development machine is not priced on its own: plans include agent usage and monthly credits, and publishing, databases and storage are billed from those credits. Core costs $20 a month with $20 of credit for more powerful models; Pro starts at $100 a month with $100 of credits and up to 15 collaborators. The free Starter plan gives daily credits for Replit AI and one published app.",
+   "summary": "Replit is a browser-based development platform built around Replit Agent, which builds apps from prompts in a hosted cloud workspace and publishes them with databases and storage. The development machine is not priced on its own: plans include agent usage and monthly credits, and publishing, databases and storage are billed from those credits. Core costs $20 a month with $20 of credit for more powerful models; Pro starts at $100 a month with $100 of credits and up to 15 collaborators. The free Starter plan is closed to new sign-ups since November 2026; new users can instead try Core free for 3 days, if eligible.",
    "isolation": "Not stated",
    "isolationKind": "unknown",
    "openSource": false,
@@ -15745,7 +15792,7 @@
       "name": "Starter",
       "monthlyFee": 0,
       "includedUsageUsd": 0,
-      "limits": "Daily credits for Replit AI up to a monthly cap, monthly credits for databases, storage and publishing, Lite build only, 1 published app that goes down after 30 days.",
+      "limits": "Closed to new sign-ups since November 2026. Existing Starter users keep a limited Free Mode allowance for Replit AI, monthly credits for databases, storage and publishing, Lite build only, and 1 published app that goes down after 30 days.",
       "includedVcpuHours": 0,
       "includedGibHours": 0,
       "capped": true
@@ -15754,7 +15801,7 @@
       "name": "Core",
       "monthlyFee": 20,
       "includedUsageUsd": 20,
-      "limits": "$20 a month ($18 billed yearly). Up to 30 hours of chat and 60 projects on Free Mode, $20 toward more powerful models, unlimited published apps, up to 5 collaborators, 1 active background task. Pay-as-you-go beyond credits.",
+      "limits": "$20 a month ($18 billed yearly). Up to 30 hours of chat and 60 projects on Free Mode, $20 toward more powerful models, unlimited published apps, up to 5 collaborators, 1 active background task. Pay-as-you-go beyond credits. Eligible new users can try it free for 3 days.",
       "includedVcpuHours": 0,
       "includedGibHours": 0,
       "capped": false
@@ -15769,8 +15816,8 @@
       "capped": false
      }
     ],
-    "freeTierKind": "recurring",
-    "freeTier": "Starter plan: free daily credits for Replit AI up to a monthly cap and monthly credits for cloud usage, with one published app.",
+    "freeTierKind": "credit",
+    "freeTier": "A 3-day free trial of Core after sign-up, for eligible new users; who is eligible and whether a card is needed are not stated. The free Starter plan no longer takes new users; those already on it keep a limited free allowance for Replit AI, monthly cloud credits and one published app.",
     "notes": [
      "Replit does not sell its development machine by the hour; there is no compute rate to compare. Plans bundle agent use, credits and the workspace.",
      "Pro yearly tiers listed: $90, $215, $425, $825 and $2,000 a month.",
@@ -15787,68 +15834,74 @@
     "No raw machine to rent; workspace resources are not published",
     "Spending is driven by agent credits, which can run out quickly on heavy use",
     "Not an API sandbox for running your own agents",
-    "Free published apps go down after 30 days"
+    "No free plan for new users, only a 3-day Core trial",
+    "Free published apps on the old Starter plan go down after 30 days"
    ],
    "sources": [
     {
      "url": "https://replit.com/pricing",
      "quote": "$20 towards more powerful models",
-     "checked": "2026-11-18"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://replit.com/pricing",
      "quote": "Up to 30 hours of chat on Free Mode",
-     "checked": "2026-11-18"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://replit.com/pricing",
      "quote": "$100 towards most powerful models",
-     "checked": "2026-11-18"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://replit.com/pricing",
      "quote": "$90 / month $215 / month $425 / month $825 / month $2,000 / month",
-     "checked": "2026-11-18"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.replit.com/billing/plans/replit-core",
      "quote": "| Active background tasks | 0 | 1 | 10 |",
-     "checked": "2026-11-18"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.replit.com/billing/plans/replit-core",
      "quote": "| Collaboration seats | 0 | 5 | 15 |",
-     "checked": "2026-11-18"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.replit.com/billing/plans/starter-plan",
-     "quote": "Starter plan users receive daily credits for Replit AI usage, up to a monthly cap.",
-     "checked": "2026-11-18"
+     "quote": "As of November 2026, the Starter plan is no longer available to new builders. If you're eligible, you can try Replit with a 3-day free trial of Replit Core after signup.",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://docs.replit.com/billing/plans/starter-plan",
+     "quote": "Starter plan builders get a limited Free Mode allowance for Replit AI work.",
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.replit.com/billing/plans/starter-plan",
      "quote": "This published link will automatically go down after 30 days.",
-     "checked": "2026-11-18"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.replit.com/billing/plans/replit-pro",
      "quote": "Unused credits roll over for two months",
-     "checked": "2026-11-18"
+     "checked": "2026-11-25"
     }
    ],
-   "lastChecked": "2026-11-18",
+   "lastChecked": "2026-11-25",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/replit",
    "score": {
     "dev-box": {
-     "total": 38,
+     "total": 33,
      "rank": 37,
      "of": 37
     },
     "coding-agent": {
-     "total": 36,
-     "rank": 11,
+     "total": 29,
+     "rank": 12,
      "of": 12
     }
    },
@@ -17521,7 +17574,7 @@
      "instance": null,
      "storageGibMonth": 0.07884,
      "billingIncrement": "per second",
-     "billedWhile": "Compute and allocated memory while the sandbox is active; nothing for compute while paused. Storage (shared template once plus each sandbox's retained changes) bills for as long as it is kept, including paused sandboxes.",
+     "billedWhile": "Compute and allocated memory while the sandbox is active (for a sandbox that grows with load, the CPU and memory it holds at the time); nothing for compute while paused. Storage (shared template once plus each sandbox's retained changes) bills for as long as it is kept, including paused sandboxes.",
      "cpuActiveOnly": false,
      "unitVcpu": null,
      "unitGib": null,
@@ -17553,7 +17606,7 @@
     "notes": [
      "Storage is published as $0.000108 per GiB-hour; the monthly figure we show is that rate times 730 hours ($0.07884 per GiB-month). Storage counts a shared template once plus each sandbox's retained changes, not the full allocated disk.",
      "The same usage rates apply on every plan; included usage on each plan is spent at these rates.",
-     "Sandbox vCPU, memory and disk come from the template and cannot be overridden per sandbox. Template defaults are 1 vCPU and 1 GiB; maximums are 2 vCPU / 4 GiB on the free trial, 4 vCPU / 16 GiB on Developer and 16 vCPU / 64 GiB on Pro. The maximum we show is the Pro limit.",
+     "By default a sandbox gets its template's vCPU, memory and disk. A template can set a size range, and each sandbox then chooses a fixed vCPU count and memory within it when it is created; a template can also let running sandboxes grow CPU and memory with load. A range or growth ceiling goes up to 4 times the template's base size and at most 32 vCPU, within the plan limit. Sandboxes that grow are billed for the CPU and memory they hold at the time. Built-in system templates have no size range. Template defaults are 1 vCPU and 1 GiB; maximums are 2 vCPU / 4 GiB on the free trial, 4 vCPU / 16 GiB on Developer and 16 vCPU / 64 GiB on Pro. The maximum we show is the Pro limit.",
      "Pause checkpoints memory, processes and filesystem and stops compute billing. An optional active-time timeout and an optional idle timeout (60 seconds to 7 days) can pause a sandbox automatically; both are off by default. Paused sandboxes are kept until deleted unless an auto-delete window (max 30 days) is set.",
      "The pricing page's estimates exclude taxes, network and external model API charges; no network or egress rate is published.",
      "Enterprise is custom-priced and offers deployment in your own VPC on AWS, GCP or Azure for early partners; we do not count this as self-hosting. The TypeScript and Python SDKs are open source under Apache-2.0; the platform itself is not described as open source.",
@@ -17567,7 +17620,7 @@
    ],
    "watchOut": [
     "vCPU and allocated memory bill for the whole time a sandbox is active, busy or idle; pause it to stop compute charges.",
-    "Sandbox size is fixed by its template; a different size needs a different template.",
+    "A sandbox can only choose its size, or grow, within a range set on its template; built-in system templates have a fixed size.",
     "The free trial amount is not published, and paid use needs a monthly plan.",
     "No region choice or GPU support is documented on the pages checked."
    ],
@@ -17575,60 +17628,85 @@
     {
      "url": "https://www.superserve.ai/pricing/",
      "quote": "Compute: $0.0504/vCPU-hour · Memory: $0.0162/GiB-hour · Storage: $0.000108/GiB-hour retained.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.superserve.ai/pricing/",
      "quote": "Includes $20 of usage",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.superserve.ai/pricing/",
      "quote": "Up to 16 vCPU and 64 GiB memory per sandbox",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.superserve.ai/pricing/",
      "quote": "Extra usage billed at the end of each billing period",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://www.superserve.ai/pricing/",
      "quote": "Start free, no card required. Then pay for usage.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.superserve.ai/introduction",
      "quote": "A new account gets a limited free trial for its first sandbox.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.superserve.ai/introduction",
      "quote": "Superserve provides sandbox infrastructure to run code in isolated cloud environments powered by Firecracker MicroVMs.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.superserve.ai/sandbox/lifecycle",
      "quote": "By default a paused sandbox is kept forever.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.superserve.ai/sandbox/lifecycle",
      "quote": "`pause()` checkpoints the full VM state (memory, processes, filesystem) to disk and stops billing for compute.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.superserve.ai/templates/build-spec",
-     "quote": "Templates specify the VM shape; sandboxes inherit these and cannot override them per-sandbox.",
-     "checked": "2026-11-14"
+     "quote": "Templates specify the VM shape and sandboxes inherit it. A template can also let sandboxes grow with load",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://docs.superserve.ai/templates/build-spec",
+     "quote": "at most 4 times it, at most 32, and within your plan's vCPU limit.",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://docs.superserve.ai/templates/build-spec",
+     "quote": "| Pro max | 16 vCPU | 64 GiB (65536 MiB) |",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://docs.superserve.ai/sandbox/size.md",
+     "quote": "A size range lets each sandbox pick its size once, at create.",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://docs.superserve.ai/sandbox/size.md",
+     "quote": "System templates such as `superserve/base` have none.",
+     "checked": "2026-11-25"
+    },
+    {
+     "url": "https://docs.superserve.ai/sandbox/live-cpu-resizing.md",
+     "quote": "You pay for the CPU allowance a sandbox is granted, the same way you pay for memory.",
+     "checked": "2026-11-25"
     },
     {
      "url": "https://docs.superserve.ai/sandbox/create",
      "quote": "Egress allow/deny rules.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-25"
     }
    ],
-   "lastChecked": "2026-11-14",
+   "lastChecked": "2026-11-25",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/superserve",

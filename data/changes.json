@@ -150,5 +150,21 @@
   "field": "rates > unitVcpu",
   "from": 2,
   "to": 4
+ },
+ {
+  "date": "2026-11-25",
+  "slug": "replit",
+  "name": "Replit",
+  "field": "freeTier",
+  "from": "Starter plan: free daily credits for Replit AI up to a monthly cap and monthly credits for cloud usage, with one published app.",
+  "to": "A 3-day free trial of Core after sign-up, for eligible new users; who is eligible and whether a card is needed are not stated. The free Starter plan no longer takes new users; those already on it keep a limited free allowance for Replit AI, monthly cloud credits and one published app."
+ },
+ {
+  "date": "2026-11-25",
+  "slug": "replit",
+  "name": "Replit",
+  "field": "freeTierKind",
+  "from": "recurring",
+  "to": "credit"
  }
 ]
