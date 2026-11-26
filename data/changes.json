@@ -166,5 +166,165 @@
   "field": "freeTierKind",
   "from": "recurring",
   "to": "credit"
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "freeTier",
+  "from": "$100 of free credit for 30 days, sent with the invite code needed to sign up and claimed in the browser with no card.",
+  "to": "$10 of free credit with no card, and $40 more once a card is added, for 30 days. It comes with the invite code needed to sign up, and the first $10 is claimed in the browser."
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Free > includedGibHours",
+  "from": 0,
+  "to": null
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Free > includedUsageUsd",
+  "from": 0,
+  "to": null
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Free > includedVcpuHours",
+  "from": 0,
+  "to": null
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Free > monthlyFee",
+  "from": 0,
+  "to": null
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Max > includedGibHours",
+  "from": 0,
+  "to": null
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Max > includedUsageUsd",
+  "from": 0,
+  "to": null
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Max > includedVcpuHours",
+  "from": 0,
+  "to": null
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Max > monthlyFee",
+  "from": 250,
+  "to": null
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Pay as you go > includedGibHours",
+  "from": null,
+  "to": 0
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Pay as you go > includedUsageUsd",
+  "from": null,
+  "to": 0
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Pay as you go > includedVcpuHours",
+  "from": null,
+  "to": 0
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Pay as you go > monthlyFee",
+  "from": null,
+  "to": 0
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Pro > includedGibHours",
+  "from": 0,
+  "to": null
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Pro > includedUsageUsd",
+  "from": 0,
+  "to": null
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Pro > includedVcpuHours",
+  "from": 0,
+  "to": null
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "promigence",
+  "name": "Promigence",
+  "field": "plans > Pro > monthlyFee",
+  "from": 50,
+  "to": null
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "runs-on",
+  "name": "RunsOn",
+  "field": "comparablePrice > ci-runner",
+  "from": 4.8,
+  "to": 4.2
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "runs-on",
+  "name": "RunsOn",
+  "field": "gpu > NVIDIA T4 (AWS g4dn.xlarge spot, 4 vCPU; paid to AWS)",
+  "from": 0.228,
+  "to": 0.222
+ },
+ {
+  "date": "2026-11-26",
+  "slug": "runs-on",
+  "name": "RunsOn",
+  "field": "rates > instanceHour",
+  "from": 0.048,
+  "to": 0.042
  }
 ]

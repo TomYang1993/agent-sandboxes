@@ -2,7 +2,7 @@
  "source": "AI Sandbox Hunt",
  "url": "https://aisandboxhunt.com",
  "license": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit AI Sandbox Hunt with a link to the page the data comes from.",
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "method": "https://aisandboxhunt.com/methodology",
  "methodVersion": "1.3 (2026-11-14)",
  "categories": [
@@ -238,13 +238,13 @@
    "page": "https://aisandboxhunt.com/aether",
    "score": {
     "dev-box": {
-     "total": 59,
+     "total": 60,
      "rank": 26,
      "of": 37
     },
     "code-sandbox": {
-     "total": 61,
-     "rank": 37,
+     "total": 59,
+     "rank": 39,
      "of": 62
     }
    },
@@ -433,13 +433,13 @@
    "page": "https://aisandboxhunt.com/agent37",
    "score": {
     "code-sandbox": {
-     "total": 71,
-     "rank": 14,
+     "total": 73,
+     "rank": 8,
      "of": 62
     },
     "dev-box": {
-     "total": 71,
-     "rank": 9,
+     "total": 73,
+     "rank": 7,
      "of": 37
     }
    },
@@ -451,22 +451,22 @@
     {
      "source": "computesdk",
      "metric": "Burst start time (median of 100 at once)",
-     "value": 3832,
+     "value": 2360,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 23,
-     "of": 27
+     "date": "2026-11-20",
+     "rank": 22,
+     "of": 25
     },
     {
      "source": "computesdk",
      "metric": "Repo clone, install and typecheck (one run)",
-     "value": 193271,
+     "value": 131106,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
+     "date": "2026-11-20",
      "rank": 25,
-     "of": 25
+     "of": 26
     }
    ],
    "status": "active"
@@ -898,7 +898,7 @@
    "page": "https://aisandboxhunt.com/alibaba-agent-sandbox",
    "score": {
     "code-sandbox": {
-     "total": 68,
+     "total": 67,
      "rank": 20,
      "of": 62
     }
@@ -1445,8 +1445,8 @@
    "page": "https://aisandboxhunt.com/anthropic-sandbox-runtime",
    "score": {
     "code-sandbox": {
-     "total": 46,
-     "rank": 59,
+     "total": 45,
+     "rank": 58,
      "of": 62
     }
    },
@@ -1613,12 +1613,12 @@
    "page": "https://aisandboxhunt.com/archil",
    "score": {
     "dev-box": {
-     "total": 72,
-     "rank": 7,
+     "total": 73,
+     "rank": 8,
      "of": 37
     },
     "code-sandbox": {
-     "total": 74,
+     "total": 73,
      "rank": 9,
      "of": 62
     }
@@ -1627,7 +1627,38 @@
     "dev-box": 41.8,
     "code-sandbox": 33.44
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Burst start time (median of 100 at once)",
+     "value": 691,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 11,
+     "of": 25
+    },
+    {
+     "source": "computesdk",
+     "metric": "Repo clone, install and typecheck (one run)",
+     "value": 54443,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 9,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 81.16,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 15,
+     "of": 25
+    }
+   ],
    "status": "active"
   },
   {
@@ -1756,8 +1787,8 @@
    "page": "https://aisandboxhunt.com/aws-agentcore-code-interpreter",
    "score": {
     "code-sandbox": {
-     "total": 60,
-     "rank": 39,
+     "total": 58,
+     "rank": 40,
      "of": 62
     }
    },
@@ -1918,7 +1949,7 @@
    "page": "https://aisandboxhunt.com/aws-lambda-microvms",
    "score": {
     "code-sandbox": {
-     "total": 65,
+     "total": 63,
      "rank": 30,
      "of": 62
     }
@@ -2075,8 +2106,8 @@
    "page": "https://aisandboxhunt.com/aws-nitro-sandboxes",
    "score": {
     "code-sandbox": {
-     "total": 45,
-     "rank": 61,
+     "total": 42,
+     "rank": 62,
      "of": 62
     }
    },
@@ -2212,8 +2243,8 @@
    "page": "https://aisandboxhunt.com/azure-dynamic-sessions",
    "score": {
     "code-sandbox": {
-     "total": 48,
-     "rank": 57,
+     "total": 45,
+     "rank": 59,
      "of": 62
     }
    },
@@ -2418,8 +2449,8 @@
    "page": "https://aisandboxhunt.com/beam",
    "score": {
     "code-sandbox": {
-     "total": 45,
-     "rank": 62,
+     "total": 44,
+     "rank": 61,
      "of": 62
     },
     "gpu": {
@@ -2428,7 +2459,7 @@
      "of": 7
     },
     "dev-box": {
-     "total": 44,
+     "total": 45,
      "rank": 33,
      "of": 37
     }
@@ -2438,7 +2469,58 @@
     "gpu": null,
     "dev-box": 30.8
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Burst start time (median of 100 at once)",
+     "value": 649,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 9,
+     "of": 25
+    },
+    {
+     "source": "computesdk",
+     "metric": "Repo clone, install and typecheck (one run)",
+     "value": 112089,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 23,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 94.23,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 4,
+     "of": 25
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Cold start (median)",
+     "value": 0.413,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 3,
+     "of": 21
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Agent tool-call replay (median)",
+     "value": 10.941,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 2,
+     "of": 21
+    }
+   ],
    "status": "active"
   },
   {
@@ -2647,7 +2729,7 @@
    "page": "https://aisandboxhunt.com/bitrise-rde",
    "score": {
     "dev-box": {
-     "total": 53,
+     "total": 54,
      "rank": 29,
      "of": 37
     }
@@ -3133,7 +3215,7 @@
    "score": {
     "code-sandbox": {
      "total": 63,
-     "rank": 32,
+     "rank": 31,
      "of": 62
     }
    },
@@ -3144,21 +3226,31 @@
     {
      "source": "computesdk",
      "metric": "Burst start time (median of 100 at once)",
-     "value": 351,
+     "value": 355,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 7,
-     "of": 27
+     "date": "2026-11-20",
+     "rank": 5,
+     "of": 25
     },
     {
      "source": "computesdk",
      "metric": "Repo clone, install and typecheck (one run)",
-     "value": 60706,
+     "value": 59988,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
+     "date": "2026-11-20",
      "rank": 12,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 91.8,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 7,
      "of": 25
     },
     {
@@ -3409,13 +3501,13 @@
    "page": "https://aisandboxhunt.com/boat",
    "score": {
     "dev-box": {
-     "total": 72,
-     "rank": 8,
+     "total": 73,
+     "rank": 9,
      "of": 37
     },
     "code-sandbox": {
-     "total": 71,
-     "rank": 15,
+     "total": 70,
+     "rank": 11,
      "of": 62
     }
    },
@@ -3425,14 +3517,24 @@
    },
    "benchmarks": [
     {
+     "source": "computesdk",
+     "metric": "Repo clone, install and typecheck (one run)",
+     "value": 62225,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 15,
+     "of": 26
+    },
+    {
      "source": "aisandboxbench",
      "metric": "Cold start (median)",
      "value": 1.125,
      "unit": "s",
      "better": "lower",
-     "date": "2026-10-23",
-     "rank": 6,
-     "of": 9
+     "date": "2026-11-25",
+     "rank": 14,
+     "of": 21
     },
     {
      "source": "aisandboxbench",
@@ -3440,9 +3542,9 @@
      "value": 43.256,
      "unit": "s",
      "better": "lower",
-     "date": "2026-10-23",
-     "rank": 9,
-     "of": 9
+     "date": "2026-11-25",
+     "rank": 19,
+     "of": 21
     },
     {
      "source": "starsling",
@@ -3615,7 +3717,7 @@
    "page": "https://aisandboxhunt.com/boxd",
    "score": {
     "dev-box": {
-     "total": 76,
+     "total": 77,
      "rank": 4,
      "of": 37
     }
@@ -3623,7 +3725,28 @@
    "comparablePrice": {
     "dev-box": 16.456
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "aisandboxbench",
+     "metric": "Cold start (median)",
+     "value": 0.548,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 8,
+     "of": 21
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Agent tool-call replay (median)",
+     "value": 11.872,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 3,
+     "of": 21
+    }
+   ],
    "status": "active"
   },
   {
@@ -3818,7 +3941,7 @@
    "page": "https://aisandboxhunt.com/boxes-dev",
    "score": {
     "dev-box": {
-     "total": 44,
+     "total": 45,
      "rank": 34,
      "of": 37
     }
@@ -4849,8 +4972,8 @@
    "page": "https://aisandboxhunt.com/cloudflare-dynamic-workers",
    "score": {
     "code-sandbox": {
-     "total": 48,
-     "rank": 58,
+     "total": 46,
+     "rank": 57,
      "of": 62
     }
    },
@@ -4991,8 +5114,8 @@
    "page": "https://aisandboxhunt.com/cloudflare-sandbox",
    "score": {
     "code-sandbox": {
-     "total": 56,
-     "rank": 47,
+     "total": 55,
+     "rank": 45,
      "of": 62
     }
    },
@@ -5002,12 +5125,32 @@
    "benchmarks": [
     {
      "source": "computesdk",
-     "metric": "Repo clone, install and typecheck (one run)",
-     "value": 107110,
+     "metric": "Burst start time (median of 100 at once)",
+     "value": 868,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 24,
+     "date": "2026-11-20",
+     "rank": 12,
+     "of": 25
+    },
+    {
+     "source": "computesdk",
+     "metric": "Repo clone, install and typecheck (one run)",
+     "value": 80021,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 19,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 77,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 18,
      "of": 25
     }
    ],
@@ -5126,7 +5269,7 @@
    "page": "https://aisandboxhunt.com/coder",
    "score": {
     "dev-box": {
-     "total": 50,
+     "total": 51,
      "rank": 30,
      "of": 37
     }
@@ -5282,13 +5425,13 @@
    "page": "https://aisandboxhunt.com/codesandbox",
    "score": {
     "code-sandbox": {
-     "total": 69,
-     "rank": 17,
+     "total": 68,
+     "rank": 19,
      "of": 62
     },
     "dev-box": {
-     "total": 68,
-     "rank": 12,
+     "total": 69,
+     "rank": 11,
      "of": 37
     }
    },
@@ -5296,7 +5439,18 @@
     "code-sandbox": 26.4,
     "dev-box": 33
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 61.75,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 23,
+     "of": 25
+    }
+   ],
    "status": "active"
   },
   {
@@ -5427,7 +5581,7 @@
    "page": "https://aisandboxhunt.com/containarium",
    "score": {
     "dev-box": {
-     "total": 48,
+     "total": 49,
      "rank": 31,
      "of": 37
     }
@@ -5615,7 +5769,7 @@
    "page": "https://aisandboxhunt.com/createos",
    "score": {
     "code-sandbox": {
-     "total": 72,
+     "total": 70,
      "rank": 12,
      "of": 62
     }
@@ -5623,7 +5777,18 @@
    "comparablePrice": {
     "code-sandbox": 20.88913376
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 21.94,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 25,
+     "of": 25
+    }
+   ],
    "status": "active"
   },
   {
@@ -5743,7 +5908,7 @@
    "page": "https://aisandboxhunt.com/cubesandbox",
    "score": {
     "code-sandbox": {
-     "total": 68,
+     "total": 67,
      "rank": 21,
      "of": 62
     }
@@ -6202,12 +6367,12 @@
    "page": "https://aisandboxhunt.com/daytona",
    "score": {
     "code-sandbox": {
-     "total": 64,
-     "rank": 31,
+     "total": 66,
+     "rank": 26,
      "of": 62
     },
     "dev-box": {
-     "total": 65,
+     "total": 66,
      "rank": 17,
      "of": 37
     },
@@ -6226,12 +6391,32 @@
     {
      "source": "computesdk",
      "metric": "Burst start time (median of 100 at once)",
-     "value": 682,
+     "value": 483,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 12,
-     "of": 27
+     "date": "2026-11-20",
+     "rank": 7,
+     "of": 25
+    },
+    {
+     "source": "computesdk",
+     "metric": "Repo clone, install and typecheck (one run)",
+     "value": 77854,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 18,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 35.56,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 24,
+     "of": 25
     },
     {
      "source": "aisandboxbench",
@@ -6239,9 +6424,9 @@
      "value": 1.25,
      "unit": "s",
      "better": "lower",
-     "date": "2026-10-23",
-     "rank": 8,
-     "of": 9
+     "date": "2026-11-25",
+     "rank": 15,
+     "of": 21
     },
     {
      "source": "aisandboxbench",
@@ -6249,9 +6434,9 @@
      "value": 12.274,
      "unit": "s",
      "better": "lower",
-     "date": "2026-10-23",
-     "rank": 1,
-     "of": 9
+     "date": "2026-11-25",
+     "rank": 5,
+     "of": 21
     },
     {
      "source": "starsling",
@@ -6459,7 +6644,7 @@
      "of": 10
     },
     "code-sandbox": {
-     "total": 55,
+     "total": 53,
      "rank": 49,
      "of": 62
     }
@@ -6899,8 +7084,8 @@
    "page": "https://aisandboxhunt.com/digitalocean-harness-runtime",
    "score": {
     "code-sandbox": {
-     "total": 61,
-     "rank": 38,
+     "total": 60,
+     "rank": 35,
      "of": 62
     }
    },
@@ -7032,8 +7217,8 @@
    "page": "https://aisandboxhunt.com/docker-sandboxes",
    "score": {
     "code-sandbox": {
-     "total": 62,
-     "rank": 33,
+     "total": 61,
+     "rank": 32,
      "of": 62
     }
    },
@@ -7156,8 +7341,8 @@
    "page": "https://aisandboxhunt.com/e2b-runtime",
    "score": {
     "code-sandbox": {
-     "total": 68,
-     "rank": 23,
+     "total": 67,
+     "rank": 22,
      "of": 62
     }
    },
@@ -7331,8 +7516,8 @@
    "page": "https://aisandboxhunt.com/e2b",
    "score": {
     "code-sandbox": {
-     "total": 68,
-     "rank": 22,
+     "total": 69,
+     "rank": 17,
      "of": 62
     }
    },
@@ -7343,21 +7528,31 @@
     {
      "source": "computesdk",
      "metric": "Burst start time (median of 100 at once)",
-     "value": 1280,
+     "value": 1041,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 18,
-     "of": 27
+     "date": "2026-11-20",
+     "rank": 14,
+     "of": 25
     },
     {
      "source": "computesdk",
      "metric": "Repo clone, install and typecheck (one run)",
-     "value": 64219,
+     "value": 95694,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 15,
+     "date": "2026-11-20",
+     "rank": 21,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 86.52,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 11,
      "of": 25
     },
     {
@@ -7366,9 +7561,9 @@
      "value": 0.793,
      "unit": "s",
      "better": "lower",
-     "date": "2026-10-23",
-     "rank": 4,
-     "of": 9
+     "date": "2026-11-25",
+     "rank": 12,
+     "of": 21
     },
     {
      "source": "aisandboxbench",
@@ -7376,9 +7571,9 @@
      "value": 15.468,
      "unit": "s",
      "better": "lower",
-     "date": "2026-10-23",
-     "rank": 3,
-     "of": 9
+     "date": "2026-11-25",
+     "rank": 10,
+     "of": 21
     },
     {
      "source": "starsling",
@@ -7573,7 +7768,7 @@
    "page": "https://aisandboxhunt.com/exe-dev",
    "score": {
     "dev-box": {
-     "total": 60,
+     "total": 61,
      "rank": 23,
      "of": 37
     }
@@ -7884,8 +8079,8 @@
    "page": "https://aisandboxhunt.com/firecracker",
    "score": {
     "code-sandbox": {
-     "total": 55,
-     "rank": 50,
+     "total": 54,
+     "rank": 46,
      "of": 62
     }
    },
@@ -8101,13 +8296,13 @@
    "page": "https://aisandboxhunt.com/fly-sprites",
    "score": {
     "dev-box": {
-     "total": 69,
+     "total": 70,
      "rank": 10,
      "of": 37
     },
     "code-sandbox": {
-     "total": 69,
-     "rank": 18,
+     "total": 67,
+     "rank": 23,
      "of": 62
     }
    },
@@ -8275,13 +8470,13 @@
    "page": "https://aisandboxhunt.com/freestyle",
    "score": {
     "dev-box": {
-     "total": 63,
+     "total": 64,
      "rank": 19,
      "of": 37
     },
     "code-sandbox": {
-     "total": 60,
-     "rank": 40,
+     "total": 61,
+     "rank": 33,
      "of": 62
     }
    },
@@ -8293,13 +8488,32 @@
     {
      "source": "computesdk",
      "metric": "Burst start time (median of 100 at once)",
-     "value": 1548,
+     "value": 1186,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 20,
-     "of": 27,
-     "note": "99% of starts succeeded"
+     "date": "2026-11-20",
+     "rank": 15,
+     "of": 25
+    },
+    {
+     "source": "computesdk",
+     "metric": "Repo clone, install and typecheck (one run)",
+     "value": 128126,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 24,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 89.76,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 8,
+     "of": 25
     },
     {
      "source": "aisandboxbench",
@@ -8307,9 +8521,9 @@
      "value": 0.693,
      "unit": "s",
      "better": "lower",
-     "date": "2026-10-23",
-     "rank": 3,
-     "of": 9
+     "date": "2026-11-25",
+     "rank": 10,
+     "of": 21
     },
     {
      "source": "aisandboxbench",
@@ -8317,9 +8531,9 @@
      "value": 24.072,
      "unit": "s",
      "better": "lower",
-     "date": "2026-10-23",
-     "rank": 6,
-     "of": 9
+     "date": "2026-11-25",
+     "rank": 16,
+     "of": 21
     }
    ],
    "status": "active"
@@ -8655,7 +8869,7 @@
    "page": "https://aisandboxhunt.com/github-codespaces",
    "score": {
     "dev-box": {
-     "total": 63,
+     "total": 64,
      "rank": 20,
      "of": 37
     }
@@ -8985,7 +9199,7 @@
    "page": "https://aisandboxhunt.com/google-cloud-workstations",
    "score": {
     "dev-box": {
-     "total": 66,
+     "total": 67,
      "rank": 15,
      "of": 37
     }
@@ -9093,8 +9307,8 @@
    "page": "https://aisandboxhunt.com/gvisor",
    "score": {
     "code-sandbox": {
-     "total": 54,
-     "rank": 52,
+     "total": 53,
+     "rank": 50,
      "of": 62
     }
    },
@@ -9258,12 +9472,12 @@
    "page": "https://aisandboxhunt.com/hopx",
    "score": {
     "code-sandbox": {
-     "total": 56,
-     "rank": 48,
+     "total": 54,
+     "rank": 47,
      "of": 62
     },
     "dev-box": {
-     "total": 55,
+     "total": 56,
      "rank": 28,
      "of": 37
     }
@@ -9484,8 +9698,8 @@
      "of": 12
     },
     "code-sandbox": {
-     "total": 62,
-     "rank": 34,
+     "total": 60,
+     "rank": 36,
      "of": 62
     }
    },
@@ -9779,13 +9993,13 @@
    "page": "https://aisandboxhunt.com/instabox",
    "score": {
     "dev-box": {
-     "total": 76,
+     "total": 77,
      "rank": 5,
      "of": 37
     },
     "code-sandbox": {
-     "total": 75,
-     "rank": 6,
+     "total": 74,
+     "rank": 5,
      "of": 62
     }
    },
@@ -9793,7 +10007,28 @@
     "dev-box": 20,
     "code-sandbox": 20
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "aisandboxbench",
+     "metric": "Cold start (median)",
+     "value": 1.85,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 17,
+     "of": 21
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Agent tool-call replay (median)",
+     "value": 25.068,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 17,
+     "of": 21
+    }
+   ],
    "status": "active"
   },
   {
@@ -9956,7 +10191,7 @@
    "page": "https://aisandboxhunt.com/islo",
    "score": {
     "dev-box": {
-     "total": 66,
+     "total": 67,
      "rank": 16,
      "of": 37
     },
@@ -10128,12 +10363,12 @@
    "score": {
     "code-sandbox": {
      "total": 78,
-     "rank": 1,
+     "rank": 2,
      "of": 62
     },
     "dev-box": {
      "total": 78,
-     "rank": 2,
+     "rank": 3,
      "of": 37
     }
    },
@@ -10145,21 +10380,31 @@
     {
      "source": "computesdk",
      "metric": "Burst start time (median of 100 at once)",
-     "value": 96,
+     "value": 111,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
+     "date": "2026-11-20",
      "rank": 1,
-     "of": 27
+     "of": 25
     },
     {
      "source": "computesdk",
      "metric": "Repo clone, install and typecheck (one run)",
-     "value": 36034,
+     "value": 34897,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 2,
+     "date": "2026-11-20",
+     "rank": 1,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 95.91,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 1,
      "of": 25
     }
    ],
@@ -10327,7 +10572,7 @@
    "page": "https://aisandboxhunt.com/judge0",
    "score": {
     "code-sandbox": {
-     "total": 46,
+     "total": 45,
      "rank": 60,
      "of": 62
     }
@@ -10434,8 +10679,8 @@
    "page": "https://aisandboxhunt.com/kata-containers",
    "score": {
     "code-sandbox": {
-     "total": 58,
-     "rank": 43,
+     "total": 57,
+     "rank": 42,
      "of": 62
     }
    },
@@ -10527,7 +10772,7 @@
       "name": "Start-Up",
       "monthlyFee": 200,
       "includedUsageUsd": 50,
-      "limits": "$50 of usage credit per month; 150 concurrent browsers; 20 GB of free proxies; bring-your-own proxies; GPU acceleration; regional browsers; 30-day replays.",
+      "limits": "$50 of usage credit per month; 150 concurrent browsers, which scaling packs raise up to 500 (25 more browsers per pack, $100 a month each); 20 GB of free proxies; bring-your-own proxies; GPU acceleration; regional browsers; 30-day replays.",
       "includedVcpuHours": 0,
       "includedGibHours": 0,
       "capped": false
@@ -10542,7 +10787,8 @@
      "Browsers in standby keep their state and stop usage charges but still count toward the concurrency limit. A browser is deleted after its timeout (default 60 seconds, up to 72 hours) once in standby.",
      "App invocations (code deployed to run next to the browsers) are billed at $0.0000666668 per second.",
      "GPU acceleration is only on Start-Up and Enterprise. Enterprise pricing is custom.",
-     "The browser images are open source (Apache-2.0) and can run in Docker or on Unikraft unikernels; the hosted platform features are not part of that repository."
+     "The browser images are open source (Apache-2.0) and can run in Docker or on Unikraft unikernels; the hosted platform features are not part of that repository.",
+     "Scaling packs (Start-Up plan only; card payment, rolling out gradually): each pack adds 25 concurrent browsers for $100 a month, up to 14 packs for 500 browsers. Browsers above the first 150 are billed at 1.5 times the standard rate: headless $0.000025, headful $0.0002 and headful with GPU $0.0012 per second. Above 500 browsers, Enterprise is needed."
     ]
    },
    "bestFor": [
@@ -10561,80 +10807,115 @@
     {
      "url": "https://www.kernel.sh/pricing",
      "quote": "Usage costs: $0.0000166667 per GB-second (no charges for idle time).",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/pricing",
      "quote": "Our hobbyist plan includes 5GB of free proxies and our start-up plans include 20GB of free proxies.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/pricing",
      "quote": "On enterprise plans, your order form sets proxy pricing.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/pricing",
      "quote": "$5 / month free credits",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/docs/info/pricing",
      "quote": "Headless browser |0.0000166667",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/docs/info/pricing",
      "quote": "Headful browser + GPU acceleration |0.0008000016",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/docs/info/pricing",
      "quote": "Start-Up |$200 + usage |$50",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/docs/info/pricing",
      "quote": "Hobbyist |$30 + usage |$10",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/docs/info/pricing",
      "quote": "Headful browser |0.0001333336",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/docs/info/pricing",
      "quote": "App invocation |0.0000666668",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/pricing",
      "quote": "150 concurrent browsers",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/docs/browsers/concurrency-and-limits",
      "quote": "Memory |8 GB or 16 GB |1 GB, 2 GB, or 4 GB",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/docs/overview/why-kernel",
      "quote": "Each browser is a microVM with its own kernel and filesystem",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.kernel.sh/docs/browsers/standby",
      "quote": "Kernel browsers automatically start entering standby after ten seconds with no activity.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://github.com/kernel/kernel-images",
      "quote": "This image can be used to run headful Chromium in a Docker container or with Unikraft unikernels.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.kernel.sh/docs/info/pricing",
+     "quote": "On the Start-Up plan, scaling packs raise the concurrent browser limit from 150 up to 500. Each pack adds 25 concurrent browsers for $100 per month",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.kernel.sh/docs/info/scaling-packs",
+     "quote": "You can add up to 14 packs. If you need more than 500 concurrent browsers, contact sales about the Enterprise plan.",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.kernel.sh/docs/info/scaling-packs",
+     "quote": "Browsers you run above 150 are billed at the overage rate, which is 1.5 times the standard rate.",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.kernel.sh/docs/info/scaling-packs",
+     "quote": "Headless browser | 0.0000166667 | 0.000025",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.kernel.sh/docs/info/scaling-packs",
+     "quote": "Headful browser | 0.0001333336 | 0.0002",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.kernel.sh/docs/info/scaling-packs",
+     "quote": "Headful browser + GPU acceleration | 0.0008000016 | 0.0012",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.kernel.sh/docs/info/scaling-packs",
+     "quote": "Scaling packs are available to organizations on an active Start-Up plan that pay by card.",
+     "checked": "2026-11-26"
     }
    ],
-   "lastChecked": "2026-11-24",
+   "lastChecked": "2026-11-26",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/kernel",
@@ -11014,7 +11295,7 @@
       "name": "Solo",
       "monthlyFee": 29,
       "includedUsageUsd": 0,
-      "limits": "100 Cloud sandbox-hours a month, then usage billed per second up to the spend cap; 2 sandboxes running at once, largest Cloud sandbox 2 vCPU / 4 GB, 1 persistent sandbox, 5 snapshots kept. On your own machines: 4 forks at once, 64 GB sandbox disk. $290 a year if paid yearly.",
+      "limits": "100 Cloud sandbox-hours a month, then usage billed per second up to the spend cap; 2 sandboxes running at once, largest Cloud sandbox 2 vCPU / 4 GB, sandbox disk up to 64 GB, 1 persistent sandbox, 5 snapshots kept. On your own machines: 4 forks at once. $290 a year if paid yearly.",
       "includedVcpuHours": 200,
       "includedGibHours": 400,
       "capped": false
@@ -11023,7 +11304,7 @@
       "name": "Pro",
       "monthlyFee": 89,
       "includedUsageUsd": 0,
-      "limits": "500 Cloud sandbox-hours a month, then usage billed per second up to the spend cap; 10 running at once, largest 4 vCPU / 8 GB, 5 persistent sandboxes, 50 snapshots. Adds swarms, pipelines and functions. On your own machines: 16 forks at once, 128 GB disk. $890 a year if paid yearly.",
+      "limits": "500 Cloud sandbox-hours a month, then usage billed per second up to the spend cap; 10 running at once, largest 4 vCPU / 8 GB, disk up to 128 GB, 5 persistent sandboxes, 50 snapshots. Adds swarms, pipelines and functions. On your own machines: 16 forks at once. $890 a year if paid yearly.",
       "includedVcpuHours": 1000,
       "includedGibHours": 2000,
       "capped": false
@@ -11032,7 +11313,7 @@
       "name": "Team",
       "monthlyFee": 169,
       "includedUsageUsd": 0,
-      "limits": "Per person per month, or $1,690 a person a year; it starts on yearly billing. 500 Cloud sandbox-hours a person, pooled, then usage billed per second up to the spend cap; 25 running at once, largest 8 vCPU / 16 GB, 25 persistent sandboxes, 250 snapshots. Adds single sign-on (OIDC), governance and MCP policies. On your own machines: 48 shared forks, 256 GB disk.",
+      "limits": "Per person per month, or $1,690 a person a year; it starts on yearly billing. 500 Cloud sandbox-hours a person, pooled, then usage billed per second up to the spend cap; 25 running at once, largest 8 vCPU / 16 GB, disk up to 256 GB, 25 persistent sandboxes, 250 snapshots. Adds single sign-on (OIDC), governance and MCP policies. On your own machines: 48 shared forks.",
       "includedVcpuHours": 1000,
       "includedGibHours": 2000,
       "capped": false
@@ -11041,7 +11322,7 @@
       "name": "Scale",
       "monthlyFee": 199,
       "includedUsageUsd": 0,
-      "limits": "Per person per month, or $1,990 a person a year; it starts on yearly billing. 1,000 Cloud sandbox-hours a person, pooled, then usage billed per second up to the spend cap; up to 1,000 running at once, largest 16 vCPU / 32 GB, 100 persistent sandboxes, 1,000 snapshots. Adds SAML, SCIM and dedicated cores. On your own machines: 160 shared forks, 500 GB disk.",
+      "limits": "Per person per month, or $1,990 a person a year; it starts on yearly billing. 1,000 Cloud sandbox-hours a person, pooled, then usage billed per second up to the spend cap; up to 1,000 running at once, largest 16 vCPU / 32 GB, disk up to 500 GB, 100 persistent sandboxes, 1,000 snapshots. Adds SAML, SCIM and dedicated cores. On your own machines: 160 shared forks.",
       "includedVcpuHours": 2000,
       "includedGibHours": 4000,
       "capped": false
@@ -11056,11 +11337,11 @@
      "kosa8's FAQ still says nothing is billed on top of a plan; its pricing page and Cloud docs bill use above the included hours per second, as described here.",
      "Running sandboxes, sizes and features are hard limits: at one, new work stops. Add-on packs raise one limit: +100 sandbox-hours for $15 a month, or +10 sandboxes running at once for $49 a month. A Cloud Burst Pass ($99 once) adds 100 sandboxes running at once for 24 hours and 1,000 sandbox-hours that month. The Cloud plan limits apply from December 2026.",
      "A sleeping sandbox's snapshot costs $0.08 per GiB a month.",
-     "Sizes are 1 vCPU / 256 MiB (templates; node 384 MiB), then 2, 4, 8 or 16 vCPUs with 2 GiB of RAM per vCPU, any OCI image, and a disk of 8 to 200 GB. The largest size each plan can run goes from 2 vCPU / 4 GB on Solo to 16 vCPU / 32 GB on Scale.",
+     "Sizes are 1 vCPU / 256 MiB (templates; node 384 MiB), then 2, 4, 8 or 16 vCPUs with 2 GiB of RAM per vCPU, any OCI image, and a disk of 8 GB up to the plan's sandbox disk (64 GB on Starter and Solo, 128 GB on Pro, 256 GB on Team, 500 GB on Scale; 32 GB by default). The largest size each plan can run goes from 2 vCPU / 4 GB on Solo to 16 vCPU / 32 GB on Scale.",
      "Small sizes for fleets of mostly idle sandboxes, on every plan: 0.25 vCPU / 512 MiB (0.125 sandbox-hours an hour), 0.5 vCPU / 1 GiB (0.25) and 1 vCPU / 2 GiB (0.5). They reserve that share of a vCPU and burst to a whole one (two for the 1 vCPU size) while the host has idle CPU; bursts are not billed.",
      "Browser sandboxes (headless Chromium driven over CDP) cost $0.12 per browser-hour, billed per second, and each browser-hour also uses 0.125 sandbox-hours. Solo runs 1 at once, Pro 3, Team 5, Scale 10.",
      "Paying yearly costs ten months' price. Team and Scale are priced per person, from one person.",
-     "Bring-your-own hosts cost $0.20 per host-hour, with no compute charge. Fork limits, fork overage ($0.10 per fork-hour, only if turned on) and sandbox disk sizes apply to use on your own machines.",
+     "Bring-your-own hosts cost $0.20 per host-hour, with no compute charge. Fork limits and fork overage ($0.10 per fork-hour, only if turned on) apply to use on your own machines.",
      "kosa8 Cloud has egress allow and deny lists per sandbox. The API key broker, undo and other security features are for your own machines and are still coming to Cloud."
     ]
    },
@@ -11073,256 +11354,282 @@
     "The free Starter tier is a one-time $10 of Cloud usage, with 60-minute sessions and outbound network limited to an allow-list",
     "kosa8 Cloud runs only in the US (Ashburn, Virginia); keeping data in the EU means running sandboxes on your own servers",
     "Use above a plan's sandbox-hours is billed per second, up to $50 a month by default; turning the spend cap off removes that ceiling",
-    "Bigger Cloud sizes need bigger plans: 8 vCPU needs Team and 16 vCPU needs Scale",
+    "Bigger Cloud sizes need bigger plans: 8 vCPU needs Team and 16 vCPU needs Scale, and Solo sandboxes are limited to 64 GB of disk",
     "The API key broker and undo apply to local use and are not yet on Cloud"
    ],
    "sources": [
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "Start $0: Starter, no card, $10 of kosa8 Cloud usage with no time limit. Plans from $29 a month.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$10 of kosa8 Cloud usage, once, with no time limit. 2 sandboxes running at once, each up to 2 vCPU and 4 GB, sessions of up to 60 minutes",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "Work stops at the limit; Starter never sends a bill.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "15 minutes of run time free per 24 hours on kosa8.com/try/",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "Every account starts free on the Starter tier, with no card: $10 of kosa8 Cloud usage, no time limit. Plans start at $29 a month. Accounts made before 16 November 2026 keep working until 1 December 2026, then need a plan.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://docs.kosa8.com/guides/cloud/",
      "quote": "Use above the included hours is metered per second ($0.048 per vCPU-hour and $0.0154 per GiB-hour of memory) up to your spend cap, which is on by default at $50",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "2 vCPU, 4 GiB ( 2x4 ) $0.158",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "Every plan starts with a $50 monthly cap on usage above its included hours. Change it, or turn it off, in your account's Settings.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "A new account can run at most $50 above its plan a month until 30 days after its first payment.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "A first surprise charge above a plan is refunded on request, once per account.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "A sleeping sandbox $0.08 per GiB of snapshot a month",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$99 once",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "+100 Cloud sandboxes running at once for 24 hours from when you activate it, and +1,000 sandbox-hours that month.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$49 /month each",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$15 /month each",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$0.10 per fork-hour for each copy above your plan's limit, only if you turn on overage",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "or $290 a year",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "or $890 a year",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$1,690 /person /year",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$1,990 /person /year",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "Team and Scale start on yearly",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "The plan is the cap: kosa8 Cloud charges nothing on top of a plan",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "It is one per person: one per email address and GitHub account",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "Yes, as sandbox-hours each month: 100 on Solo, 500 on Pro, and 500 or 1,000 a person, pooled, on Team and Scale.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "An hour of a standard 2 vCPU / 4 GB Cloud sandbox running is one sandbox-hour",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "A sleeping sandbox uses none of the plan's sandbox-hours",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$29/month",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$89/month",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$169/person /month",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "$199/person /month",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "Adds 100 Cloud sandbox-hours a month to your plan’s hours.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://docs.kosa8.com/guides/cloud/",
      "quote": "The limits apply from December 2026.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://docs.kosa8.com/guides/cloud/",
      "quote": "Sizes are 0.25x0.5, 0.5x1, 1x2, 2x4, 4x8, 8x16 and 16x32",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
-     "quote": "2, 4, 8 or 16 vCPUs with 2 GiB of RAM per vCPU, any OCI image, and a disk of 8 to 200 GB",
-     "checked": "2026-11-24"
+     "quote": "2, 4, 8 or 16 vCPUs with 2 GiB of RAM per vCPU, any OCI image, and a disk of 8 GB up to your plan's sandbox disk (Starter and Solo 64 GB, Pro 128 GB, Team 256 GB, Scale 500 GB",
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "16 vCPU, 32 GiB (16x32)",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "Browser sandboxes $0.12 per browser-hour, billed per second.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "0.25 vCPU reserved, 512 MiB ( 0.25x0.5 ) 0.125 Solo",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/pricing/",
      "quote": "Region US East ( us-ash1 , Ashburn, Virginia), the one region today.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://docs.kosa8.com/guides/cloud/",
      "quote": "a plain create may run on kosa8's overflow capacity (Cloudflare Containers) ... It is the same API, at the same price as the size you asked for.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://docs.kosa8.com/guides/cloud-egress/",
      "quote": "An egress policy tells that network what to let out.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "each sandbox is hardware-virtualised with its own kernel (Apple's Virtualization framework on a Mac, Cloud Hypervisor on KVM on Linux)",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "kosa8 Cloud runs in one region today: us-ash1 (Ashburn, Virginia, US East). It has no EU region yet.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "To keep data in the EU, or in any other country, run sandboxes on machines you control there",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "join your Linux servers to kosa8 Cloud as hosts ($0.20 per host-hour, no compute charge)",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "Do sandboxes have a GPU? Not on kosa8 Cloud.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://kosa8.com/faq/",
      "quote": "kosa8 Cloud runs sandboxes and functions today, and those parts are coming to it.",
-     "checked": "2026-11-24"
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://docs.kosa8.com/guides/cloud/",
+     "quote": "8 GB up to your plan's sandbox disk: Starter and Solo 64 GB, Pro 128 GB, Team 256 GB, Scale 500 GB; default 32",
+     "checked": "2026-11-26"
     }
    ],
-   "lastChecked": "2026-11-24",
+   "lastChecked": "2026-11-26",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/kosa8",
    "score": {
     "code-sandbox": {
-     "total": 66,
-     "rank": 29,
+     "total": 60,
+     "rank": 37,
      "of": 62
     }
    },
    "comparablePrice": {
     "code-sandbox": 40.9776
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Burst start time (median of 100 at once)",
+     "value": 2240,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 20,
+     "of": 25
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 75.45,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 20,
+     "of": 25
+    }
+   ],
    "status": "active"
   },
   {
@@ -11536,8 +11843,8 @@
    "page": "https://aisandboxhunt.com/koyeb-sandboxes",
    "score": {
     "code-sandbox": {
-     "total": 76,
-     "rank": 3,
+     "total": 74,
+     "rank": 6,
      "of": 62
     },
     "gpu": {
@@ -11665,8 +11972,8 @@
    "page": "https://aisandboxhunt.com/kubernetes-agent-sandbox",
    "score": {
     "code-sandbox": {
-     "total": 54,
-     "rank": 53,
+     "total": 53,
+     "rank": 51,
      "of": 62
     }
    },
@@ -11842,7 +12149,7 @@
    "page": "https://aisandboxhunt.com/langsmith-sandboxes",
    "score": {
     "code-sandbox": {
-     "total": 72,
+     "total": 70,
      "rank": 13,
      "of": 62
     }
@@ -12206,8 +12513,8 @@
    "page": "https://aisandboxhunt.com/lizard",
    "score": {
     "code-sandbox": {
-     "total": 76,
-     "rank": 4,
+     "total": 74,
+     "rank": 7,
      "of": 62
     }
    },
@@ -12245,7 +12552,7 @@
     "MCP",
     "E2B-compatible API"
    ],
-   "regions": "Not stated on the pages checked.",
+   "regions": "United States and Germany.",
    "features": {
     "pauseResume": true,
     "snapshots": true,
@@ -12336,82 +12643,102 @@
    "sources": [
     {
      "url": "https://maritime.sh/pricing",
-     "quote": "Virtual machine $0.0055 per vCPU-hour + $0.00275 per GB-hour Per second, no minimum",
-     "checked": "2026-11-21"
+     "quote": "CPU Billed per second, no minimum $0.0055 per vCPU-hour Memory $0.00275 per GB-hour",
+     "checked": "2026-11-26"
     },
     {
      "url": "https://maritime.sh/pricing",
-     "quote": "|Agent box |$1 per 2 GB a month Monthly, awake or asleep, 5 GB of disk included |",
-     "checked": "2026-11-21"
+     "quote": "Agent box 1 vCPU, unlimited awake hours and 5 GB of disk included $1 per month per 2 GB",
+     "checked": "2026-11-26"
     },
     {
      "url": "https://maritime.sh/pricing",
-     "quote": "|Disk of a sleeping machine |$0.08 per GB-month Per second while asleep |",
-     "checked": "2026-11-21"
+     "quote": "Asleep Only if you set it to pause when idle; by default an idle virtual machine ends and its disk is deleted $0.08 per GB-month of disk",
+     "checked": "2026-11-26"
     },
     {
      "url": "https://maritime.sh/pricing",
      "quote": "One for one. A $100 Growth plan gives you $100 of usage each month.",
-     "checked": "2026-11-21"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://maritime.sh/pricing",
      "quote": "The first 7 days are free, with up to $20 of usage on Starter terms.",
-     "checked": "2026-11-21"
+     "checked": "2026-11-26"
     },
     {
-     "url": "https://maritime.sh/pricing",
-     "quote": "Any size up to 16 vCPU and 64 GB",
-     "checked": "2026-11-21"
+     "url": "https://maritime.sh/llms.txt",
+     "quote": "at any size up to 16 vCPU and 64 GB",
+     "checked": "2026-11-26"
     },
     {
      "url": "https://maritime.sh/pricing",
      "quote": "Usage past your plan credit is billed at the same rates with no cap",
-     "checked": "2026-11-21"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://maritime.sh/docs/ephemeral-sandboxes.md",
      "quote": "Idle time 1 to 60 minutes, time limit 5 to 1,440 minutes.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://maritime.sh/docs/ephemeral-sandboxes.md",
      "quote": "Set `E2B_DOMAIN` to `sb.mtm.sh` and `E2B_API_KEY` to a Maritime key with the `sandboxes` scope.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://maritime.sh/docs/persistent-sandboxes.md",
      "quote": "Each one is its own Firecracker micro-VM with its own disk.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://maritime.sh/docs/persistent-sandboxes.md",
      "quote": "2 GB RAM and 5 GB SSD by default; self-serve up to 8 GB RAM and 100 GB SSD.",
-     "checked": "2026-11-14"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://maritime.sh",
-     "quote": "Private networks, internet policies and warm pools",
-     "checked": "2026-11-14"
+     "quote": "Isolated VMs, internet policies, private networks, US or Germany",
+     "checked": "2026-11-26"
     },
     {
      "url": "https://maritime.sh/docs/ephemeral-sandboxes.md",
      "quote": "a stock template such as `base` or `python`, a saved snapshot, or an OCI image",
-     "checked": "2026-11-14"
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://maritime.sh/pricing",
+     "quote": "More disk $0.08 per GB-month",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://maritime.sh/pricing",
+     "quote": "Linux $0.12, Android $0.15, Windows $0.18 on Growth and up",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://maritime.sh/pricing",
+     "quote": "$1 per minute while rented",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://maritime.sh/llms.txt",
+     "quote": "Hosting regions: the United States and Germany.",
+     "checked": "2026-11-26"
     }
    ],
-   "lastChecked": "2026-11-21",
+   "lastChecked": "2026-11-26",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/maritime",
    "score": {
     "dev-box": {
-     "total": 60,
+     "total": 61,
      "rank": 24,
      "of": 37
     },
     "code-sandbox": {
-     "total": 59,
+     "total": 58,
      "rank": 41,
      "of": 62
     }
@@ -12420,7 +12747,28 @@
     "dev-box": 20,
     "code-sandbox": 20
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "aisandboxbench",
+     "metric": "Cold start (median)",
+     "value": 1.619,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 16,
+     "of": 21
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Agent tool-call replay (median)",
+     "value": 18.83,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 12,
+     "of": 21
+    }
+   ],
    "status": "active"
   },
   {
@@ -12539,7 +12887,7 @@
    "page": "https://aisandboxhunt.com/microsandbox",
    "score": {
     "code-sandbox": {
-     "total": 68,
+     "total": 67,
      "rank": 24,
      "of": 62
     }
@@ -12547,7 +12895,48 @@
    "comparablePrice": {
     "code-sandbox": null
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "aisandboxbench",
+     "metric": "Cold start (median)",
+     "value": 6.771,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 21,
+     "of": 21
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Agent tool-call replay (median)",
+     "value": 179.072,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 20,
+     "of": 21
+    },
+    {
+     "source": "starsling",
+     "metric": "Node.js web tooling (runs per second)",
+     "value": 21.14,
+     "unit": "runs/s",
+     "better": "higher",
+     "date": "2026-09-29",
+     "rank": 4,
+     "of": 12
+    },
+    {
+     "source": "starsling",
+     "metric": "Better Auth cold dependency install",
+     "value": 17.5,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-09-29",
+     "rank": 6,
+     "of": 11
+    }
+   ],
    "status": "active"
   },
   {
@@ -12650,8 +13039,8 @@
    "page": "https://aisandboxhunt.com/microsoft-nvx",
    "score": {
     "code-sandbox": {
-     "total": 57,
-     "rank": 45,
+     "total": 56,
+     "rank": 43,
      "of": 62
     }
    },
@@ -12784,67 +13173,67 @@
     {
      "url": "https://miosa.ai/pricing",
      "quote": "small Popular 2 4 GB $0.0893 /h $65.16 /mo",
-     "checked": "2026-11-13"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://miosa.ai/pricing",
-     "quote": "A computer costs the same as a sandbox of the same size, billed the same way.",
-     "checked": "2026-11-13"
+     "quote": "A computer costs the same as an instance of the same size, billed the same way.",
+     "checked": "2026-11-26"
     },
     {
      "url": "https://miosa.ai/pricing",
      "quote": "Storage attached to a machine, while it exists",
-     "checked": "2026-11-13"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://miosa.ai/pricing",
      "quote": "Free has no monthly charge and includes $1 of usage every month.",
-     "checked": "2026-11-13"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://miosa.ai/pricing",
-     "quote": "Sandboxes and computers are billed the flat price of their size, per second, while they run.",
-     "checked": "2026-11-13"
+     "quote": "One price per size, billed to the second while it runs. Nothing for compute while it is stopped.",
+     "checked": "2026-11-26"
     },
     {
      "url": "https://miosa.ai/pricing",
      "quote": "200 computers · machines up to 16 vCPU / 32 GB",
-     "checked": "2026-11-13"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://miosa.ai/docs/develop/sandboxes.md",
      "quote": "runtime: firecracker (the default), soma, or auto.",
-     "checked": "2026-11-13"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://miosa.ai/docs/regions.md",
      "quote": "All three are generally available and none is restricted.",
-     "checked": "2026-11-13"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://miosa.ai/docs/develop/sandboxes/timeouts.md",
      "quote": "It defaults to 3600 seconds and accepts values from 1 through 86400.",
-     "checked": "2026-11-13"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://miosa.ai/docs/known-limitations/",
      "quote": "The public sandbox create contract does not accept, persist, or schedule GPU requests",
-     "checked": "2026-11-13"
+     "checked": "2026-11-26"
     }
    ],
-   "lastChecked": "2026-11-13",
+   "lastChecked": "2026-11-26",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/miosa",
    "score": {
     "dev-box": {
-     "total": 76,
-     "rank": 6,
+     "total": 83,
+     "rank": 2,
      "of": 37
     },
     "code-sandbox": {
-     "total": 75,
-     "rank": 7,
+     "total": 80,
+     "rank": 1,
      "of": 62
     },
     "browser": {
@@ -12858,7 +13247,18 @@
     "code-sandbox": 20,
     "browser": 0.0446
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Burst start time (median of 100 at once)",
+     "value": 145,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 2,
+     "of": 25
+    }
+   ],
    "status": "active"
   },
   {
@@ -13089,8 +13489,8 @@
    "page": "https://aisandboxhunt.com/modal",
    "score": {
     "code-sandbox": {
-     "total": 57,
-     "rank": 46,
+     "total": 56,
+     "rank": 44,
      "of": 62
     },
     "gpu": {
@@ -13107,22 +13507,52 @@
     {
      "source": "computesdk",
      "metric": "Burst start time (median of 100 at once)",
-     "value": 451,
+     "value": 660,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
+     "date": "2026-11-20",
      "rank": 10,
-     "of": 27
+     "of": 25
     },
     {
      "source": "computesdk",
      "metric": "Repo clone, install and typecheck (one run)",
-     "value": 48147,
+     "value": 47238,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
+     "date": "2026-11-20",
      "rank": 4,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 94.91,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 2,
      "of": 25
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Cold start (median)",
+     "value": 0.376,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 2,
+     "of": 21
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Agent tool-call replay (median)",
+     "value": 12.11,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 4,
+     "of": 21
     },
     {
      "source": "starsling",
@@ -13304,13 +13734,13 @@
    "page": "https://aisandboxhunt.com/morph",
    "score": {
     "dev-box": {
-     "total": 65,
+     "total": 66,
      "rank": 18,
      "of": 37
     },
     "code-sandbox": {
-     "total": 67,
-     "rank": 26,
+     "total": 65,
+     "rank": 28,
      "of": 62
     }
    },
@@ -13466,15 +13896,46 @@
    "page": "https://aisandboxhunt.com/mosaic-sandbox",
    "score": {
     "code-sandbox": {
-     "total": 74,
-     "rank": 10,
+     "total": 70,
+     "rank": 14,
      "of": 62
     }
    },
    "comparablePrice": {
     "code-sandbox": 8.8
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Burst start time (median of 100 at once)",
+     "value": 1771,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 19,
+     "of": 25
+    },
+    {
+     "source": "computesdk",
+     "metric": "Repo clone, install and typecheck (one run)",
+     "value": 62337,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 16,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 80.61,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 16,
+     "of": 25
+    }
+   ],
    "status": "active"
   },
   {
@@ -13672,13 +14133,13 @@
    "page": "https://aisandboxhunt.com/namespace",
    "score": {
     "dev-box": {
-     "total": 61,
+     "total": 62,
      "rank": 22,
      "of": 37
     },
     "code-sandbox": {
-     "total": 62,
-     "rank": 35,
+     "total": 60,
+     "rank": 38,
      "of": 62
     },
     "ci-runner": {
@@ -13696,12 +14157,12 @@
     {
      "source": "computesdk",
      "metric": "Repo clone, install and typecheck (one run)",
-     "value": 47445,
+     "value": 53400,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 3,
-     "of": 25
+     "date": "2026-11-20",
+     "rank": 8,
+     "of": 26
     },
     {
      "source": "starsling",
@@ -13936,8 +14397,8 @@
    "page": "https://aisandboxhunt.com/northflank",
    "score": {
     "code-sandbox": {
-     "total": 78,
-     "rank": 2,
+     "total": 76,
+     "rank": 4,
      "of": 62
     },
     "gpu": {
@@ -14109,15 +14570,66 @@
    "page": "https://aisandboxhunt.com/novita-sandbox",
    "score": {
     "code-sandbox": {
-     "total": 58,
-     "rank": 44,
+     "total": 54,
+     "rank": 48,
      "of": 62
     }
    },
    "comparablePrice": {
     "code-sandbox": 20.52864
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Burst start time (median of 100 at once)",
+     "value": 1691,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 18,
+     "of": 25
+    },
+    {
+     "source": "computesdk",
+     "metric": "Repo clone, install and typecheck (one run)",
+     "value": 60171,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 14,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 85.79,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 12,
+     "of": 25
+    },
+    {
+     "source": "starsling",
+     "metric": "Node.js web tooling (runs per second)",
+     "value": 19.52,
+     "unit": "runs/s",
+     "better": "higher",
+     "date": "2026-09-29",
+     "rank": 5,
+     "of": 12
+    },
+    {
+     "source": "starsling",
+     "metric": "Better Auth cold dependency install",
+     "value": 14.6,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-09-29",
+     "rank": 4,
+     "of": 11
+    }
+   ],
    "status": "active"
   },
   {
@@ -14240,8 +14752,8 @@
    "page": "https://aisandboxhunt.com/nvidia-openshell",
    "score": {
     "code-sandbox": {
-     "total": 54,
-     "rank": 54,
+     "total": 53,
+     "rank": 52,
      "of": 62
     }
    },
@@ -14367,7 +14879,7 @@
    "page": "https://aisandboxhunt.com/okteto",
    "score": {
     "dev-box": {
-     "total": 47,
+     "total": 48,
      "rank": 32,
      "of": 37
     }
@@ -14741,7 +15253,7 @@
    "page": "https://aisandboxhunt.com/opencomputer",
    "score": {
     "dev-box": {
-     "total": 41,
+     "total": 42,
      "rank": 36,
      "of": 37
     },
@@ -14925,7 +15437,7 @@
    "page": "https://aisandboxhunt.com/orgo",
    "score": {
     "dev-box": {
-     "total": 60,
+     "total": 61,
      "rank": 25,
      "of": 37
     },
@@ -15098,8 +15610,8 @@
    "page": "https://aisandboxhunt.com/podflare",
    "score": {
     "code-sandbox": {
-     "total": 71,
-     "rank": 16,
+     "total": 70,
+     "rank": 15,
      "of": 62
     }
    },
@@ -15120,7 +15632,7 @@
     "code-sandbox"
    ],
    "tagline": "Sandboxes for agents, evals and CI from verified snapshots, billed per second with a quote and hard spend cap per run.",
-   "summary": "Promigence starts sandboxes from snapshots that must pass their own verify command at build time, and forks many identical copies at once for agent runs, evaluations, RL rollouts and CI jobs. Usage is metered per second at $0.0504 per vCPU-hour and $0.0162 per GiB-hour, paused time is not billed, and snapshot storage is included. Every run is priced before it starts and held to a hard spend cap, and runs report environment failures separately from task failures. Sign-up needs an invite code, which comes with $100 of free credit for 30 days; paid plans are arranged by email.",
+   "summary": "Promigence starts sandboxes from snapshots that must pass their own verify command at build time, and forks many identical copies at once for agent runs, evaluations, RL rollouts and CI jobs. It is pay as you go with no plans or monthly fee: usage is metered per second at $0.0504 per vCPU-hour and $0.0162 per GiB-hour, paused time is not billed, and snapshot storage is included. Every run is priced before it starts and held to a hard spend cap, and runs report environment failures separately from task failures. Sign-up needs an invite code; new accounts get $10 of free credit with no card and $40 more after adding one, for 30 days. Teams at volume can ask for Dedicated capacity, priced by quote.",
    "isolation": "Isolated sandbox per run; the isolation technology is not stated",
    "isolationKind": "unknown",
    "openSource": false,
@@ -15163,42 +15675,24 @@
     "gpu": [],
     "plans": [
      {
-      "name": "Free",
+      "name": "Pay as you go",
       "monthlyFee": 0,
       "includedUsageUsd": 0,
-      "limits": "Pay as you go at list rates after the $100 starting credit (valid 30 days). 20 sandboxes at once, sessions up to 1 hour, sizes up to Large (8 vCPU), 20 GB of data out a month.",
-      "includedVcpuHours": 0,
-      "includedGibHours": 0,
-      "capped": false
-     },
-     {
-      "name": "Pro",
-      "monthlyFee": 50,
-      "includedUsageUsd": 0,
-      "limits": "Set up by email. 'More compute each month than the plan costs' (amount not stated), up to 100 sandboxes at once, verified snapshot builds, harness adapters, email support.",
-      "includedVcpuHours": 0,
-      "includedGibHours": 0,
-      "capped": false
-     },
-     {
-      "name": "Max",
-      "monthlyFee": 250,
-      "includedUsageUsd": 0,
-      "limits": "Set up by email. 5x the usage of Pro (or 20x for $500), up to 500 sandboxes at once (1,000 at $500), capacity held warm, shared Slack channel; usage past the allowance below list by commitment.",
+      "limits": "No plan and no monthly fee: usage at list rates, after the free credit. A new account runs 20 sandboxes at once, sessions up to 1 hour (15 minutes by default), sizes up to Large (8 vCPU), 20 GB of data out a month; support raises a limit on request.",
       "includedVcpuHours": 0,
       "includedGibHours": 0,
       "capped": false
      }
     ],
     "freeTierKind": "credit",
-    "freeTier": "$100 of free credit for 30 days, sent with the invite code needed to sign up and claimed in the browser with no card.",
+    "freeTier": "$10 of free credit with no card, and $40 more once a card is added, for 30 days. It comes with the invite code needed to sign up, and the first $10 is claimed in the browser.",
     "notes": [
      "Sizes are fixed tiers at the same per-resource rate: Small 2 vCPU / 4 GiB ($0.1656/hour), Medium 4 vCPU / 16 GiB ($0.4608/hour), Large 8 vCPU / 32 GiB ($0.9216/hour). The list prices are rounded to $0.17, $0.46 and $0.92.",
-     "Snapshot storage is included (we show storage as $0). Data out is limited by a monthly allowance (20 GB on a new account); a price for data out beyond it is not published.",
+     "There are no plans and no monthly fee. Dedicated, for teams running agents in production at volume, holds capacity for the team with custom sizes, sessions up to 24 hours and a shared Slack channel, at a rate set by usage and commitment, invoiced monthly and priced by quote.",
+     "Snapshot storage is included (we show storage as $0); each account has a storage limit. Data out is limited by a monthly allowance (20 GB on a new account); a price for data out beyond it is not published.",
      "Verified snapshot builds bill at their size's rate for the time they run, at most an hour; builds that fail on Promigence's side are not billed.",
      "Paused sandboxes are kept 30 days and do not count against concurrency.",
-     "Plans are set up by email; the dollar value of usage included with Pro and Max is not stated, so we show none.",
-     "Free accounts can run sessions up to an hour (15 minutes by default); the limit for paid plans is not stated.",
+     "New accounts can run sessions up to an hour (15 minutes by default); Dedicated runs sessions up to 24 hours.",
      "The isolation technology (microVM, container or other) is not described; the security page only says no sandbox can reach another.",
      "Outbound network can be limited with an allowlist or turned off. GPUs are not offered."
     ]
@@ -15209,8 +15703,9 @@
     "Running GitHub Actions or GitLab CI jobs in sandboxes from the same account"
    ],
    "watchOut": [
-    "Free accounts are limited to 1-hour sessions and 20 sandboxes at once",
-    "Paid plans are arranged by email and their included usage is not stated in dollars",
+    "New accounts are limited to 1-hour sessions and 20 sandboxes at once until support raises the limits",
+    "There are no self-serve plans with included usage; lower rates for volume come only with Dedicated, priced by quote",
+    "The free credit is small ($10 without a card, $50 with one) and lasts 30 days",
     "The isolation technology is not documented",
     "Some accounts must answer setup questions before starting work",
     "Sign-up needs an invite code, requested on the website"
@@ -15219,99 +15714,120 @@
     {
      "url": "https://www.promigence.ai",
      "quote": "Promigence meters per second at $0.0504 per vCPU-hour plus $0.0162 per GiB-hour",
-     "checked": "2026-11-19"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.promigence.ai",
      "quote": "That works out at $0.17 an hour for a small sandbox (2 vCPU, 4 GB), $0.46 for medium (4 vCPU, 16 GB) and $0.92 for large (8 vCPU, 32 GB).",
-     "checked": "2026-11-19"
-    },
-    {
-     "url": "https://www.promigence.ai",
-     "quote": "Plans are set up with you by email.",
-     "checked": "2026-11-19"
-    },
-    {
-     "url": "https://www.promigence.ai",
-     "quote": "20 sandboxes at once, sessions up to an hour",
-     "checked": "2026-11-19"
-    },
-    {
-     "url": "https://www.promigence.ai/docs/llms-full.txt",
-     "quote": "snapshot storage is included in every plan",
-     "checked": "2026-11-19"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.promigence.ai",
      "quote": "Paused time is not invoiced, and nothing accrues before an environment is handed to you.",
-     "checked": "2026-11-19"
-    },
-    {
-     "url": "https://www.promigence.ai",
-     "quote": "Max is $250 a month for 5× the usage of Pro and up to 500 sandboxes at once, or $500 for 20× and up to 1,000.",
-     "checked": "2026-11-19"
-    },
-    {
-     "url": "https://www.promigence.ai",
-     "quote": "Pro is $50 a month, includes more compute than it costs, and runs up to 100 sandboxes at once.",
-     "checked": "2026-11-19"
-    },
-    {
-     "url": "https://www.promigence.ai",
-     "quote": "New accounts get $100 of free credit for 30 days, claimed in the browser",
-     "checked": "2026-11-19"
-    },
-    {
-     "url": "https://www.promigence.ai",
-     "quote": "Request access at www.promigence.ai: Promigence emails an invite code with $100 of free credit.",
-     "checked": "2026-11-19"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.promigence.ai",
      "quote": "Our servers are on the US East Coast.",
-     "checked": "2026-11-19"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.promigence.ai/docs/llms-full.txt",
      "quote": "a build that fails on our side is not billed",
-     "checked": "2026-11-19"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.promigence.ai/docs/limits",
      "quote": "A new account runs 20 sandboxes at once, each for up to an hour (15 minutes unless `--timeout` asks for more), on sizes up to large (8 vCPU), with 20 GB of data out a month.",
-     "checked": "2026-11-19"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.promigence.ai/docs/limits",
      "quote": "It is kept for 30 days, and resuming it starts the 30 days again.",
-     "checked": "2026-11-19"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.promigence.ai/security",
      "quote": "No sandbox can see, reach or address another, yours or anyone else's.",
-     "checked": "2026-11-19"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://www.promigence.ai/docs/llms-full.txt",
      "quote": "There are no GPUs or Windows images.",
-     "checked": "2026-11-19"
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.promigence.ai",
+     "quote": "No. Promigence is pay as you go: you pay per second at list for the sandboxes you run, with no plan to pick and no monthly fee.",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.promigence.ai",
+     "quote": "Teams running agents in production at volume can ask for Dedicated: capacity held for the team, priced by quote.",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.promigence.ai",
+     "quote": "A rate set by your usage and commitment, invoiced monthly.",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.promigence.ai",
+     "quote": "Sessions that run up to 24 hours.",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.promigence.ai",
+     "quote": "Yes: $10 of free credit with no card, and $40 more once a card is added, for 30 days, with 20 concurrent sandboxes and sessions up to an hour.",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.promigence.ai",
+     "quote": "Request access at www.promigence.ai: Promigence emails an invite code with free credit.",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.promigence.ai",
+     "quote": "A new Promigence account runs 20 sandboxes at once, and support@promigence.ai raises the limit on request.",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.promigence.ai/docs/llms-full.txt",
+     "quote": "Snapshot storage is included with every account.",
+     "checked": "2026-11-26"
+    },
+    {
+     "url": "https://www.promigence.ai/docs/llms-full.txt",
+     "quote": "Billed per second at the size's rate while the build runs, for at most an hour",
+     "checked": "2026-11-26"
     }
    ],
-   "lastChecked": "2026-11-19",
+   "lastChecked": "2026-11-26",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/promigence",
    "score": {
     "code-sandbox": {
-     "total": 55,
-     "rank": 51,
+     "total": 53,
+     "rank": 53,
      "of": 62
     }
    },
    "comparablePrice": {
     "code-sandbox": 29.1456
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 65.46,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 21,
+     "of": 25
+    }
+   ],
    "status": "active"
   },
   {
@@ -15505,15 +16021,36 @@
    "page": "https://aisandboxhunt.com/railway-sandboxes",
    "score": {
     "code-sandbox": {
-     "total": 59,
-     "rank": 42,
+     "total": 51,
+     "rank": 54,
      "of": 62
     }
    },
    "comparablePrice": {
     "code-sandbox": 56.2218624
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Burst start time (median of 100 at once)",
+     "value": 4089,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 24,
+     "of": 25
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 62.79,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 22,
+     "of": 25
+    }
+   ],
    "status": "active"
   },
   {
@@ -15720,12 +16257,12 @@
    "page": "https://aisandboxhunt.com/render",
    "score": {
     "code-sandbox": {
-     "total": 62,
-     "rank": 36,
+     "total": 61,
+     "rank": 34,
      "of": 62
     },
     "dev-box": {
-     "total": 63,
+     "total": 64,
      "rank": 21,
      "of": 37
     }
@@ -15895,7 +16432,7 @@
    "page": "https://aisandboxhunt.com/replit",
    "score": {
     "dev-box": {
-     "total": 33,
+     "total": 34,
      "rank": 37,
      "of": 37
     },
@@ -16063,7 +16600,7 @@
    "page": "https://aisandboxhunt.com/riza",
    "score": {
     "code-sandbox": {
-     "total": 52,
+     "total": 51,
      "rank": 55,
      "of": 62
     }
@@ -16234,12 +16771,12 @@
    "page": "https://aisandboxhunt.com/runloop",
    "score": {
     "code-sandbox": {
-     "total": 62,
+     "total": 60,
      "rank": null,
      "of": 62
     },
     "dev-box": {
-     "total": 61,
+     "total": 62,
      "rank": null,
      "of": 37
     }
@@ -16283,7 +16820,7 @@
     "ci-runner"
    ],
    "tagline": "Self-hosted GitHub Actions runners in your own AWS account: a flat yearly license, with EC2 billed by AWS at cost.",
-   "summary": "RunsOn is a control plane you deploy into your own AWS account with one CloudFormation or Terraform stack; it launches a fresh EC2 instance for every GitHub Actions job and removes it afterwards. You pay RunsOn a flat yearly license sized by jobs per month (from $350 a year), and AWS bills you directly for the instances, disks, cache bucket and a small control plane. On its pricing page RunsOn estimates a 2 vCPU x64 spot runner at about $0.0008 a minute in us-east-1. It is free for open-source, non-profit and personal non-commercial use.",
+   "summary": "RunsOn is a control plane you deploy into your own AWS account with one CloudFormation or Terraform stack; it launches a fresh EC2 instance for every GitHub Actions job and removes it afterwards. You pay RunsOn a flat yearly license sized by jobs per month (from $350 a year), and AWS bills you directly for the instances, disks, cache bucket and a small control plane. On its pricing page RunsOn estimated a 2 vCPU x64 spot runner at about $0.0007 a minute in us-east-1 (7-day average of AWS spot prices on 26 November 2026). It is free for open-source, non-profit and personal non-commercial use.",
    "isolation": "Fresh EC2 instance per job in your own AWS account",
    "isolationKind": "vm",
    "openSource": false,
@@ -16311,8 +16848,8 @@
     "rates": {
      "vcpuHour": null,
      "gibHour": null,
-     "instanceHour": 0.048,
-     "instance": "AWS m8a.large spot, 2 vCPU x64, with a 30 GB gp3 root volume; paid to AWS, not RunsOn ($0.0008 per minute, us-east-1 7-day average)",
+     "instanceHour": 0.042,
+     "instance": "AWS m8a.large spot, 2 vCPU x64, with a 30 GB gp3 root volume; paid to AWS, not RunsOn ($0.0007 per minute, us-east-1 7-day average on 26 November 2026)",
      "storageGibMonth": null,
      "billingIncrement": "per second (AWS EC2 and EBS billing); license billed yearly",
      "billedWhile": "AWS bills the instance and its volume only while a job runs; the control plane (about $7 a month) runs continuously in your account. The license is a flat yearly fee.",
@@ -16324,7 +16861,7 @@
     "gpu": [
      {
       "type": "NVIDIA T4 (AWS g4dn.xlarge spot, 4 vCPU; paid to AWS)",
-      "perHour": 0.228
+      "perHour": 0.222
      }
     ],
     "plans": [
@@ -16378,8 +16915,8 @@
     "freeTier": "15-day free trial of Starter, Growth or Scale (payment details collected at checkout); AWS usage during the trial is billed by AWS. Open-source, non-profit and personal non-commercial projects get a free license.",
     "notes": [
      "There are two bills. The RunsOn license is a flat yearly fee per company (monthly figures here are the yearly price divided by 12). Compute, storage, the S3 cache bucket, data transfer and the control plane (from about $7 a month) are billed by AWS on your own account with no markup from RunsOn.",
-     "Rate shown is RunsOn's published estimate of the AWS bill for a 2 vCPU x64 spot runner (m8a.large, 7-day average spot price in the cheapest us-east-1 zone, including a 30 GB gp3 root volume): $0.0008 per minute x 60 = $0.048 per hour. Spot prices change, differ by region and can be interrupted; on-demand instances cost more.",
-     "Other examples from the same table: 2 vCPU arm64 (m8g.large) $0.0010 per minute, 2 vCPU Windows (m8i.large) $0.0020 per minute, 4 vCPU T4 GPU (g4dn.xlarge) $0.0038 per minute ($0.228 per hour).",
+     "Rate shown is RunsOn's published estimate of the AWS bill for a 2 vCPU x64 spot runner (m8a.large, 7-day average spot price in the cheapest us-east-1 zone, including a 30 GB gp3 root volume), as shown on 26 November 2026: $0.0007 per minute x 60 = $0.042 per hour. RunsOn updates these averages every few days as AWS spot prices move, so the current figure may differ a little; spot prices also differ by region and can be interrupted, and on-demand instances cost more.",
+     "Other examples from the same table on 26 November 2026: 2 vCPU arm64 (m8g.large) $0.0010 per minute, 2 vCPU Windows (m8i.large) $0.0020 per minute, 4 vCPU T4 GPU (g4dn.xlarge) $0.0037 per minute ($0.222 per hour).",
      "License tiers are set by jobs per month and are not enforced as hard limits; only two consecutive months above a tier move you up, prorated. Prices are shown in EUR by default with USD equivalents.",
      "Runners use AMIs built from GitHub's runner images, refreshed every 15 days, or your own AMI. Instance families and sizes are chosen per job in the runs-on label.",
      "The public repository holds the CloudFormation templates and docs under the MIT license; the server and agent source code is only provided to Sponsorship customers."
@@ -16400,65 +16937,65 @@
     {
      "url": "https://runs-on.com/pricing/",
      "quote": "AWS bills you for the instances at spot prices, with no markup.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-26"
     },
     {
-     "url": "https://runs-on.com/pricing/",
-     "quote": "| 2cpu | m8a.large | $0.0008 | $0.0060 |",
-     "checked": "2026-11-23"
+     "url": "https://web.archive.org/web/20261126140715/https://runs-on.com/pricing/",
+     "quote": "| 2cpu | m8a.large | $0.0007 | $0.0060 |",
+     "checked": "2026-11-26"
     },
     {
      "url": "https://runs-on.com/pricing/",
      "quote": "spot prices (7-day average, cheapest zone) · us-east-1 · incl. 30GB gp3 @ 400 MB/s billed by AWS, to the second",
-     "checked": "2026-11-23"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://runs-on.com/pricing/",
      "quote": "Starter < 50k jobs/mo €300 / yr",
-     "checked": "2026-11-23"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://runs-on.com/pricing/",
      "quote": "Checkout supports EUR and USD",
-     "checked": "2026-11-23"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://runs-on.com/pricing/",
      "quote": "From about $7 a month; no egress to a third party.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://runs-on.com/pricing/",
      "quote": "15 days, with payment details collected at checkout.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://runs-on.com/pricing/",
      "quote": "The full product for non-profit, open-source and personal non-commercial projects, in exchange for a public link back to runs-on.com.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-26"
     },
     {
-     "url": "https://runs-on.com/pricing/",
-     "quote": "| 4cpu·T4 | g4dn.xlarge | $0.0038 | $0.0520 | 14× |",
-     "checked": "2026-11-23"
+     "url": "https://web.archive.org/web/20261126140715/https://runs-on.com/pricing/",
+     "quote": "| 4cpu·T4 | g4dn.xlarge | $0.0037 | $0.0520 | 14× |",
+     "checked": "2026-11-26"
     },
     {
-     "url": "https://runs-on.com/pricing/",
+     "url": "https://web.archive.org/web/20261126140715/https://runs-on.com/pricing/",
      "quote": "| 2cpu | m8g.large | $0.0010 | $0.0050 | 5× |",
-     "checked": "2026-11-23"
+     "checked": "2026-11-26"
     },
     {
-     "url": "https://runs-on.com/pricing/",
+     "url": "https://web.archive.org/web/20261126140715/https://runs-on.com/pricing/",
      "quote": "| 2cpu | m8i.large | $0.0020 | $0.0100 | 5× |",
-     "checked": "2026-11-23"
+     "checked": "2026-11-26"
     },
     {
      "url": "https://github.com/runs-on/runs-on",
      "quote": "It launches an isolated EC2 runner for every job with full GitHub Linux runner-image compatibility.",
-     "checked": "2026-11-23"
+     "checked": "2026-11-26"
     }
    ],
-   "lastChecked": "2026-11-23",
+   "lastChecked": "2026-11-26",
    "notice": null,
    "added": "2026-11-13",
    "page": "https://aisandboxhunt.com/runs-on",
@@ -16470,7 +17007,7 @@
     }
    },
    "comparablePrice": {
-    "ci-runner": 4.8
+    "ci-runner": 4.2
    },
    "benchmarks": [],
    "status": "active"
@@ -16622,7 +17159,7 @@
    "page": "https://aisandboxhunt.com/sailboxes",
    "score": {
     "dev-box": {
-     "total": 86,
+     "total": 87,
      "rank": 1,
      "of": 37
     }
@@ -16630,7 +17167,28 @@
    "comparablePrice": {
     "dev-box": 8.36
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Repo clone, install and typecheck (one run)",
+     "value": 73656,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 17,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 79.5,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 17,
+     "of": 25
+    }
+   ],
    "status": "active"
   },
   {
@@ -16781,7 +17339,7 @@
    "page": "https://aisandboxhunt.com/sandbase",
    "score": {
     "code-sandbox": {
-     "total": 49,
+     "total": 47,
      "rank": 56,
      "of": 62
     }
@@ -16929,7 +17487,7 @@
    "page": "https://aisandboxhunt.com/sandbox0",
    "score": {
     "dev-box": {
-     "total": 67,
+     "total": 68,
      "rank": 14,
      "of": 37
     }
@@ -16937,7 +17495,18 @@
    "comparablePrice": {
     "dev-box": 13.2
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Repo clone, install and typecheck (one run)",
+     "value": 80559,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 20,
+     "of": 26
+    }
+   ],
    "status": "active"
   },
   {
@@ -17133,7 +17702,7 @@
    "page": "https://aisandboxhunt.com/simular-box",
    "score": {
     "dev-box": {
-     "total": 44,
+     "total": 45,
      "rank": 35,
      "of": 37
     },
@@ -17331,7 +17900,7 @@
    "page": "https://aisandboxhunt.com/solo-agent-substrate",
    "score": {
     "code-sandbox": {
-     "total": 68,
+     "total": 67,
      "rank": 25,
      "of": 62
     }
@@ -17713,12 +18282,12 @@
    "score": {
     "code-sandbox": {
      "total": 69,
-     "rank": 19,
+     "rank": 18,
      "of": 62
     },
     "dev-box": {
      "total": 69,
-     "rank": 11,
+     "rank": 12,
      "of": 37
     }
    },
@@ -17730,21 +18299,31 @@
     {
      "source": "computesdk",
      "metric": "Burst start time (median of 100 at once)",
-     "value": 377,
+     "value": 392,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 8,
-     "of": 27
+     "date": "2026-11-20",
+     "rank": 6,
+     "of": 25
     },
     {
      "source": "computesdk",
      "metric": "Repo clone, install and typecheck (one run)",
-     "value": 57422,
+     "value": 51347,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 9,
+     "date": "2026-11-20",
+     "rank": 6,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 94.14,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 5,
      "of": 25
     },
     {
@@ -17753,9 +18332,9 @@
      "value": 0.52,
      "unit": "s",
      "better": "lower",
-     "date": "2026-10-23",
-     "rank": 1,
-     "of": 9
+     "date": "2026-11-25",
+     "rank": 7,
+     "of": 21
     },
     {
      "source": "aisandboxbench",
@@ -17763,9 +18342,9 @@
      "value": 13.147,
      "unit": "s",
      "better": "lower",
-     "date": "2026-10-23",
-     "rank": 2,
-     "of": 9
+     "date": "2026-11-25",
+     "rank": 6,
+     "of": 21
     }
    ],
    "status": "active"
@@ -18008,7 +18587,7 @@
    "page": "https://aisandboxhunt.com/tembo",
    "score": {
     "dev-box": {
-     "total": 57,
+     "total": 58,
      "rank": 27,
      "of": 37
     },
@@ -18219,8 +18798,8 @@
    "page": "https://aisandboxhunt.com/tenki",
    "score": {
     "code-sandbox": {
-     "total": 67,
-     "rank": 27,
+     "total": 65,
+     "rank": 29,
      "of": 62
     },
     "ci-runner": {
@@ -18233,7 +18812,28 @@
     "code-sandbox": 29.1456,
     "ci-runner": 23.04
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "aisandboxbench",
+     "metric": "Cold start (median)",
+     "value": 1.089,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 13,
+     "of": 21
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Agent tool-call replay (median)",
+     "value": 20.953,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 13,
+     "of": 21
+    }
+   ],
    "status": "active"
   },
   {
@@ -18447,13 +19047,13 @@
    "page": "https://aisandboxhunt.com/tensorlake",
    "score": {
     "code-sandbox": {
-     "total": 76,
-     "rank": 5,
+     "total": 73,
+     "rank": 10,
      "of": 62
     },
     "dev-box": {
-     "total": 78,
-     "rank": 3,
+     "total": 75,
+     "rank": 6,
      "of": 37
     },
     "gpu": {
@@ -18471,21 +19071,31 @@
     {
      "source": "computesdk",
      "metric": "Burst start time (median of 100 at once)",
-     "value": 991,
+     "value": 2276,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 16,
-     "of": 27
+     "date": "2026-11-20",
+     "rank": 21,
+     "of": 25
     },
     {
      "source": "computesdk",
      "metric": "Repo clone, install and typecheck (one run)",
-     "value": 72954,
+     "value": 219255,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 21,
+     "date": "2026-11-20",
+     "rank": 26,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 82.3,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 14,
      "of": 25
     }
    ],
@@ -18980,15 +19590,66 @@
    "page": "https://aisandboxhunt.com/upstash-box",
    "score": {
     "code-sandbox": {
-     "total": 73,
-     "rank": 11,
+     "total": 70,
+     "rank": 16,
      "of": 62
     }
    },
    "comparablePrice": {
     "code-sandbox": 10.56
    },
-   "benchmarks": [],
+   "benchmarks": [
+    {
+     "source": "computesdk",
+     "metric": "Burst start time (median of 100 at once)",
+     "value": 1404,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 16,
+     "of": 25
+    },
+    {
+     "source": "computesdk",
+     "metric": "Repo clone, install and typecheck (one run)",
+     "value": 54476,
+     "unit": "ms",
+     "better": "lower",
+     "date": "2026-11-20",
+     "rank": 10,
+     "of": 26
+    },
+    {
+     "source": "computesdk",
+     "metric": "Snapshot and restore (weekly score out of 100)",
+     "value": 92.47,
+     "unit": "points",
+     "better": "higher",
+     "date": "2026-11-26",
+     "rank": 6,
+     "of": 25
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Cold start (median)",
+     "value": 2.684,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 18,
+     "of": 21
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Agent tool-call replay (median)",
+     "value": 26.886,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 18,
+     "of": 21
+    }
+   ],
    "status": "active"
   },
   {
@@ -19152,8 +19813,8 @@
    "page": "https://aisandboxhunt.com/vercel-sandbox",
    "score": {
     "code-sandbox": {
-     "total": 75,
-     "rank": 8,
+     "total": 77,
+     "rank": 3,
      "of": 62
     }
    },
@@ -19164,22 +19825,42 @@
     {
      "source": "computesdk",
      "metric": "Burst start time (median of 100 at once)",
-     "value": 428,
+     "value": 307,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 9,
-     "of": 27
+     "date": "2026-11-20",
+     "rank": 4,
+     "of": 25
     },
     {
      "source": "computesdk",
      "metric": "Repo clone, install and typecheck (one run)",
-     "value": 72265,
+     "value": 101829,
      "unit": "ms",
      "better": "lower",
-     "date": "2026-11-13",
-     "rank": 20,
-     "of": 25
+     "date": "2026-11-20",
+     "rank": 22,
+     "of": 26
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Cold start (median)",
+     "value": 0.517,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 6,
+     "of": 21
+    },
+    {
+     "source": "aisandboxbench",
+     "metric": "Agent tool-call replay (median)",
+     "value": 22.51,
+     "unit": "s",
+     "better": "lower",
+     "date": "2026-11-25",
+     "rank": 15,
+     "of": 21
     },
     {
      "source": "starsling",
@@ -19535,13 +20216,13 @@
    "page": "https://aisandboxhunt.com/workpaper",
    "score": {
     "dev-box": {
-     "total": 68,
+     "total": 69,
      "rank": 13,
      "of": 37
     },
     "code-sandbox": {
-     "total": 67,
-     "rank": 28,
+     "total": 66,
+     "rank": 27,
      "of": 62
     }
    },
